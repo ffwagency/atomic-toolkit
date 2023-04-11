@@ -1,0 +1,48 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <AssemblyVersion>1.0.1</AssemblyVersion>
+    <Version>1.0.1</Version>
+    <InformationalVersion>1.0.1</InformationalVersion>
+    <TargetFramework>net7.0</TargetFramework>
+    <Authors>FFW</Authors>
+    <ContentTargetFolders>.</ContentTargetFolders>
+    <Product>AtomicStarterKit</Product>
+    <PackageId>AtomicStarterKit</PackageId>
+    <Title>AtomicStarterKit</Title>
+    <Description>Atomic Starter Kit for Umbraco</Description>
+    
+    <PackageIcon>logo.png</PackageIcon>
+    <PackageIconUrl>../../images/logo.png?raw=true</PackageIconUrl>
+    <PackageTags>umbraco;umbraco-marketplace;atomic;starter;kit;atomicstarterkit;ffw</PackageTags>
+
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Umbraco.Cms.Core" Version="11.2.0" />
+    <PackageReference Include="Umbraco.Cms.Infrastructure" Version="11.2.0" />
+    <PackageReference Include="Umbraco.Cms.Web.Website" Version="11.2.0" />
+    <PackageReference Include="Umbraco.Cms.Web.BackOffice" Version="11.2.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="build\**" Pack="true" PackagePath="build" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="wwwroot\**\*.*" ExcludeFromSingleFile="true" CopyToPublishDirectory="Always" />
+    <Content Include="Views\**\*.*" ExcludeFromSingleFile="true" CopyToPublishDirectory="Always" />
+    <None Include="build\**" Pack="true" PackagePath="build" />
+    
+    <None Remove="Migrations\package.zip" />
+    <EmbeddedResource Include="Migrations\package.zip" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="../../images/logo.png" Pack="true" PackPath="\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\AtomicStarterKit.Common\AtomicStarterKit.Common.csproj" />
+    <ProjectReference Include="..\AtomicStarterKit.ModelsBuilder\AtomicStarterKit.ModelsBuilder.csproj" />
+  </ItemGroup>
+</Project>

@@ -1,0 +1,37 @@
+﻿@model CTA
+@{
+	if (Model == null) return;
+}
+
+<section class="py-4 py-xl-5">
+	<div class="container">
+		<div class="bg-dark border rounded border-0 border-dark overflow-hidden">
+			<div class="row g-0">
+				<div class="col-md-6">
+					<div class="text-white p-4 p-md-5">
+						@if (!string.IsNullOrWhiteSpace(Model.Title))
+						{
+							<h2 class="fw-bold text-white mb-3">@Model.Title</h2>
+						}
+						@if (!string.IsNullOrWhiteSpace(Model.Description))
+						{
+							<p class="mb-4">@Model.Description</p>
+						}						
+						@if(Model.CTalink != null && Model.CTalink.Any())
+						{
+							<div class="my-3">
+							<a class="btn btn-light btn-lg" role="button" href="@Model.CTalink.FirstOrDefault()!.Url">@Model.CTalink.FirstOrDefault()!.Name</a>
+						</div>
+						}
+					</div>
+				</div>
+				@if (Model.Image != null)
+				{
+					<div class="col-md-6 order-first order-md-last" style="min-height: 250px;">
+						<img class="w-100 h-100 fit-cover" src="@Model.Image.Url()">
+					</div>
+				}
+			</div>
+		</div>
+	</div>
+</section>

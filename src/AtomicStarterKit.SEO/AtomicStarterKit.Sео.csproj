@@ -1,0 +1,41 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <AssemblyVersion>1.0.0</AssemblyVersion>
+    <Version>1.0.0</Version>
+    <InformationalVersion>1.0.0</InformationalVersion>
+    <TargetFramework>net7.0</TargetFramework>
+    <Authors>FFW</Authors>
+    <ContentTargetFolders>.</ContentTargetFolders>
+    <Product>AtomicStarterKit.SEO</Product>
+    <PackageId>AtomicStarterKit.SEO</PackageId>
+    <Title>AtomicStarterKit SEO</Title>
+    <Description>All SEO related services</Description>
+
+    <PackageIcon>logo.png</PackageIcon>
+    <PackageIconUrl>../../images/logo.png?raw=true</PackageIconUrl>
+    <PackageTags>umbraco;umbraco-marketplace;atomic;starter;kit;atomicstarterkit;ffw;seo;</PackageTags>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Migrations\package.zip" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\package.zip" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Umbraco.Cms.Web.Website" Version="11.2.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\AtomicStarterKit.Common\AtomicStarterKit.Common.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="../../images/logo.png" Pack="true" PackPath="\" />
+  </ItemGroup>
+</Project>

@@ -1,0 +1,16 @@
+﻿@model Heading
+@{
+	if (Model == null) return;
+}
+<section class="py-4 py-xl-5 heading-section" style="@(Model.BackgroundImage != null ? $"background: url('{Model.BackgroundImage.Url()}');" : "background-color: rgb(108, 108, 112,0.5);")">
+	<div class="container h-100">
+		<div class="row h-100">
+			<div class="col-md-10 col-xl-8 text-center d-flex d-sm-flex d-md-flex flex-column justify-content-center align-items-center mx-auto justify-content-md-start align-items-md-center justify-content-xl-center">
+				@if (!string.IsNullOrWhiteSpace(Model.Title))
+				{
+					<h1 class="text-uppercase fw-bold text-white mb-3">@Model.Title</h1>
+				}
+			</div>
+		</div>
+	</div>
+</section>

@@ -1,0 +1,23 @@
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <AtomicStarterKitAssetsFilesPath>$(MSBuildThisFileDirectory)..\wwwroot\**\*.*</AtomicStarterKitAssetsFilesPath>
+    <AtomicStarterKitViewsFilesPath>$(MSBuildThisFileDirectory)..\Views\**\*.*</AtomicStarterKitViewsFilesPath>
+  </PropertyGroup>
+
+  <Target Name="CopyAtomicStarterKitAssets" BeforeTargets="Build">
+    <ItemGroup>
+      <AtomicStarterKitAssetsFiles Include="$(AtomicStarterKitAssetsFilesPath)" />
+    </ItemGroup>
+    <Message Text="Copying AtomicStarterKit assets: $(AtomicStarterKitAssetsFilesPath) - #@(AtomicStarterKitAssetsFiles->Count()) files" Importance="high" />
+    <Copy SourceFiles="@(AtomicStarterKitAssetsFiles)" DestinationFiles="@(AtomicStarterKitAssetsFiles->'$(MSBuildProjectDirectory)\wwwroot\%(RecursiveDir)%(Filename)%(Extension)')" SkipUnchangedFiles="true" />
+  </Target>
+
+  <Target Name="CopyAtomicStarterKitViews" BeforeTargets="Build">
+    <ItemGroup>
+      <AtomicStarterKitViewsFiles Include="$(AtomicStarterKitViewsFilesPath)" />
+    </ItemGroup>
+    <Message Text="Copying AtomicStarterKit views: $(AtomicStarterKitViewsFilesPath) - #@(AtomicStarterKitViewsFiles->Count()) files" Importance="high" />
+    <Copy SourceFiles="@(AtomicStarterKitViewsFiles)" DestinationFiles="@(AtomicStarterKitViewsFiles->'$(MSBuildProjectDirectory)\Views\%(RecursiveDir)%(Filename)%(Extension)')" SkipUnchangedFiles="true" />
+  </Target>
+
+</Project>

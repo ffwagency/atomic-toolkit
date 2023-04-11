@@ -1,0 +1,47 @@
+﻿@model PortfolioDetails
+@{
+	if (Model == null) return;
+}
+
+<section class="bg-light" id="portfolio-single-details">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-12 text-center">
+				@if (!string.IsNullOrWhiteSpace(Model.PreTitle))
+				{
+					<h2 class="text-uppercase section-heading">@Model.PreTitle</h2>
+				}
+				@if (!string.IsNullOrWhiteSpace(Model.Title))
+				{
+					<h3 class="text-muted section-subheading">@Model.Title</h3>
+				}
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-lg-8 mx-auto">
+				<div class="simple-slider">
+					<div class="swiper-container">
+						@if (Model.Images != null && Model.Images.Any())
+						{
+							<div class="swiper-wrapper">
+								@foreach (var item in Model.Images)
+								{
+									<div class="swiper-slide" style="background: url('@(item.Url())') center center / cover no-repeat;"></div>
+								}
+							</div>
+						}
+						<div class="swiper-pagination"></div>
+						<div class="swiper-button-prev"></div>
+						<div class="swiper-button-next"></div>
+					</div>
+				</div>
+				@if (Model.Description != null)
+				{
+					@Html.Raw(Model.Description);
+				}
+			</div>
+		</div>
+	</div>
+</section>
+
+

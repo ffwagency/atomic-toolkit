@@ -1,0 +1,95 @@
+﻿@model Footer
+@{
+	if (Model == null) return;
+}
+
+<footer class="text-white bg-dark">
+	<div class="container py-4 py-lg-5">
+		<div class="row justify-content-center">
+			@if (Model.LeftColumnNavigation != null && Model.LeftColumnNavigation.Any())
+			{
+				<div class="col-sm-4 col-md-3 text-center text-lg-start d-flex flex-column">
+					@if (!string.IsNullOrWhiteSpace(Model.LeftColumTitle))
+					{
+						<h3 class="fs-6 text-white">@Model.LeftColumTitle</h3>
+					}
+					<ul class="list-unstyled">
+						@foreach (var item in Model.LeftColumnNavigation)
+						{
+							var currentItem = item.Content as NavigationItem;
+							if (currentItem != null && currentItem.Link != null)
+							{
+								<li><a class="link-light" href="@currentItem.Link.FirstOrDefault()!.Url">@currentItem.Link.FirstOrDefault()!.Name</a></li>
+							}
+						}
+
+					</ul>
+				</div>
+			}
+			@if(Model.MiddleColumnNavigation != null && Model.MiddleColumnNavigation.Any())
+			{
+			<div class="col-sm-4 col-md-3 text-center text-lg-start d-flex flex-column">
+				@if (!string.IsNullOrWhiteSpace(Model.MiddleColumnTitle))
+				{
+					<h3 class="fs-6 text-white">@Model.MiddleColumnTitle</h3>
+				}
+				<ul class="list-unstyled">
+					@foreach (var item in Model.MiddleColumnNavigation)
+					{
+						var currentItem = item.Content as NavigationItem;
+						if (currentItem != null && currentItem.Link != null)
+						{
+							<li><a class="link-light" href="@currentItem.Link.FirstOrDefault()!.Url">@currentItem.Link.FirstOrDefault()!.Name</a></li>
+						}
+					}
+
+				</ul>
+			</div>
+			}
+			@if(Model.RightColumnNavigation != null && Model.RightColumnNavigation.Any())
+			{
+			<div class="col-sm-4 col-md-3 text-center text-lg-start d-flex flex-column">
+				@if (!string.IsNullOrWhiteSpace(Model.RightColumnTitle))
+				{
+					<h3 class="fs-6 text-white">@Model.RightColumnTitle</h3>
+				}
+				<ul class="list-unstyled">
+					@foreach (var item in Model.RightColumnNavigation)
+					{
+						var currentItem = item.Content as NavigationItem;
+						if (currentItem != null && currentItem.Link != null)
+						{
+							<li><a class="link-light" href="@currentItem.Link.FirstOrDefault()!.Url">@currentItem.Link.FirstOrDefault()!.Name</a></li>
+						}
+					}
+
+				</ul>
+			</div>
+			}
+			<div class="col-lg-3 text-center text-lg-start d-flex flex-column align-items-center order-first align-items-lg-start order-lg-last">
+				<div class="fw-bold d-flex align-items-center mb-2">
+					@if (Model.Logo != null)
+					{
+						<img src="@Model.Logo.Url()" />
+					}
+					@if (!string.IsNullOrWhiteSpace(Model.BrandText))
+					{
+						<span>@Model.BrandText</span>
+					}
+				</div>
+				@if (!string.IsNullOrWhiteSpace(Model.Desciption))
+				{
+					<p class="text-muted">@Model.Desciption</p>
+				}
+			</div>
+		</div>
+		<hr>
+		<div class="d-flex justify-content-between align-items-center pt-3">
+			@if (!string.IsNullOrWhiteSpace(Model.CopyrightText))
+			{
+				<p class="mb-0">@Model.CopyrightText</p>
+			}
+			@(await Component.InvokeAsync("SocialMedia"))
+		</div>
+	</div>
+</footer>
