@@ -1,14 +1,13 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Umbraco.Cms.Web.Common.PublishedModels;
 
-namespace AtomicStarterKit.Components
+namespace AtomicStarterKit.Components;
+
+[ViewComponent(Name = PortfolioListing.ModelTypeAlias)]
+public class PortfolioListingViewComponent : ViewComponent
 {
-	[ViewComponent(Name = PortfolioListing.ModelTypeAlias)]
-	public class PortfolioListingViewComponent : ViewComponent
+	public IViewComponentResult Invoke(PortfolioListing source)
 	{
-		public IViewComponentResult Invoke(PortfolioListing source)
-		{
-			return View("~/Views/Components/PortfolioListing.cshtml", source);
-		}
+		return View("~/Views/Components/PortfolioListing.cshtml", source);
 	}
 }

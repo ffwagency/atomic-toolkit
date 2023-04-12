@@ -6,20 +6,19 @@ using Umbraco.Cms.Core.Web;
 using Umbraco.Cms.Web.Common.Controllers;
 using Umbraco.Cms.Web.Common.PublishedModels;
 
-namespace AtomicStarterKit.Pages
-{
-	public class PortfolioPageController : RenderController
-	{
-		public PortfolioPageController(ILogger<PortfolioPageController> logger,
-								  ICompositeViewEngine compositeViewEngine,
-								  IUmbracoContextAccessor umbracoContextAccessor)
-			: base(logger, compositeViewEngine, umbracoContextAccessor)
-		{ }
+namespace AtomicStarterKit.Pages;
 
-		public override IActionResult Index()
-		{
-			var vm = ((PortfolioPage)CurrentPage).MapToDesignPage();
-			return View("~/views/DefaultPage.cshtml", vm);
-		}
+public class PortfolioPageController : RenderController
+{
+	public PortfolioPageController(ILogger<PortfolioPageController> logger,
+							  ICompositeViewEngine compositeViewEngine,
+							  IUmbracoContextAccessor umbracoContextAccessor)
+		: base(logger, compositeViewEngine, umbracoContextAccessor)
+	{ }
+
+	public override IActionResult Index()
+	{
+		var vm = ((PortfolioPage)CurrentPage).MapToDesignPageViewModel();
+		return View("~/views/DefaultPage.cshtml", vm);
 	}
 }

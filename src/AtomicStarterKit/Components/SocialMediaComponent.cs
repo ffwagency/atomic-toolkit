@@ -1,23 +1,22 @@
-﻿using AtomicStarterKit.Common.Services;
+﻿using AtomicStarterKit.Common.Content.Services;
 using Microsoft.AspNetCore.Mvc;
 using Umbraco.Cms.Web.Common.PublishedModels;
 
-namespace AtomicStarterKit.Components
+namespace AtomicStarterKit.Components;
+
+[ViewComponent(Name = "SocialMedia")]
+public class SocialMediaComponent : ViewComponent
 {
-	[ViewComponent(Name = "SocialMedia")]
-	public class SocialMediaComponent : ViewComponent
-	{
-		private readonly ContentTreeNavigator _contentTreeNavigator;
+    private readonly MultisiteContentService _multisiteContentService;
 
-		public SocialMediaComponent(ContentTreeNavigator contentTreeNavigator)
-		{
-			_contentTreeNavigator = contentTreeNavigator;
-		}
+    public SocialMediaComponent(MultisiteContentService multisiteContentService)
+    {
+        _multisiteContentService = multisiteContentService;
+    }
 
-		public IViewComponentResult Invoke()
-		{
-			var vm = _contentTreeNavigator.GetSettingsNode<SocialMediaSettings>();
-			return View("~/Views/Components/SocialMedia.cshtml", vm);
-		}
-	}
+    public IViewComponentResult Invoke()
+    {
+        var vm = _multisiteContentService.GetSettings<SocialMediaSettings>();
+        return View("~/Views/Components/SocialMedia.cshtml", vm);
+    }
 }

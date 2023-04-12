@@ -3,11 +3,10 @@
     if (Model?.Any() != true) { return; }
 }
 
-    @foreach (var block in Model)
-    {
-        if (block?.ContentUdi == null) { continue; }
-        var data = block.Content;
+@foreach (var block in Model)
+{
+    if (block?.ContentUdi == null) { continue; }
+    var data = block.Content;
 
-        @await Component.InvokeAsync(block.Content.ContentType.Alias, block.Content);
-    }
-
+    @await Component.InvokeAsync(block.Content.ContentType.Alias, block.Content)
+}

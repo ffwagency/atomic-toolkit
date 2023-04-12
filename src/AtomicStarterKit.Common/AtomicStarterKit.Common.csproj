@@ -20,10 +20,10 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Umbraco.Cms.Web.Website" Version="11.2.0" />
+    <PackageReference Include="Umbraco.Cms.Web.Website" Version="11.3.0" />
   </ItemGroup>
 
   <ItemGroup>
-    <None Include="../../images/logo.png" Pack="true" PackPath="\" />
+    <ProjectReference Include="..\AtomicStarterKit.ModelsBuilder\AtomicStarterKit.ModelsBuilder.csproj" />
   </ItemGroup>
 </Project>

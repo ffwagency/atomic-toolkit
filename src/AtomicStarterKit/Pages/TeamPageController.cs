@@ -6,20 +6,19 @@ using Umbraco.Cms.Web.Common.PublishedModels;
 using Microsoft.Extensions.Logging;
 using AtomicStarterKit.Models.Mapping;
 
-namespace AtomicStarterKit.Pages
-{
-	public class TeamPageController : RenderController
-	{
-		public TeamPageController(ILogger<TeamPageController> logger,
-								  ICompositeViewEngine compositeViewEngine,
-								  IUmbracoContextAccessor umbracoContextAccessor)
-			: base(logger, compositeViewEngine, umbracoContextAccessor)
-		{ }
+namespace AtomicStarterKit.Pages;
 
-		public override IActionResult Index()
-		{
-			var vm = ((TeamPage)CurrentPage).MapToDesignPage();
-			return View("~/views/DefaultPage.cshtml", vm);
-		}
+public class TeamPageController : RenderController
+{
+	public TeamPageController(ILogger<TeamPageController> logger,
+							  ICompositeViewEngine compositeViewEngine,
+							  IUmbracoContextAccessor umbracoContextAccessor)
+		: base(logger, compositeViewEngine, umbracoContextAccessor)
+	{ }
+
+	public override IActionResult Index()
+	{
+		var vm = ((TeamPage)CurrentPage).MapToDesignPageViewModel();
+		return View("~/views/DefaultPage.cshtml", vm);
 	}
 }
