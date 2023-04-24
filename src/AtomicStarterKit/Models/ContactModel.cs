@@ -2,8 +2,7 @@
 
 namespace AtomicStarterKit.Models;
 
-// TODO: Discuss maybe remove Custom from name
-public class CustomContactModel
+public class ContactModel
 {
     public Contact Contact { get; set; }
     public ContactFormViewModel ContactFormModel { get; set; }

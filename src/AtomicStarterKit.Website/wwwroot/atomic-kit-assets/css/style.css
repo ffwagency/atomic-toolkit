@@ -394,3 +394,23 @@
 .bs-icon.bs-icon-circle {
   border-radius: 50%;
 }
+
+/* Contact form*/
+
+.error-massage {
+    display: none;
+    background: rgb(208, 2, 27);
+    color: rgb(255, 255, 255);
+    font-weight: 400;
+    padding: 5px 13px;
+    font-size: 13px;
+}
+
+.invalid,
+.invalid-val{
+    border-color: rgb(208, 2, 27) !important;
+}
+
+.error_show.error-massage {
+    display: inline-block;
+}

@@ -1,5 +1,5 @@
 ﻿@using AtomicStarterKit.API
-@model Contact
+@model ContactModel
 @{
 	if (Model == null) return;
 }
@@ -7,16 +7,16 @@
 <section class="contact-section">
 	<div class="container">
 		<div class="row">
-			@if (!string.IsNullOrWhiteSpace(Model.EmbededGoogleMap))
+			@if (!string.IsNullOrWhiteSpace(Model.Contact.EmbededGoogleMap))
 			{
-				<div class="col">@Html.Raw(Model.EmbededGoogleMap)</div>
+				<div class="col">@Html.Raw(Model.Contact.EmbededGoogleMap)</div>
 			}
 			<div class="col-md-6 col-xl-4">
 				<div class="p-3 p-xl-4">
-					@using (Html.BeginUmbracoForm<ContactFormController>(nameof(ContactFormController.Submit), FormMethod.Post, antiforgery: true))
+					@using (Html.BeginUmbracoForm<ContactFormController>(nameof(ContactFormController.Submit), null, new { @id = "contactForm" }, FormMethod.Post, antiforgery: true))
 					{
-						<h4>@Model.FromPreTitle</h4>
-						<p class="text-muted">@Model.FormTitle</p>
+						<h4>@Model.Contact.FromPreTitle</h4>
+						<p class="text-muted">@Model.Contact.FormTitle</p>
 						<div class="mb-3">
 							<label class="form-label" for="@nameof(ContactFormViewModel.Name)">Name</label>
 							<input class="form-control" type="text" id="field_4bs9q" name="@nameof(ContactFormViewModel.Name)" value="" placeholder="John Doe" />
@@ -27,19 +27,19 @@
 						</div>
 						<div class="mb-3">
 							<label class="form-label" for="@nameof(ContactFormViewModel.Message)">Message</label>
-							<textarea class="form-control" name="@nameof(ContactFormViewModel.Message)" id="field_jy2v2" rows="5" placeholder="@nameof(ContactFormViewModel.Message)" rows="6" required></textarea>
+							<textarea class="form-control" name="@nameof(ContactFormViewModel.Message)" id="field_jy2v2" rows="5" placeholder="@nameof(ContactFormViewModel.Message)" rows="6"></textarea>
+							<span class="error-massage">Please fill in the required fields</span>
 						</div>
-						@if (Model.LinkToTermsAndConditionsPage != null && Model.LinkToTermsAndConditionsPage.Any())
+						@if (Model.Contact.LinkToTermsAndConditionsPage != null && Model.Contact.LinkToTermsAndConditionsPage.Any())
 						{
 							<div class="d-flex justify-content-center align-items-center flex-nowrap mb-3">
 								<div class="form-check">
-									<input class="form-check-input" type="checkbox" id="formCheck-1">
-									<label class="form-check-label" for="formCheck-1">@Model.AcceptanceText &nbsp;<a href="@Model.LinkToTermsAndConditionsPage.FirstOrDefault()!.Url">@Model.LinkToTermsAndConditionsPage.FirstOrDefault()!.Name</a></label>
+									<input class="form-check-input" type="checkbox" id="data-acceptance">
+									<label class="form-check-label" for="formCheck-1">@Model.Contact.AcceptanceText &nbsp;<a href="@Model.Contact.LinkToTermsAndConditionsPage.FirstOrDefault()!.Url">@Model.Contact.LinkToTermsAndConditionsPage.FirstOrDefault()!.Name</a></label>
 								</div>
 							</div>
 						}
 						<div class="mb-3 text-center"><button class="btn" type="submit">Send</button></div>
-
 					}
 				</div>
 			</div>

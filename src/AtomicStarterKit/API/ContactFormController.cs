@@ -40,7 +40,7 @@ public class ContactFormController : SurfaceController
     {
         if (!ModelState.IsValid)
         {
-            return CurrentUmbracoPage();
+            return BadRequest();
         }
 
         var requestsContainer = _multisiteContentService.GetSharedContent<ContactEntriesContainer>();
@@ -58,9 +58,9 @@ public class ContactFormController : SurfaceController
         }
         else
         {
-            return CurrentUmbracoPage();
-        }
+			return BadRequest();
+		}
 
-        return Redirect("/");
+        return Ok();
     }
 }

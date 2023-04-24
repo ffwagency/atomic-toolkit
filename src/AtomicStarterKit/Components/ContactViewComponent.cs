@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using AtomicStarterKit.Models;
+using Microsoft.AspNetCore.Mvc;
 using Umbraco.Cms.Web.Common.PublishedModels;
 
 namespace AtomicStarterKit.Components;
@@ -8,6 +9,9 @@ public class ContactViewComponent : ViewComponent
 {
 	public IViewComponentResult Invoke(Contact source)
 	{
-		return View("~/views/Components/Contact.cshtml", source);
+		var vm = new ContactModel();
+		vm.Contact = source;
+		vm.ContactFormModel = new ContactFormViewModel();
+		return View("~/views/Components/Contact.cshtml", vm);
 	}
 }

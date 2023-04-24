@@ -6,6 +6,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="jQuery.Validation" Version="1.19.5" />
     <PackageReference Include="Umbraco.Cms" Version="11.3.0" />
   </ItemGroup>
 

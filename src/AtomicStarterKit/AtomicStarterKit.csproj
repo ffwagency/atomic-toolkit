@@ -34,6 +34,8 @@
     <None Include="build\**" Pack="true" PackagePath="build" />
     
     <None Remove="Migrations\package.zip" />
+    
+    <None Remove="wwwroot\atomic-kit-assets\js\contact-form.js" />
     <EmbeddedResource Include="Migrations\package.zip" />
   </ItemGroup>
 
