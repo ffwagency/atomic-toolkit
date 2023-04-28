@@ -18,29 +18,15 @@
         }
     }
 
-    function checkDataAcceptance(input) {
-        if (input.checked !== true) {
-            input.classList.add('invalid-val');
-            return false;
-        }
-        input.classList.remove('invalid-val');
-        return true;
-    }
-
 
     if (form) {
         form.addEventListener('submit', e => {
             e.preventDefault();
 
             const formData = new FormData(form);
-
             var input = document.getElementById('field_jy2v2');
-            var dataAcceptanceInput = document.getElementById('data-acceptance');
-
-            var isDataAccepted = checkDataAcceptance(dataAcceptanceInput);
             var messageValid = checkMessage(input);
-
-            if (messageValid && isDataAccepted) {
+            if (messageValid) {
                 fetch('/ContactForm/Submit', {
                     method: 'POST',
                     body: formData

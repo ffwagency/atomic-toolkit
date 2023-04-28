@@ -27,14 +27,14 @@
 						</div>
 						<div class="mb-3">
 							<label class="form-label" for="@nameof(ContactFormViewModel.Message)">Message</label>
-							<textarea class="form-control" name="@nameof(ContactFormViewModel.Message)" id="field_jy2v2" rows="5" placeholder="@nameof(ContactFormViewModel.Message)" rows="6"></textarea>
+							<textarea class="form-control" name="@nameof(ContactFormViewModel.Message)" id="field_jy2v2" rows="5" placeholder="@nameof(ContactFormViewModel.Message)" rows="6" required></textarea>
 							<span class="error-massage">Please fill in the required fields</span>
 						</div>
 						@if (Model.Contact.LinkToTermsAndConditionsPage != null && Model.Contact.LinkToTermsAndConditionsPage.Any())
 						{
 							<div class="d-flex justify-content-center align-items-center flex-nowrap mb-3">
 								<div class="form-check">
-									<input class="form-check-input" type="checkbox" id="data-acceptance">
+									<input class="form-check-input" type="checkbox" id="formCheck-1">
 									<label class="form-check-label" for="formCheck-1">@Model.Contact.AcceptanceText &nbsp;<a href="@Model.Contact.LinkToTermsAndConditionsPage.FirstOrDefault()!.Url">@Model.Contact.LinkToTermsAndConditionsPage.FirstOrDefault()!.Name</a></label>
 								</div>
 							</div>

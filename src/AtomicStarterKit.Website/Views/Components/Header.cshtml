@@ -3,9 +3,9 @@
 	if (Model == null) return;
 }
 
-<nav class="navbar navbar-dark navbar-expand-lg fixed-top bg-dark" id="mainNav">
+<nav class="navbar navbar-dark navbar-expand-lg fixed-top" id="mainNav">
 	<div class="container">
-		<a class="navbar-brand d-flex flex-row align-items-center align-content-center" style="height: 60px;max-height: 60px;margin-right: 20px;" href="\">
+		<a class="navbar-brand d-flex flex-row align-items-center align-content-center" href="\">
 			@if (Model.Logo != null)
 			{
 				<img class="d-inline-block" src="@Model.Logo.Url()">
@@ -26,7 +26,7 @@
 					{
 						var currentItem = item.Content as NavigationItem;
 						var activeCssClass = CheckSelected(currentItem) ? "active" : "";
-						if(currentItem != null && currentItem.Link != null && currentItem.Link.Any())
+						if (currentItem != null && currentItem.Link != null && currentItem.Link.Any())
 						{
 							<li class="nav-item">
 								<a class="nav-link @activeCssClass" href="@currentItem.Link.FirstOrDefault().Url">@currentItem.Link.FirstOrDefault().Name</a>
