@@ -18,6 +18,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="BuildWebCompiler2022" Version="1.14.10" />
     <PackageReference Include="Umbraco.Cms.Core" Version="11.3.0" />
     <PackageReference Include="Umbraco.Cms.Infrastructure" Version="11.3.0" />
     <PackageReference Include="Umbraco.Cms.Web.Website" Version="11.3.0" />
@@ -35,7 +36,17 @@
     
     <None Remove="Migrations\package.zip" />
     
+    <None Remove="Views\Components\DoubleImage.cshtml" />
+    
+    <None Remove="Views\Components\Quote.cshtml" />
+    
+    <None Remove="wwwroot\atomic-kit-assets\css\style.scss" />
+    
     <None Remove="wwwroot\atomic-kit-assets\js\contact-form.js" />
+    
+    <None Remove="wwwroot\atomic-kit-assets\scss\fonts.scss" />
+    
+    <None Remove="wwwroot\atomic-kit-assets\scss\style.scss" />
     <EmbeddedResource Include="Migrations\package.zip" />
   </ItemGroup>
 
@@ -46,5 +57,19 @@
   <ItemGroup>
     <ProjectReference Include="..\AtomicStarterKit.Common\AtomicStarterKit.Common.csproj" />
     <ProjectReference Include="..\AtomicStarterKit.ModelsBuilder\AtomicStarterKit.ModelsBuilder.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Update="wwwroot\atomic-kit-assets\scss\style.scss">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Update="wwwroot\atomic-kit-assets\scss\fonts.scss">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
   </ItemGroup>
 </Project>

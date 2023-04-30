@@ -1,0 +1,12 @@
+﻿@model Quote
+@{
+	if (Model == null) return;
+}
+<div class="highlight-clean bg-light">
+	<div class="container">
+		<div class="intro">
+			<h2 class="text-center"><i class="fa fa-quote-left"></i> </h2>
+			<p class="text-center">@Model.Text </p>
+		</div>
+	</div>
+</div>
