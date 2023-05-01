@@ -9,9 +9,6 @@ public class ContactViewComponent : ViewComponent
 {
 	public IViewComponentResult Invoke(Contact source)
 	{
-		var vm = new ContactModel();
-		vm.Contact = source;
-		vm.ContactFormModel = new ContactFormViewModel();
-		return View("~/views/Components/Contact.cshtml", vm);
+		return View("~/views/Components/Contact.cshtml", source);
 	}
 }

@@ -80,6 +80,14 @@ $border-color_1: rgb(208, 2, 27);
     background: #003D6D;
 }
 
+a {
+    color: $main_color_light;
+}
+
+a:hover {
+    color: $main_color_light;
+}
+
 .btn {
     background-color: $background-color_1;
     color: $color_1;
@@ -797,5 +805,33 @@ footer {
 @media(min-width: 768px) {
     .team-listing-section {
         padding: 48px 0;
+    }
+}
+
+.about-section {
+    padding: 48px 0;
+}
+
+@media(min-width: 768px) {
+    .about-section {
+        padding: 48px 0;
+    }
+}
+
+.contact-section {
+    &__contact-form {
+        &__group {
+            .form-label {
+                margin-bottom: 0;
+            }
+
+            .form-control:focus {
+                color: #212529;
+                background-color: #fff;
+                border-color: $main_color_light;
+                outline: 0;
+                box-shadow: 0 0 0 .25rem rgba(0, 61, 109, .25)
+            }
+        }
     }
 }

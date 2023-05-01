@@ -131,6 +131,14 @@
   background: #003D6D;
 }
 
+a {
+  color: #003D6D;
+}
+
+a:hover {
+  color: #003D6D;
+}
+
 .btn {
   background-color: #00243D;
   color: white;
@@ -735,4 +743,23 @@ footer {
   .team-listing-section {
     padding: 48px 0;
   }
+}
+.about-section {
+  padding: 48px 0;
+}
+
+@media (min-width: 768px) {
+  .about-section {
+    padding: 48px 0;
+  }
+}
+.contact-section__contact-form__group .form-label {
+  margin-bottom: 0;
+}
+.contact-section__contact-form__group .form-control:focus {
+  color: #212529;
+  background-color: #fff;
+  border-color: #003D6D;
+  outline: 0;
+  box-shadow: 0 0 0 0.25rem rgba(0, 61, 109, 0.25);
 }
