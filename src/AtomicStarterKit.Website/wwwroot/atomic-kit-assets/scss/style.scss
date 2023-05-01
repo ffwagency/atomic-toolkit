@@ -1,11 +1,14 @@
 @import 'fonts.scss';
-
+$main_color_dark: #00243D;
+$main_color_light: #003D6D;
+$main_color_green: #a48f5c;
 $color_1: white;
 $color_2: #ccc;
 $color_3: #ddd;
 $color_4: var(--bs-primary);
 $color_5: var(--bs-white);
 $color_6: rgb(255, 255, 255);
+$blue_color: #003D6D;
 $font-family_1: "Montserrat","Helvetica Neue",Helvetica,Arial,sans-serif;
 $font-family_2: sans-serif;
 $font-family_3: Hack, sans-serif;
@@ -96,15 +99,6 @@ $border-color_1: rgb(208, 2, 27);
     --bs-gradient: none;
 }
 
-.navbar-brand {
-    height: 60px;
-    max-height: 60px;
-    margin-right: 20px;
-
-    &:hover {
-        color: $color_1 !important;
-    }
-}
 
 #mainNav {
     background-color: $background-color_2;
@@ -112,6 +106,21 @@ $border-color_1: rgb(208, 2, 27);
     .navbar-brand {
         color: $color_1;
         font-family: $font-family_1;
+        height: 60px;
+        max-height: 60px;
+        margin-right: 20px;
+
+        &:hover {
+            color: $color_1 !important;
+        }
+
+        &:focus {
+            color: $color_1 !important;
+        }
+
+        .brand-text {
+            padding-left: 8px;
+        }
     }
 
     .navbar-nav {
@@ -135,7 +144,7 @@ $border-color_1: rgb(208, 2, 27);
                     position: absolute;
                     width: 100%;
                     transform: scaleX(0);
-                    height: 2px;
+                    height: 4px;
                     bottom: 0;
                     left: 0;
                     background-color: $background-color_3;
@@ -149,11 +158,38 @@ $border-color_1: rgb(208, 2, 27);
             }
         }
     }
+
+    .navbar-toggler {
+        background-color: $main_color_light;
+    }
+
+    &.navbar-shrink {
+        padding-top: 10px;
+        background-color: $background-color_1 !important;
+
+        .logo {
+            max-height: 60px !important;
+        }
+
+        @media (max-width: 767px) {
+            .logo {
+                max-height: 50px !important;
+            }
+        }
+    }
+
+    @media (max-width: 767px) {
+        .logo {
+            max-height: 40px !important;
+        }
+    }
 }
 
-#mainNav.navbar-shrink {
-    padding-top:10px;
-    background-color: $background-color_1 !important;
+
+@media (max-width: 767px) {
+    #mainNav {
+        background-color: $main_color_dark;
+    }
 }
 
 .contact-section {
@@ -168,8 +204,19 @@ $border-color_1: rgb(208, 2, 27);
     max-width: 1903px;
     max-height: 450px;
 
-    h1 {
-        margin-top: 100px;
+    &__overlay {
+        position: absolute;
+        top: 0;
+        height: 450px;
+        width: 100%;
+        background-color: rgba(0,0,0,.4);
+        background-size: cover;
+    }
+
+    &__content {
+        &__title {
+            z-index: 999;
+        }
     }
 }
 
@@ -221,19 +268,37 @@ $border-color_1: rgb(208, 2, 27);
 }
 
 .portfolio-section {
-    padding: 0 0 50px 0;
-       
+    padding: 48px 0;
+
     .portfolio-item {
         .portfolio-link {
             .portfolio-hover {
-                background: rgba(0, 61, 109, .6);
+                background: rgba(0, 61, 109, .6) !important;
+
+                .portfolio-hover-content {
+                    position: absolute;
+                    top: 0 !important;
+                    right: 0 !important;
+                    width: 100%;
+                    height: 16px !important;
+                    text-align: right !important;
+                    color: #fff;
+                    margin-top: 8px !important;
+                    margin-right: 8px;
+
+                    i {
+                        margin-top: 0 !important;
+                    }
+                }
             }
         }
     }
 
+
+
     .see-all-link {
         a {
-            font-size: 25px;
+            font-size: 18px;
             border: none;
 
             i {
@@ -245,7 +310,7 @@ $border-color_1: rgb(208, 2, 27);
 
 @media(min-width: 768px) {
     .portfolio-section {
-        padding: 0 0 50px 0;
+        padding: 48px 0;
     }
 }
 
@@ -460,61 +525,73 @@ footer {
     max-height: 70px;
 }
 
-.bs-icon {
-    --bs-icon-size: .75rem;
-    display: flex;
-    flex-shrink: 0;
-    justify-content: center;
-    align-items: center;
-    font-size: var(--bs-icon-size);
-    width: calc(var(--bs-icon-size) * 2);
-    height: calc(var(--bs-icon-size) * 2);
-    color: $color_4;
-}
+.social-media-links {
+    .bs-icon {
+        --bs-icon-size: .75rem;
+        display: flex;
+        flex-shrink: 0;
+        justify-content: center;
+        align-items: center;
+        font-size: var(--bs-icon-size);
+        width: calc(var(--bs-icon-size) * 2);
+        height: calc(var(--bs-icon-size) * 2);
+        color: $color_4;
+    }
 
-.bs-icon-xs {
-    --bs-icon-size: 1rem;
-    width: calc(var(--bs-icon-size) * 1.5);
-    height: calc(var(--bs-icon-size) * 1.5);
-}
+    .bs-icon-xs {
+        --bs-icon-size: 1rem;
+        width: calc(var(--bs-icon-size) * 1.5);
+        height: calc(var(--bs-icon-size) * 1.5);
+    }
 
-.bs-icon-sm {
-    --bs-icon-size: 1rem;
-}
+    .bs-icon-sm {
+        --bs-icon-size: 1rem;
+    }
 
-.bs-icon-md {
-    --bs-icon-size: 1.5rem;
-}
+    .bs-icon-md {
+        --bs-icon-size: 1.5rem;
+    }
 
-.bs-icon-lg {
-    --bs-icon-size: 2rem;
-}
+    .bs-icon-lg {
+        --bs-icon-size: 2rem;
+    }
 
-.bs-icon-xl {
-    --bs-icon-size: 2.5rem;
-}
+    .bs-icon-xl {
+        --bs-icon-size: 2.5rem;
+    }
 
-.bs-icon.bs-icon-primary {
-    color: $color_5;
-    background: var(--bs-primary);
-}
+    .bs-icon.bs-icon-primary {
+        color: $color_5;
+        background: var(--bs-primary);
+    }
 
-.bs-icon.bs-icon-primary-light {
-    color: $color_4;
-    background: rgba(var(--bs-primary-rgb), .2);
-}
+    .bs-icon.bs-icon-primary-light {
+        color: $color_4;
+        background: rgba(var(--bs-primary-rgb), .2);
+    }
 
-.bs-icon.bs-icon-semi-white {
-    color: $color_4;
-    background: rgba(255, 255, 255, .5);
-}
+    .bs-icon.bs-icon-semi-white {
+        color: $color_4;
+        background: rgba(255, 255, 255, .5);
+    }
 
-.bs-icon.bs-icon-rounded {
-    border-radius: .5rem;
-}
+    .bs-icon.bs-icon-rounded {
+        border-radius: .5rem;
+    }
 
-.bs-icon.bs-icon-circle {
-    border-radius: 50%;
+    .bs-icon.bs-icon-circle {
+        border-radius: 50%;
+    }
+
+    &__item {
+        &__link {
+            &__icon:hover {
+                fill: #f8f9fa;
+                font-size: 25px;
+                transition: ease-in-out;
+            }
+        }
+    }
 }
 
 .error-massage {
@@ -648,19 +725,6 @@ footer {
     }
 
     .hover-5 {
-        &::after {
-            content: '';
-            width: 100%;
-            height: 10px;
-            background: #003D6D;
-            position: absolute;
-            bottom: -10px;
-            left: 0;
-            display: block;
-            transition: all 0.3s;
-            z-index: 999;
-        }
-
         .hover-overlay {
             background: rgba(0, 0, 0, 0.4);
         }
@@ -705,5 +769,33 @@ footer {
 @media(min-width: 768px) {
     .double-image {
         padding: 0 0 50px 0;
+    }
+}
+
+.services-section {
+    padding: 48px 0;
+}
+
+@media(min-width: 768px) {
+    .services-section {
+        padding: 48px 0;
+    }
+}
+
+.team-listing-section {
+    padding: 48px 0;
+
+    .team-listing-section__content {
+        .team-listing-section__content__member-info {
+            a, h5 {
+                color: $main_color_light;
+            }
+        }
+    }
+}
+
+@media(min-width: 768px) {
+    .team-listing-section {
+        padding: 48px 0;
     }
 }
