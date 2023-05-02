@@ -127,6 +127,7 @@ a:hover {
         }
 
         .brand-text {
+            font-size:18px;
             padding-left: 8px;
         }
     }
@@ -530,7 +531,7 @@ footer {
 }
 
 .logo {
-    max-height: 70px;
+    max-height: 60px;
 }
 
 .social-media-links {
@@ -630,10 +631,11 @@ footer {
 }
 
 .intro-heading {
-    font-weight: 600;
+    font-weight: 600 !important;
     text-align: center;
-    font-size: 40px;
+    font-size: 48px !important;
     font-family: $font-family_3;
+    line-height:45px !important;
     text-transform: uppercase;
     background: linear-gradient(90deg, #000, #fff, #fff);
     letter-spacing: 5px;
@@ -814,6 +816,20 @@ footer {
 
 @media(min-width: 768px) {
     .about-section {
+        padding: 48px 0;
+    }
+}
+
+.team-member-details-section {
+    padding: 48px 0;
+
+    .text-primary {
+        color:$main_color_light !important;
+    }
+}
+
+@media(min-width: 768px) {
+    .team-member-details-section {
         padding: 48px 0;
     }
 }
