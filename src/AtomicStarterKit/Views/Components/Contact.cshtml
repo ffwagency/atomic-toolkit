@@ -27,15 +27,16 @@
 						</div>
 						<div class="mb-4 contact-section__contact-form__group">
 							<label class="form-label" for="@nameof(ContactFormViewModel.Message)">Message</label>
-							<textarea class="form-control" name="@nameof(ContactFormViewModel.Message)" id="field_jy2v2" rows="5" placeholder="@nameof(ContactFormViewModel.Message)" rows="6" required></textarea>
+							<textarea class="form-control" name="@nameof(ContactFormViewModel.Message)" id="field_jy2v2" rows="5" placeholder="@nameof(ContactFormViewModel.Message)" rows="6"></textarea>
 							<span class="error-massage">Please fill in the required fields</span>
 						</div>
 						@if (Model.LinkToTermsAndConditionsPage != null && Model.LinkToTermsAndConditionsPage.Any())
 						{
 							<div class="d-flex justify-content-center align-items-center flex-nowrap mb-3 contact-section__contact-form__group">
 								<div class="form-check ">
-									<input class="form-check-input" type="checkbox" id="formCheck-1">
-									<label class="form-check-label" for="formCheck-1">@Model.AcceptanceText &nbsp;<a href="@Model.LinkToTermsAndConditionsPage.FirstOrDefault()!.Url">@Model.LinkToTermsAndConditionsPage.FirstOrDefault()!.Name</a></label>
+									<input class="form-check-input" type="checkbox" id="data-acceptance">
+									<label class="form-check-label" for="data-acceptance">@Model.AcceptanceText &nbsp;<a href="@Model.LinkToTermsAndConditionsPage.FirstOrDefault()!.Url">@Model.LinkToTermsAndConditionsPage.FirstOrDefault()!.Name</a></label>
+									<span class="error-massage">Please fill in the required fields</span>
 								</div>
 							</div>
 						}

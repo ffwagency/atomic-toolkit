@@ -54,4 +54,91 @@
     }
   }
 
+    var form = document.querySelector('#contactForm');
+
+    function checkMessage(input) {
+        var isName = input.value.trim();
+        if (isName) {
+            input.classList.remove('invalid');
+            input.classList.add('valid');
+            input.nextElementSibling.classList.remove('error_show');
+            return true;
+        } else {
+            input.nextElementSibling.classList.add('error_show');
+            input.classList.remove('valid');
+            input.classList.add('invalid');
+            return false;
+        }
+    }
+
+    function checkDataAcceptance(input) {
+        var isChecked = input.checked;
+        if (isChecked) {
+            input.classList.remove('invalid');
+            input.classList.add('valid');
+            input.nextElementSibling.nextElementSibling.classList.remove('error_show');
+            return true;
+        } else {
+            input.nextElementSibling.nextElementSibling.classList.add('error_show');
+            input.classList.remove('valid');
+            input.classList.add('invalid');
+            return false;
+        }
+    }
+
+
+    if (form) {
+        form.addEventListener('submit', e => {
+            e.preventDefault();
+
+            const formData = new FormData(form);
+            var input = document.getElementById('field_jy2v2');
+            var inputDataAcceptance = document.getElementById('data-acceptance');
+            var messageValid = checkMessage(input);
+            var isDataAcceptanceChecked = checkDataAcceptance(inputDataAcceptance);
+            if (messageValid && isDataAcceptanceChecked) {
+                fetch('/ContactForm/Submit', {
+                    method: 'POST',
+                    body: formData
+                })
+                    .then(response => {
+                        if (response.ok) {
+                            location.reload();
+                        } else {
+                            return;
+                        }
+                    })
+                    .catch(error => {
+                        return;
+                    });
+            } else {
+                return;
+            }
+        });
+    }
+
+    if (document.querySelectorAll('[data-bss-baguettebox]').length > 0) {
+        baguetteBox.run('[data-bss-baguettebox]', { animation: 'slideIn' });
+    }
+
+    document.addEventListener("DOMContentLoaded", function () {
+
+        // Initializing the swiper plugin for the slider.
+        // Read more here: http://idangero.us/swiper/api/
+
+        var mySwiper = new Swiper('.swiper-container', {
+            loop: true,
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true
+            },
+            paginationClickable: true,
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev'
+            }
+        });
+
+    });
+
 })(); // End of use strict

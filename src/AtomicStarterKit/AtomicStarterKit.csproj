@@ -18,6 +18,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="BuildBundlerMinifier2022" Version="2.9.9" />
     <PackageReference Include="BuildWebCompiler2022" Version="1.14.10" />
     <PackageReference Include="Umbraco.Cms.Core" Version="11.3.0" />
     <PackageReference Include="Umbraco.Cms.Infrastructure" Version="11.3.0" />
@@ -42,16 +43,10 @@
     
     <None Remove="wwwroot\atomic-kit-assets\css\style.scss" />
     
-    <None Remove="wwwroot\atomic-kit-assets\js\contact-form.js" />
-    
     <None Remove="wwwroot\atomic-kit-assets\scss\fonts.scss" />
     
     <None Remove="wwwroot\atomic-kit-assets\scss\style.scss" />
     <EmbeddedResource Include="Migrations\package.zip" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Include="../../images/logo.png" Pack="true" PackPath="\" />
   </ItemGroup>
 
   <ItemGroup>
