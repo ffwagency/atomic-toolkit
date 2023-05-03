@@ -43,9 +43,11 @@
     
     <None Remove="wwwroot\atomic-kit-assets\css\style.scss" />
     
-    <None Remove="wwwroot\atomic-kit-assets\scss\fonts.scss" />
+    <None Remove="wwwroot\atomic-kit-assets\scss\base\_variables.scss" />
     
     <None Remove="wwwroot\atomic-kit-assets\scss\style.scss" />
+    
+    <None Remove="wwwroot\atomic-kit-assets\scss\_fonts.scss" />
     <EmbeddedResource Include="Migrations\package.zip" />
   </ItemGroup>
 
@@ -62,7 +64,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Content Update="wwwroot\atomic-kit-assets\scss\fonts.scss">
+    <Content Update="wwwroot\atomic-kit-assets\scss\base\_fonts.scss">
       <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>
