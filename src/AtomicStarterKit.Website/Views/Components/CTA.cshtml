@@ -28,7 +28,7 @@
 				@if (Model.Image != null)
 				{
 					<div class="col-md-6 order-first order-md-last" style="min-height: 250px;">
-						<img class="w-100 h-100 fit-cover" src="@Model.Image.Url()">
+						<img class="w-100 h-100 fit-cover" src="@Model.Image.Url()" alt="@Model.Image.Name">
 					</div>
 				}
 			</div>

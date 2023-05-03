@@ -8,7 +8,7 @@
         <div class="row">
             <div class="col-md-6 mb-lg-0 double-image__left">
                 <div class="hover hover-5 text-white rounded">
-                    <img src="@Model.LeftImageSource.Url()" alt="image">
+                    <img src="@Model.LeftImageSource.Url()" alt="@Model.LeftImageSource.Name">
                     <div class="hover-overlay"></div>
                     <div class="hover-5-content">
                         <h2 class="text-uppercase hover-5-title fw-light mb-0">@Model.LeftImageCaption</h2>
@@ -18,7 +18,7 @@
             </div>
             <div class="col-md-6 mb-lg-0  double-image__right">
                 <div class="hover hover-5 text-white rounded">
-                    <img src="@Model.RightImageSource.Url()" alt="image">
+                    <img src="@Model.RightImageSource.Url()" alt="@Model.RightImageSource.Name">
                     <div class="hover-overlay"></div>
                     <div class="hover-5-content">
                         <h2 class="text-uppercase hover-5-title fw-light mb-0">@Model.RightImageCaption</h2>

@@ -127,7 +127,7 @@ a:hover {
         }
 
         .brand-text {
-            font-size:18px;
+            font-size: 18px;
             padding-left: 8px;
         }
     }
@@ -635,9 +635,9 @@ footer {
     text-align: center;
     font-size: 48px !important;
     font-family: $font-family_3;
-    line-height:45px !important;
+    line-height: 45px !important;
     text-transform: uppercase;
-    background: linear-gradient(90deg, #000, #fff, #fff);
+    background: linear-gradient(90deg,#00243d,#fff,#fff);
     letter-spacing: 5px;
     -webkit-background-clip: text;
     background-clip: text;
@@ -789,14 +789,20 @@ footer {
 @media(min-width: 768px) {
     .services-section {
         padding: 48px 0;
+
+        &__content {
+            &__image {
+                width: 50%;
+            }
+        }
     }
 }
 
 .team-listing-section {
     padding: 48px 0;
 
-    .team-listing-section__content {
-        .team-listing-section__content__member-info {
+    &__content {
+        &__content__member-info {
             a, h5 {
                 color: $main_color_light;
             }
@@ -824,7 +830,7 @@ footer {
     padding: 48px 0;
 
     .text-primary {
-        color:$main_color_light !important;
+        color: $main_color_light !important;
     }
 }
 

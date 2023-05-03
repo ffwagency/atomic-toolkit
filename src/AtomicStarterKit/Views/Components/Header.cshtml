@@ -8,7 +8,7 @@
 		<a class="navbar-brand d-flex flex-row align-items-center align-content-center" href="\">
 			@if (Model.Logo != null)
 			{
-				<img class="d-inline-block logo" src="@Model.Logo.Url()">
+				<img class="d-inline-block logo" src="@Model.Logo.Url()" alt="@Model.Logo.Name">
 			}
 			@if (!string.IsNullOrWhiteSpace(Model.BrandText))
 			{

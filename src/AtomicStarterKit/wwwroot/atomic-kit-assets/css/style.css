@@ -607,7 +607,7 @@ footer {
   font-family: Hack, sans-serif;
   line-height: 45px !important;
   text-transform: uppercase;
-  background: linear-gradient(90deg, #000, #fff, #fff);
+  background: linear-gradient(90deg, #00243d, #fff, #fff);
   letter-spacing: 5px;
   -webkit-background-clip: text;
   background-clip: text;
@@ -733,11 +733,14 @@ footer {
   .services-section {
     padding: 48px 0;
   }
+  .services-section__content__image {
+    width: 50%;
+  }
 }
 .team-listing-section {
   padding: 48px 0;
 }
-.team-listing-section .team-listing-section__content .team-listing-section__content__member-info a, .team-listing-section .team-listing-section__content .team-listing-section__content__member-info h5 {
+.team-listing-section__content__content__member-info a, .team-listing-section__content__content__member-info h5 {
   color: #003D6D;
 }
 

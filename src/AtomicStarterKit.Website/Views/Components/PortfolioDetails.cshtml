@@ -21,7 +21,7 @@
             <div class="col-md-8">
 				@if (Model.MainImage != null)
 				{
-					<img class="img-fluid" src="@Model.MainImage.GetCropUrl(750,500)" alt="image" loading="lazy">
+					<img class="img-fluid" src="@Model.MainImage.GetCropUrl(750,500)" alt="@Model.MainImage.Name" loading="lazy">
 				}
 			
 			</div>
@@ -38,7 +38,7 @@
 			<div class="row">
 				@foreach (var item in Model.RelatedImages)
 				{
-					<div class="col-sm-6 col-md-3 mb-4"><img class="img-fluid" src="@item.GetCropUrl(500,300)" alt="Image" loading="lazy"></div>
+					<div class="col-sm-6 col-md-3 mb-4"><img class="img-fluid" src="@item.GetCropUrl(500,300)" alt="@item.Name" loading="lazy"></div>
 				}
 			</div>
 		}

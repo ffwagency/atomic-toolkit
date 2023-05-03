@@ -21,7 +21,7 @@
 			@if (Model.Image != null)
 			{
 				<div class="col-md-6 col-xl-6">
-					<img class="img-thumbnail" src="@Model.Image.Url()">
+					<img class="img-thumbnail" src="@Model.Image.Url()" alt="@Model.Image.Name">
 				</div>
 			}
 			<div class="@(Model.Image != null ? "col-md-6" : "col-md-12") d-flex flex-column">

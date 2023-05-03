@@ -32,7 +32,7 @@
 								<li class="list-group-item @cssClass">
 									@if (currentItem.Image != null)
 									{
-										<div class="timeline-image"><img class="rounded-circle img-fluid" src="@currentItem.Image.Url()"></div>
+										<div class="timeline-image"><img class="rounded-circle img-fluid" src="@currentItem.Image.Url()" alt="@currentItem.Image.Name"></div>
 									}
 									<div class="timeline-panel">
 										<div class="timeline-heading">

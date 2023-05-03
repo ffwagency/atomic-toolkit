@@ -17,7 +17,7 @@
 				}
 			</div>
 		</div>
-		<div class="row text-center">
+		<div class="row text-center services-section__content">
 			@if (Model.ServicesItems != null && Model.ServicesItems.Any())
 			{
 				foreach (var item in Model.ServicesItems)
@@ -28,7 +28,7 @@
 						<div class="col-md-4 d-flex flex-column justify-content-evenly align-items-center">
 							@if (currentItem.Image != null)
 							{
-								<img src="@currentItem.Image.Url()" style="width: 50%;" />
+								<img class="services-section__content__image" src="@currentItem.Image.Url()" alt="@currentItem.Image.Name" />
 							}
 							@if (!string.IsNullOrWhiteSpace(currentItem.Title))
 							{

@@ -70,7 +70,7 @@
 				<div class="fw-bold d-flex align-items-center flex-column justify-content-between mb-2">
 					@if (Model.Logo != null)
 					{
-						<img class="logo" src="@Model.Logo.Url()" />
+						<img class="logo" src="@Model.Logo.Url()" alt="@Model.Logo.Name"/>
 					}
 					@if (!string.IsNullOrWhiteSpace(Model.BrandText))
 					{

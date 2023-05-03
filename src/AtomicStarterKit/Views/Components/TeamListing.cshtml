@@ -30,7 +30,7 @@
                                 <div class="card-body text-center d-flex flex-column align-items-center p-0 team-listing-section__content__member-info">
                                     @if (currentItem.Image != null)
                                     {
-                                        <img class="rounded-circle mb-3 fit-cover" width="130" height="130" src="@currentItem.Image.Url()">
+                                        <img class="rounded-circle mb-3 fit-cover" width="130" height="130" src="@currentItem.Image.Url()" alt="@currentItem.Image.Name">
                                     }
                                     @if (currentItem.ProfileLink != null && currentItem.ProfileLink.Any())
                                     {
