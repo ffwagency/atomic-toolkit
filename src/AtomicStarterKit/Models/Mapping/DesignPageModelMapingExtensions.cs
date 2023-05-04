@@ -10,7 +10,9 @@ public static class DesignPageModelMapingExtensions
 	{
 		var target = new DesignPageViewModel(source);
 		var components = new List<BlockListItem>();
-		components.AddRange(source.DynamicContent);
+        var basePage = source as IBasePage;
+        components.Add(basePage.PageHeader);
+        components.AddRange(source.DynamicContent);
 		target.Components = new BlockListModel(components);
 		return target;
 	}
@@ -28,7 +30,9 @@ public static class DesignPageModelMapingExtensions
 	{
 		var target = new DesignPageViewModel(source);
 		var components = new List<BlockListItem>();
-		components.AddRange(source.DynamicContent);
+        var basePage = source as IBasePage;
+        components.Add(basePage.PageHeader);
+        components.AddRange(source.DynamicContent);
 		target.Components = new BlockListModel(components);
 		return target;
 	}
@@ -37,7 +41,9 @@ public static class DesignPageModelMapingExtensions
 	{
 		var target = new DesignPageViewModel(source);
 		var components = new List<BlockListItem>();
-		components.AddRange(source.DynamicContent);
+        var basePage = source as IBasePage;
+        components.Add(basePage.PageHeader);
+        components.AddRange(source.DynamicContent);
 		target.Components = new BlockListModel(components);
 		return target;
 	}
@@ -46,7 +52,9 @@ public static class DesignPageModelMapingExtensions
 	{
 		var target = new DesignPageViewModel(source);
 		var components = new List<BlockListItem>();
-		components.AddRange(source.DynamicContent);
+        var basePage = source as IBasePage;
+        components.Add(basePage.PageHeader);
+        components.AddRange(source.DynamicContent);
 		target.Components = new BlockListModel(components);
 		return target;
 	}
@@ -55,7 +63,9 @@ public static class DesignPageModelMapingExtensions
 	{
 		var target = new DesignPageViewModel(source);
 		var components = new List<BlockListItem>();
-		components.AddRange(source.DynamicContent);
+        var basePage = source as IBasePage;
+        components.Add(basePage.PageHeader);
+        components.AddRange(source.DynamicContent);
 		target.Components = new BlockListModel(components);
 		return target;
 	}
@@ -64,7 +74,9 @@ public static class DesignPageModelMapingExtensions
 	{
 		var target = new DesignPageViewModel(source);
 		var components = new List<BlockListItem>();
-		components.AddRange(source.DynamicContent);
+        var basePage = source as IBasePage;
+        components.Add(basePage.PageHeader);
+        components.AddRange(source.DynamicContent);
 		target.Components = new BlockListModel(components);
 		return target;
 	}
@@ -73,7 +85,9 @@ public static class DesignPageModelMapingExtensions
 	{
 		var target = new DesignPageViewModel(source);
 		var components = new List<BlockListItem>();
-		components.AddRange(source.DynamicContent);
+        var basePage = source as IBasePage;
+        components.Add(basePage.PageHeader);
+        components.AddRange(source.DynamicContent);
 		target.Components = new BlockListModel(components);
 		return target;
 	}
@@ -82,7 +96,9 @@ public static class DesignPageModelMapingExtensions
 	{
 		var target = new DesignPageViewModel(source);
 		var components = new List<BlockListItem>();
-		components.AddRange(source.DynamicContent);
+        var basePage = source as IBasePage;
+        components.Add(basePage.PageHeader);
+        components.AddRange(source.DynamicContent);
 		target.Components = new BlockListModel(components);
 		return target;
 	}
@@ -91,7 +107,9 @@ public static class DesignPageModelMapingExtensions
 	{
 		var target = new DesignPageViewModel(source);
 		var components = new List<BlockListItem>();
-		components.AddRange(source.DynamicContent);
+		var basePage = source as IBasePage;
+        components.Add(basePage.PageHeader);
+        components.AddRange(source.DynamicContent);
 		target.Components = new BlockListModel(components);
 		return target;
 	}

@@ -20,7 +20,7 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 {
 	/// <summary>Portfolio Single Page</summary>
 	[PublishedModel("portfolioSinglePage")]
-	public partial class PortfolioSinglePage : PublishedContentModel, ISeoBasePage
+	public partial class PortfolioSinglePage : PublishedContentModel, IBasePage, ISeoBasePage
 	{
 		// helpers
 #pragma warning disable 0109 // new is redundant
@@ -56,6 +56,14 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
 		[ImplementPropertyType("dynamicContent")]
 		public virtual global::Umbraco.Cms.Core.Models.Blocks.BlockListModel DynamicContent => this.Value<global::Umbraco.Cms.Core.Models.Blocks.BlockListModel>(_publishedValueFallback, "dynamicContent");
+
+		///<summary>
+		/// Page Header
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "11.3.0+a1d6f65")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("pageHeader")]
+		public virtual global::Umbraco.Cms.Core.Models.Blocks.BlockListItem<global::Umbraco.Cms.Web.Common.PublishedModels.Heading> PageHeader => global::Umbraco.Cms.Web.Common.PublishedModels.BasePage.GetPageHeader(this, _publishedValueFallback);
 
 		///<summary>
 		/// Browser Title
