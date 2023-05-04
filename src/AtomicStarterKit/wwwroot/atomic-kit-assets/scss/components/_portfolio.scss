@@ -1,0 +1,36 @@
+.portfolio-section {
+    .portfolio-item {
+        .portfolio-link {
+            .portfolio-hover {
+                background: rgba(0, 61, 109, .6) !important;
+
+                .portfolio-hover-content {
+                    position: absolute;
+                    top: 0 !important;
+                    right: 0 !important;
+                    width: 100%;
+                    height: 16px !important;
+                    text-align: right !important;
+                    color: #fff;
+                    margin-top: 8px !important;
+                    margin-right: 8px;
+
+                    i {
+                        margin-top: 0 !important;
+                    }
+                }
+            }
+        }
+    }
+
+    .see-all-link {
+        a {
+            font-size: 18px;
+            border: none;
+
+            i {
+                padding-left: 10px;
+            }
+        }
+    }
+}

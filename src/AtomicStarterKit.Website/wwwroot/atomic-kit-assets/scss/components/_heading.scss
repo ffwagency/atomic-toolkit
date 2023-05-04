@@ -1,0 +1,23 @@
+.heading-section {
+    background-position: center;
+    background-repeat: no-repeat;
+    margin: 0px 0px;
+    height: 500px;
+    max-width: 1903px;
+    max-height: 450px;
+
+    &__overlay {
+        position: absolute;
+        top: 0;
+        height: 450px;
+        width: 100%;
+        background-color: rgba(0,0,0,.4);
+        background-size: cover;
+    }
+
+    &__content {
+        &__title {
+            z-index: 999;
+        }
+    }
+}

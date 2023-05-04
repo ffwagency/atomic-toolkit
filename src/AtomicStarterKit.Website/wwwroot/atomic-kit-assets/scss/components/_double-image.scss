@@ -1,0 +1,69 @@
+.double-image {
+    &__left, &__right {
+        padding: 10px;
+    }
+
+    .hover {
+        overflow: hidden;
+        position: relative;
+        padding-bottom: 60%;
+
+        img {
+            width: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            transition: all 0.3s;
+        }
+    }
+
+    .hover-overlay {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 90;
+        transition: all 0.4s;
+    }
+
+    .hover-5 {
+        .hover-overlay {
+            background: rgba(0, 0, 0, 0.4);
+        }
+
+        &:hover {
+            .hover-overlay {
+                background: rgba(0, 0, 0, 0.8);
+            }
+
+            .hover-5-title {
+                bottom: 0;
+
+                span {
+                    opacity: 1;
+                }
+            }
+
+            &::after {
+                bottom: 0;
+            }
+        }
+    }
+
+    .hover-5-title {
+        position: absolute;
+        bottom: 1rem;
+        left: 0;
+        transition: all 0.3s;
+        padding: 2rem 3rem;
+        z-index: 99;
+        font-weight: bold;
+
+        span {
+            transition: all 0.4s;
+            opacity: 0;
+            color: #47c650;
+        }
+    }
+}

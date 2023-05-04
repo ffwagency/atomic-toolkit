@@ -1,0 +1,9 @@
+.team-listing-section {
+    &__content {
+        &__content__member-info {
+            a, h5 {
+                color: $main_color_light;
+            }
+        }
+    }
+}

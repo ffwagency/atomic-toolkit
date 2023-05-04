@@ -43,9 +43,43 @@
     
     <None Remove="wwwroot\atomic-kit-assets\css\style.scss" />
     
+    <None Remove="wwwroot\atomic-kit-assets\scss\base\_typography.scss" />
+    
+    <None Remove="wwwroot\atomic-kit-assets\scss\base\_validation.scss" />
+    
     <None Remove="wwwroot\atomic-kit-assets\scss\base\_variables.scss" />
     
+    <None Remove="wwwroot\atomic-kit-assets\scss\components\_animations.scss" />
+    
+    <None Remove="wwwroot\atomic-kit-assets\scss\components\_contact.scss" />
+    
+    <None Remove="wwwroot\atomic-kit-assets\scss\components\_cta.scss" />
+    
+    <None Remove="wwwroot\atomic-kit-assets\scss\components\_double-image.scss" />
+    
+    <None Remove="wwwroot\atomic-kit-assets\scss\components\_footer.scss" />
+    
+    <None Remove="wwwroot\atomic-kit-assets\scss\components\_heading.scss" />
+    
+    <None Remove="wwwroot\atomic-kit-assets\scss\components\_hero.scss" />
+    
+    <None Remove="wwwroot\atomic-kit-assets\scss\components\_navigation.scss" />
+    
+    <None Remove="wwwroot\atomic-kit-assets\scss\components\_portfolio.scss" />
+    
+    <None Remove="wwwroot\atomic-kit-assets\scss\components\_quote.scss" />
+    
+    <None Remove="wwwroot\atomic-kit-assets\scss\components\_services.scss" />
+    
+    <None Remove="wwwroot\atomic-kit-assets\scss\components\_social-media.scss" />
+    
+    <None Remove="wwwroot\atomic-kit-assets\scss\components\_team-listing.scss" />
+    
+    <None Remove="wwwroot\atomic-kit-assets\scss\components\_team-member-datails.scss" />
+    
     <None Remove="wwwroot\atomic-kit-assets\scss\style.scss" />
+    
+    <None Remove="wwwroot\atomic-kit-assets\scss\vendor\baguetteBox.scss" />
     
     <None Remove="wwwroot\atomic-kit-assets\scss\_fonts.scss" />
     <EmbeddedResource Include="Migrations\package.zip" />
