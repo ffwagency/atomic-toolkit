@@ -348,3 +348,11 @@ MigrationBackup/
 
 # Ionide (cross platform F# VS Code tools) working folder
 .ionide/
+
+# Atomic Starter Kit
+src/AtomicStarterKit/wwwroot/atomic-kit-assets/css/style.css
+src/AtomicStarterKit.Website/wwwroot/atomic-kit-assets/css/style.css
+/src/AtomicStarterKit.Website/Views/_ViewImports.cshtml
+/src/AtomicStarterKit.Website/Views/DefaultPage.cshtml
+/src/AtomicStarterKit.Website/Views/MasterLayout.cshtml
+/src/AtomicStarterKit.Website/Views/Components/*

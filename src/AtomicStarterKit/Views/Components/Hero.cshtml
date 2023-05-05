@@ -6,20 +6,20 @@
 <header class="masthead" style="@(Model.BackgroundImage != null ? $"background: url('{Model.BackgroundImage.Url()}') center / cover no-repeat;" : "background-color: transparent;")">
 	<div class="container">
 		<div class="intro-text">
-			@if (!string.IsNullOrWhiteSpace(Model.PreTitle))
-			{
-				<div class="intro-lead-in"><span>@Model.PreTitle</span></div>
-			}
 			@if (!string.IsNullOrWhiteSpace(Model.Title))
 			{
 				<div class="intro-heading text-uppercase">
-					<span>@Model.Title</span>
+					<h1>@Model.Title</h1>
 				</div>
+			}
+			@if (!string.IsNullOrWhiteSpace(Model.SubTitle))
+			{
+				<div class="intro-lead-in"><span>@Model.SubTitle</span></div>
 			}
 			@if (Model.ButtonLink != null && Model.ButtonLink.Any())
 			{
 				<a class="btn btn-xl text-uppercase" role="button" href="@Model.ButtonLink.FirstOrDefault()!.Url">@Model.ButtonLink.FirstOrDefault()!.Name</a>
-			}			
+			}
 		</div>
 	</div>
 </header>
