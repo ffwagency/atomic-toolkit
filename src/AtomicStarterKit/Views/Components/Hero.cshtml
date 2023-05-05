@@ -3,7 +3,7 @@
 	if (Model == null) return;
 }
 
-<header class="masthead" style="@(Model.BackgroundImage != null ? $"background: url('{Model.BackgroundImage.Url()}') center / cover no-repeat;" : "background-color: transparent;")">
+<header class="masthead hero-section" style="@(Model.BackgroundImage != null ? $"background: url('{Model.BackgroundImage.Url()}') center / cover no-repeat;" : "background-color: transparent;")">
 	<div class="container">
 		<div class="intro-text">
 			@if (!string.IsNullOrWhiteSpace(Model.Title))

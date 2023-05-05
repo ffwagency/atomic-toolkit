@@ -1,9 +1,10 @@
 .heading-section {
-    background-position: center;
-    background-repeat: no-repeat;
-    margin: 0px 0px;
-    height: 500px;
-    max-width: 1903px;
+    background-position: center !important;
+    background-size: cover !important;
+    background-repeat: no-repeat !important;
+    margin: 0 0;
+    height: 450px;
+    max-width: 100%;
     max-height: 450px;
 
     &__overlay {
