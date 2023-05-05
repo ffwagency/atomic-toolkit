@@ -1,106 +1,52 @@
 <Project Sdk="Microsoft.NET.Sdk">
-  <PropertyGroup>
-    <AssemblyVersion>1.0.1</AssemblyVersion>
-    <Version>1.0.1</Version>
-    <InformationalVersion>1.0.1</InformationalVersion>
-    <TargetFramework>net7.0</TargetFramework>
-    <Authors>FFW</Authors>
-    <ContentTargetFolders>.</ContentTargetFolders>
-    <Product>AtomicStarterKit</Product>
-    <PackageId>AtomicStarterKit</PackageId>
-    <Title>AtomicStarterKit</Title>
-    <Description>Atomic Starter Kit for Umbraco</Description>
-    
-    <PackageIcon>logo.png</PackageIcon>
-    <PackageIconUrl>../../images/logo.png?raw=true</PackageIconUrl>
-    <PackageTags>umbraco;umbraco-marketplace;atomic;starter;kit;atomicstarterkit;ffw</PackageTags>
+	<PropertyGroup>
+		<AssemblyVersion>1.0.1</AssemblyVersion>
+		<Version>1.0.1</Version>
+		<InformationalVersion>1.0.1</InformationalVersion>
+		<TargetFramework>net7.0</TargetFramework>
+		<Authors>FFW</Authors>
+		<ContentTargetFolders>.</ContentTargetFolders>
+		<Product>AtomicStarterKit</Product>
+		<PackageId>AtomicStarterKit</PackageId>
+		<Title>AtomicStarterKit</Title>
+		<Description>Atomic Starter Kit for Umbraco</Description>
 
-  </PropertyGroup>
+		<PackageIcon>logo.png</PackageIcon>
+		<PackageIconUrl>../../images/logo.png</PackageIconUrl>
+		<PackageTags>umbraco;umbraco-marketplace;atomic;starter;kit;atomicstarterkit;ffw</PackageTags>
 
-  <ItemGroup>
-    <PackageReference Include="BuildBundlerMinifier2022" Version="2.9.9" />
-    <PackageReference Include="BuildWebCompiler2022" Version="1.14.10" />
-    <PackageReference Include="Umbraco.Cms.Core" Version="11.3.0" />
-    <PackageReference Include="Umbraco.Cms.Infrastructure" Version="11.3.0" />
-    <PackageReference Include="Umbraco.Cms.Web.Website" Version="11.3.0" />
-    <PackageReference Include="Umbraco.Cms.Web.BackOffice" Version="11.3.0" />
-  </ItemGroup>
+	</PropertyGroup>
 
-  <ItemGroup>
-    <None Include="build\**" Pack="true" PackagePath="build" />
-  </ItemGroup>
+	<ItemGroup>
+		<PackageReference Include="BuildBundlerMinifier2022" Version="2.9.9" />
+		<PackageReference Include="BuildWebCompiler2022" Version="1.14.10" />
+		<PackageReference Include="Umbraco.Cms.Core" Version="11.3.1" />
+		<PackageReference Include="Umbraco.Cms.Infrastructure" Version="11.3.1" />
+		<PackageReference Include="Umbraco.Cms.Web.Website" Version="11.3.1" />
+		<PackageReference Include="Umbraco.Cms.Web.BackOffice" Version="11.3.1" />
+	</ItemGroup>
 
-  <ItemGroup>
-    <Content Include="wwwroot\**\*.*" ExcludeFromSingleFile="true" CopyToPublishDirectory="Always" />
-    <Content Include="Views\**\*.*" ExcludeFromSingleFile="true" CopyToPublishDirectory="Always" />
-    <None Include="build\**" Pack="true" PackagePath="build" />
-    
-    <None Remove="Migrations\package.zip" />
-    
-    <None Remove="Views\Components\DoubleImage.cshtml" />
-    
-    <None Remove="Views\Components\Quote.cshtml" />
-    
-    <None Remove="wwwroot\atomic-kit-assets\css\style.scss" />
-    
-    <None Remove="wwwroot\atomic-kit-assets\scss\base\_typography.scss" />
-    
-    <None Remove="wwwroot\atomic-kit-assets\scss\base\_validation.scss" />
-    
-    <None Remove="wwwroot\atomic-kit-assets\scss\base\_variables.scss" />
-    
-    <None Remove="wwwroot\atomic-kit-assets\scss\components\_animations.scss" />
-    
-    <None Remove="wwwroot\atomic-kit-assets\scss\components\_contact.scss" />
-    
-    <None Remove="wwwroot\atomic-kit-assets\scss\components\_cta.scss" />
-    
-    <None Remove="wwwroot\atomic-kit-assets\scss\components\_double-image.scss" />
-    
-    <None Remove="wwwroot\atomic-kit-assets\scss\components\_footer.scss" />
-    
-    <None Remove="wwwroot\atomic-kit-assets\scss\components\_heading.scss" />
-    
-    <None Remove="wwwroot\atomic-kit-assets\scss\components\_hero.scss" />
-    
-    <None Remove="wwwroot\atomic-kit-assets\scss\components\_navigation.scss" />
-    
-    <None Remove="wwwroot\atomic-kit-assets\scss\components\_portfolio.scss" />
-    
-    <None Remove="wwwroot\atomic-kit-assets\scss\components\_quote.scss" />
-    
-    <None Remove="wwwroot\atomic-kit-assets\scss\components\_services.scss" />
-    
-    <None Remove="wwwroot\atomic-kit-assets\scss\components\_social-media.scss" />
-    
-    <None Remove="wwwroot\atomic-kit-assets\scss\components\_team-listing.scss" />
-    
-    <None Remove="wwwroot\atomic-kit-assets\scss\components\_team-member-datails.scss" />
-    
-    <None Remove="wwwroot\atomic-kit-assets\scss\style.scss" />
-    
-    <None Remove="wwwroot\atomic-kit-assets\scss\vendor\baguetteBox.scss" />
-    
-    <None Remove="wwwroot\atomic-kit-assets\scss\_fonts.scss" />
-    <EmbeddedResource Include="Migrations\package.zip" />
-  </ItemGroup>
+	<ItemGroup>
+		<None Include="build\**" Pack="true" PackagePath="build" />
+	</ItemGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\AtomicStarterKit.Common\AtomicStarterKit.Common.csproj" />
-    <ProjectReference Include="..\AtomicStarterKit.ModelsBuilder\AtomicStarterKit.ModelsBuilder.csproj" />
-  </ItemGroup>
+	<ItemGroup>
+		<Content Include="wwwroot\**\*.*" ExcludeFromSingleFile="true" CopyToPublishDirectory="Always" />
+		<Content Include="Views\**\*.*" ExcludeFromSingleFile="true" CopyToPublishDirectory="Always" />
+		<Content Include="bundleconfig.json" ExcludeFromSingleFile="true" CopyToPublishDirectory="Always" />
+		<Content Include="compilerconfig.json" ExcludeFromSingleFile="true" CopyToPublishDirectory="Always" />
+		<Content Include="compilerconfig.json.defaults" ExcludeFromSingleFile="true" CopyToPublishDirectory="Always" />
+		<None Include="build\**" Pack="true" PackagePath="build" />
+		<EmbeddedResource Include="Migrations\package.zip" />
+	</ItemGroup>
 
-  <ItemGroup>
-    <Content Update="wwwroot\atomic-kit-assets\scss\style.scss">
-      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-    </Content>
-  </ItemGroup>
+	<ItemGroup>
+		<ProjectReference Include="..\AtomicStarterKit.Common\AtomicStarterKit.Common.csproj" />
+		<ProjectReference Include="..\AtomicStarterKit.ModelsBuilder\AtomicStarterKit.ModelsBuilder.csproj" />
+	</ItemGroup>
 
-  <ItemGroup>
-    <Content Update="wwwroot\atomic-kit-assets\scss\base\_fonts.scss">
-      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-    </Content>
-  </ItemGroup>
+	<ItemGroup>
+		<None Include="../../images/logo.png" Pack="true" PackPath="\" />
+	</ItemGroup>
+
 </Project>

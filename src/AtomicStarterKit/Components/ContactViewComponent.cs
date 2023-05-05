@@ -1,5 +1,4 @@
-﻿using AtomicStarterKit.Models;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Umbraco.Cms.Web.Common.PublishedModels;
 
 namespace AtomicStarterKit.Components;

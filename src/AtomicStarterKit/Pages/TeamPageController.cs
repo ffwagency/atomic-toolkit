@@ -5,9 +5,12 @@ using Umbraco.Cms.Web.Common.Controllers;
 using Umbraco.Cms.Web.Common.PublishedModels;
 using Microsoft.Extensions.Logging;
 using AtomicStarterKit.Models.Mapping;
+using AtomicStarterKit.Umbraco.OutputCache;
+using Microsoft.AspNetCore.OutputCaching;
 
 namespace AtomicStarterKit.Pages;
 
+[OutputCache(PolicyName = CachingConstants.DefaultPolicy)]
 public class TeamPageController : RenderController
 {
 	public TeamPageController(ILogger<TeamPageController> logger,

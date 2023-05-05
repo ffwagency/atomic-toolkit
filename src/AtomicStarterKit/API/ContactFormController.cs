@@ -13,7 +13,6 @@ using AtomicStarterKit.Common.Content.Services;
 
 namespace AtomicStarterKit.API;
 
-// TODO: Discuss
 public class ContactFormController : SurfaceController
 {
     private readonly IContentService _contentService;
