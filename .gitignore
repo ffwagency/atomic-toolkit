@@ -356,3 +356,4 @@ src/AtomicStarterKit.Website/wwwroot/atomic-kit-assets/css/style.css
 /src/AtomicStarterKit.Website/Views/DefaultPage.cshtml
 /src/AtomicStarterKit.Website/Views/MasterLayout.cshtml
 /src/AtomicStarterKit.Website/Views/Components/*
+/src/AtomicStarterKit.Website/wwwroot/*
