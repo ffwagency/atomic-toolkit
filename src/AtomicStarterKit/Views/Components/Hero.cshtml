@@ -18,7 +18,7 @@
 			}
 			@if (Model.ButtonLink != null && Model.ButtonLink.Any())
 			{
-				<a class="btn btn-xl text-uppercase" role="button" href="@Model.ButtonLink.FirstOrDefault()!.Url">@Model.ButtonLink.FirstOrDefault()!.Name</a>
+				<a class="btn btn-lg text-uppercase" role="button" href="@Model.ButtonLink.FirstOrDefault()!.Url">@Model.ButtonLink.FirstOrDefault()!.Name <i class="fa fa-arrow-right fa-1x"></i></a>
 			}
 		</div>
 	</div>

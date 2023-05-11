@@ -4,16 +4,9 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
   </PropertyGroup>
-  <ItemGroup>
-    <Content Remove="compilerconfig.json" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="compilerconfig.json" />
-  </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="jQuery.Validation" Version="1.19.5" />
-    <PackageReference Include="Umbraco.Cms" Version="11.3.0" />
+    <PackageReference Include="Umbraco.Cms" Version="11.3.1" />
   </ItemGroup>
 
   <ItemGroup>
@@ -35,19 +28,11 @@
   </PropertyGroup>
   
   <Import Project="..\AtomicStarterKit\build\AtomicStarterKit.targets" />
+	
   <ItemGroup>
     <ProjectReference Include="..\AtomicStarterKit.ModelsBuilder\AtomicStarterKit.ModelsBuilder.csproj" />
     <ProjectReference Include="..\AtomicStarterKit.SEO\AtomicStarterKit.Sео.csproj" />
     <ProjectReference Include="..\AtomicStarterKit\AtomicStarterKit.csproj" />
   </ItemGroup>
-  <ItemGroup>
-    <Content Update="wwwroot\atomic-kit-assets\css\style.css">
-      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
-      <CopyToPublishDirectory>Always</CopyToPublishDirectory>
-    </Content>
-    <Content Update="wwwroot\atomic-kit-assets\css\style.min.css">
-      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
-      <CopyToPublishDirectory>Always</CopyToPublishDirectory>
-    </Content>
-  </ItemGroup>
+	
 </Project>
