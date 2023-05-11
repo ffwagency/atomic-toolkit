@@ -1,10 +1,10 @@
 .portfolio-section {
-    .portfolio-item {
-        .portfolio-link {
-            .portfolio-hover {
+    &__item {
+        &__link {
+            &__hover {
                 background: rgba(0, 61, 109, .6) !important;
 
-                .portfolio-hover-content {
+                &__content {
                     position: absolute;
                     top: 0 !important;
                     right: 0 !important;
@@ -15,7 +15,7 @@
                     margin-top: 8px !important;
                     margin-right: 8px;
 
-                    i {
+                    &-icon {
                         margin-top: 0 !important;
                     }
                 }
@@ -23,7 +23,7 @@
         }
     }
 
-    .see-all-link {
+    &__see-all-link {
         a {
             font-size: 18px;
             border: none;

@@ -3,7 +3,7 @@
 	if (Model == null) return;
 }
 
-<section class="bg-light portfolio-section" id="portfolio">
+<section class="bg-light portfolio-section">
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-12 text-center">
@@ -25,13 +25,13 @@
 					var currentItem = item.Content as PortfolioListingItem;
 					if (currentItem != null)
 					{
-						<div class="col-sm-6 col-md-4 portfolio-item">
+						<div class="col-sm-6 col-md-4 portfolio-section__item">
 							@if (currentItem.Link != null && currentItem.Link.Any())
 							{
-								<a class="portfolio-link" href="@(currentItem.Link.FirstOrDefault()!.Url ?? "#")">
-									<div class="portfolio-hover">
-										<div class="portfolio-hover-content">
-											<i class="fa fa-arrow-right fa-2x"></i>
+								<a class="portfolio-section__item__link" href="@(currentItem.Link.FirstOrDefault()!.Url ?? "#")">
+									<div class="portfolio-section__item__link__hover">
+										<div class="portfolio-section__item__link__hover__content">
+											<i class="fa fa-arrow-right fa-2x portfolio-section__item__link__hover__content-icon"></i>
 										</div>
 									</div>
 									@if (currentItem.Image != null)

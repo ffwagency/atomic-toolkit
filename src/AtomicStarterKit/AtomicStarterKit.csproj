@@ -43,13 +43,19 @@
     
     <None Remove="wwwroot\atomic-kit-assets\css\style.scss" />
     
-    <None Remove="wwwroot\atomic-kit-assets\scss\base\_typography.scss" />
+    <None Remove="wwwroot\atomic-kit-assets\scss\base\_base.scss" />
+    
+    <None Remove="wwwroot\atomic-kit-assets\scss\base\_bs-icons.scss" />
+    
+    <None Remove="wwwroot\atomic-kit-assets\scss\base\_buttons.scss" />
+    
+    <None Remove="wwwroot\atomic-kit-assets\scss\base\_links.scss" />
+    
+    <None Remove="wwwroot\atomic-kit-assets\scss\base\_section.scss" />
     
     <None Remove="wwwroot\atomic-kit-assets\scss\base\_validation.scss" />
     
     <None Remove="wwwroot\atomic-kit-assets\scss\base\_variables.scss" />
-    
-    <None Remove="wwwroot\atomic-kit-assets\scss\components\_animations.scss" />
     
     <None Remove="wwwroot\atomic-kit-assets\scss\components\_contact.scss" />
     

@@ -1,3 +1,13 @@
+::-moz-selection {
+    color: $c-white;
+    background: #003D6D;
+}
+
+::selection {
+    color: $c-white;
+    background: #003D6D;
+}
+
 @keyframes bounceFromRight {
     0%,100% {
         margin-left: 0;

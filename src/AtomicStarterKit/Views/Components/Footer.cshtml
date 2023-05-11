@@ -3,9 +3,9 @@
 	if (Model == null) return;
 }
 
-<footer class="text-white">
+<footer class="text-white footer">
 	<div class="container py-4 py-lg-5">
-		<div class="row justify-content-center">
+		<div class="row justify-content-center footer__content">
 			@if (Model.LeftColumnNavigation != null && Model.LeftColumnNavigation.Any())
 			{
 				<div class="col-sm-4 col-md-3 text-center text-lg-start d-flex flex-column">
@@ -66,11 +66,11 @@
 				</ul>
 			</div>
 			}
-			<div class="col-lg-3 text-center text-lg-start d-flex flex-column align-items-center order-first align-items-lg-start order-lg-last">
+			<div class="col-lg-3 text-center text-lg-start d-flex flex-column align-items-center order-first align-items-lg-start order-lg-last footer__content__right">
 				<div class="fw-bold d-flex align-items-center flex-column justify-content-between mb-2">
 					@if (Model.Logo != null)
 					{
-						<img class="logo" src="@Model.Logo.Url()" alt="@Model.Logo.Name"/>
+						<img class="footer__content__right__logo" src="@Model.Logo.Url()" alt="@Model.Logo.Name" />
 					}
 					@if (!string.IsNullOrWhiteSpace(Model.BrandText))
 					{
@@ -84,7 +84,7 @@
 			</div>
 		</div>
 		<hr>
-		<div class="d-flex justify-content-between align-items-center pt-3">
+		<div class="d-flex justify-content-between align-items-center pt-3 footer__copyrights">
 			@if (!string.IsNullOrWhiteSpace(Model.CopyrightText))
 			{
 				<p class="mb-0">@Model.CopyrightText</p>

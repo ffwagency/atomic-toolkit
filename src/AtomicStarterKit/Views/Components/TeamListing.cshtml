@@ -34,15 +34,15 @@
                                     }
                                     @if (currentItem.ProfileLink != null && currentItem.ProfileLink.Any())
                                     {
-                                        <a href="@currentItem.ProfileLink.FirstOrDefault()!.Url">
-                                            <h5 class="mb-2"><strong>@currentItem.FullName</strong></h5>
+                                        <a class="team-listing-section__content__member-info__link" href="@currentItem.ProfileLink.FirstOrDefault()!.Url">
+                                            <h5 class="mb-2 team-listing-section__content__member-info__link__title"><strong>@currentItem.FullName</strong></h5>
                                         </a>
                                     }
                                     else
                                     {
                                         if (!string.IsNullOrWhiteSpace(currentItem.FullName))
                                         {
-                                            <h5 class="mb-2"><strong>@currentItem.FullName</strong></h5>
+                                            <h5 class="mb-2 team-listing-section__content__member-info__title"><strong>@currentItem.FullName</strong></h5>
                                         }
                                     }
                                     @if (!string.IsNullOrWhiteSpace(currentItem.Description))

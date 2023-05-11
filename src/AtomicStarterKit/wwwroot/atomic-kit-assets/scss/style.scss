@@ -1,11 +1,11 @@
 @import './base/_fonts.scss';
 @import './base/_variables.scss';
+@import './base/_bs-icons.scss';
 
-/*Typography*/
-@import './base/_typography.scss';
-
-/*Animations*/
-@import './components/_animations.scss';
+@import './base/_links.scss';
+@import './base/_buttons.scss';
+@import './base/_section.scss';
+@import './base/_base.scss';
 
 /*Validation*/
 @import './base/_validation.scss';

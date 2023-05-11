@@ -1,11 +1,11 @@
 .contact-section {
     &__contact-form {
         &__group {
-            .form-label {
+            &__label {
                 margin-bottom: 0;
             }
 
-            .form-control:focus {
+            &__form-control:focus {
                 color: #212529;
                 background-color: #fff;
                 border-color: $main_color_light;
@@ -14,15 +14,17 @@
             }
         }
 
-        .form-check-input:checked {
-            background-color: $main_color_light;
-            border-color: $main_color_light;
-        }
+        &__form-check {
+            &__input:checked {
+                background-color: $main_color_light;
+                border-color: $main_color_light;
+            }
 
-        .form-check-input:focus {
-            border-color: $main_color_light;
-            outline: 0;
-            box-shadow: 0 0 0 .25rem rgba(0, 61, 109, .25)
+            &__input:focus {
+                border-color: $main_color_light;
+                outline: 0;
+                box-shadow: 0 0 0 .25rem rgba(0, 61, 109, .25)
+            }
         }
     }
 }

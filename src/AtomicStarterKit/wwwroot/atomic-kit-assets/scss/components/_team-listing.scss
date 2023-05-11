@@ -1,7 +1,22 @@
 .team-listing-section {
     &__content {
-        &__content__member-info {
-            a, h5 {
+        &__member-info {
+
+            &__link {
+                color: $main_color_light;
+                text-decoration: none;
+
+                &__title {
+                    color: $main_color_light;
+                }
+
+                &:hover {
+                    color: $main_color_light !important;
+                    text-decoration:underline;
+                }
+            }
+
+            &__title {
                 color: $main_color_light;
             }
         }

@@ -1,5 +1,13 @@
 .cta-section {
-    .content {
+    &__content {
         background-color: $main_color_green;
+
+        &__image {
+            min-height: 250px;
+
+            img {
+                object-fit: cover;
+            }
+        }
     }
 }

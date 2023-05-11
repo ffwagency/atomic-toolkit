@@ -5,9 +5,9 @@
 
 <section class="py-4 py-xl-5 cta-section">
 	<div class="container">
-		<div class="content border rounded border-0 border-dark overflow-hidden">
+		<div class="border rounded border-0 border-dark overflow-hidden cta-section__content">
 			<div class="row g-0">
-				<div class="col-md-6">
+				<div class="col-md-6 ">
 					<div class="text-white p-4 p-md-5">
 						@if (!string.IsNullOrWhiteSpace(Model.Title))
 						{
@@ -27,8 +27,8 @@
 				</div>
 				@if (Model.Image != null)
 				{
-					<div class="col-md-6 order-first order-md-last" style="min-height: 250px;">
-						<img class="w-100 h-100 fit-cover" src="@Model.Image.Url()" alt="@Model.Image.Name">
+					<div class="col-md-6 order-first order-md-last cta-section__content__image">
+						<img class="w-100 h-100" src="@Model.Image.Url()" alt="@Model.Image.Name">
 					</div>
 				}
 			</div>
