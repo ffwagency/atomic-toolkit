@@ -31,7 +31,6 @@
 	
   <ItemGroup>
     <ProjectReference Include="..\AtomicStarterKit.ModelsBuilder\AtomicStarterKit.ModelsBuilder.csproj" />
-    <ProjectReference Include="..\AtomicStarterKit.SEO\AtomicStarterKit.Sео.csproj" />
     <ProjectReference Include="..\AtomicStarterKit\AtomicStarterKit.csproj" />
   </ItemGroup>
 	

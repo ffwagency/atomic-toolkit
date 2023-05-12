@@ -2,9 +2,9 @@
 using AtomicStarterKit.Sео.Html.Tags;
 using Umbraco.Cms.Core.DependencyInjection;
 
-namespace AtomicStarterKit.Sео.DependencyInjection.Extensions;
+namespace AtomicStarterKit.Sео.DependencyInjection;
 
-public static class UmbracoBuilderExtensions
+public static class IUmbracoBuilderExtensions
 {
     internal static IUmbracoBuilder AddDefaultSeoHtmlTags(this IUmbracoBuilder builder)
     {

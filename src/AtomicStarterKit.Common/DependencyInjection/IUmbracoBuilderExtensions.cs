@@ -4,9 +4,9 @@ using Microsoft.Extensions.Options;
 using System.Reflection;
 using Umbraco.Cms.Core.DependencyInjection;
 
-namespace AtomicStarterKit.Common.DependencyInjection.Extensions;
+namespace AtomicStarterKit.Common.DependencyInjection;
 
-public static class UmbracoBuilderExtensions
+public static class IUmbracoBuilderExtensions
 {
     public static IUmbracoBuilder AddAtomicStarterKitOptions<TOptions>(this IUmbracoBuilder builder, Action<OptionsBuilder<TOptions>>? configure = null)
         where TOptions : class

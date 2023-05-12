@@ -1,4 +1,4 @@
-﻿using AtomicStarterKit.Umbraco.OutputCache;
+﻿using AtomicStarterKit.OutputCache;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ViewEngines;
 using Microsoft.AspNetCore.OutputCaching;
@@ -8,7 +8,7 @@ using Umbraco.Cms.Web.Common.Controllers;
 
 namespace AtomicStarterKit.Pages;
 
-[OutputCache(PolicyName = CachingConstants.DefaultPolicy)]
+[OutputCache(PolicyName = Constants.DefaultPolicy)]
 public class NotFoundPageController : RenderController
 {
 	public NotFoundPageController(ILogger<NotFoundPageController> logger,

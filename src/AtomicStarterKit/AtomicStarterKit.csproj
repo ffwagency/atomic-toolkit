@@ -43,6 +43,8 @@
 	<ItemGroup>
 		<ProjectReference Include="..\AtomicStarterKit.Common\AtomicStarterKit.Common.csproj" />
 		<ProjectReference Include="..\AtomicStarterKit.ModelsBuilder\AtomicStarterKit.ModelsBuilder.csproj" />
+		<ProjectReference Include="..\AtomicStarterKit.OutputCache\AtomicStarterKit.OutputCache.csproj" />
+		<ProjectReference Include="..\AtomicStarterKit.SEO\AtomicStarterKit.Sео.csproj" />
 	</ItemGroup>
 
 	<ItemGroup>

@@ -1,13 +1,12 @@
 ﻿using AtomicStarterKit.Common.Configuration.Models;
 using AtomicStarterKit.Common.Content.Services;
-using AtomicStarterKit.Common.DependencyInjection.Extensions;
 using Microsoft.Extensions.DependencyInjection;
 using Umbraco.Cms.Core.Composing;
 using Umbraco.Cms.Core.DependencyInjection;
 
-namespace AtomicStarterKit.Common.DependencyInjection.Composing;
+namespace AtomicStarterKit.Common.DependencyInjection;
 
-public class AtomicStarterKitCommonComposer : IComposer
+public class CommonComposer : IComposer
 {
     public void Compose(IUmbracoBuilder builder)
     {

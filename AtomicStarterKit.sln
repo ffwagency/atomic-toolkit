@@ -13,6 +13,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AtomicStarterKit.Website", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AtomicStarterKit.ModelsBuilder", "src\AtomicStarterKit.ModelsBuilder\AtomicStarterKit.ModelsBuilder.csproj", "{CF395760-917F-4E03-904C-579C05A95114}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AtomicStarterKit.OutputCache", "src\AtomicStarterKit.OutputCache\AtomicStarterKit.OutputCache.csproj", "{D47C17F0-4406-458D-A401-DC4E371F574A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{CF395760-917F-4E03-904C-579C05A95114}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CF395760-917F-4E03-904C-579C05A95114}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CF395760-917F-4E03-904C-579C05A95114}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D47C17F0-4406-458D-A401-DC4E371F574A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D47C17F0-4406-458D-A401-DC4E371F574A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D47C17F0-4406-458D-A401-DC4E371F574A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D47C17F0-4406-458D-A401-DC4E371F574A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

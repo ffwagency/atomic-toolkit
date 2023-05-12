@@ -5,12 +5,12 @@ using Umbraco.Cms.Web.Common.Controllers;
 using Umbraco.Cms.Web.Common.PublishedModels;
 using Microsoft.Extensions.Logging;
 using AtomicStarterKit.Models.Mapping;
-using AtomicStarterKit.Umbraco.OutputCache;
 using Microsoft.AspNetCore.OutputCaching;
+using AtomicStarterKit.OutputCache;
 
 namespace AtomicStarterKit.Pages;
 
-[OutputCache(PolicyName = CachingConstants.DefaultPolicy)]
+[OutputCache(PolicyName = Constants.DefaultPolicy)]
 public class ServicesPageController : RenderController
 {
 	public ServicesPageController(ILogger<ServicesPageController> logger,
