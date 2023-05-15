@@ -1,0 +1,29 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <AssemblyVersion>1.0.0</AssemblyVersion>
+    <Version>1.0.0</Version>
+    <InformationalVersion>1.0.0</InformationalVersion>
+    <TargetFramework>net7.0</TargetFramework>
+    <Authors>FFW</Authors>
+    <ContentTargetFolders>.</ContentTargetFolders>
+    <Product>AtomicStarterKit.Common</Product>
+    <PackageId>AtomicStarterKit.Common</PackageId>
+    <Title>AtomicStarterKit Common</Title>
+    <Description>Common services for the Starter kit</Description>
+
+    <PackageIcon>logo.png</PackageIcon>
+    <PackageIconUrl>../../images/logo.png?raw=true</PackageIconUrl>
+    <PackageTags>umbraco;umbraco-marketplace;atomic;starter;kit;atomicstarterkit;ffw</PackageTags>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Umbraco.Cms.Web.Website" Version="11.3.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Atomic.ModelsBuilder\Atomic.ModelsBuilder.csproj" />
+  </ItemGroup>
+</Project>
