@@ -7,8 +7,8 @@
 	</PropertyGroup>
 
 	<PropertyGroup>
-		<Version>11.1.3</Version>
-		<AssemblyVersion>11.1.3</AssemblyVersion>
+		<Version>11.1.4</Version>
+		<AssemblyVersion>11.1.4</AssemblyVersion>
 		<Product>Atomic.OutputCache</Product>
 		<PackageId>Atomic.OutputCache</PackageId>
 		<Authors>FFW</Authors>
@@ -18,7 +18,7 @@
 		<PackageIcon>logo.png</PackageIcon>
 		<PackageReadmeFile>readme.md</PackageReadmeFile>
 		<PackageProjectUrl>https://atomictoolkit.com/packages/atomicoutputcache</PackageProjectUrl>
-		<PackageTags>umbraco;atomictoolkit;cache;atomicoutputcache;ffw;H5YR</PackageTags>
+		<PackageTags>umbraco;umbraco-marketplace;atomictoolkit;cache;atomicoutputcache;ffw;H5YR</PackageTags>
 		<PackageLicenseExpression>MIT</PackageLicenseExpression>
 
 		<EnablePackageValidation>true</EnablePackageValidation>
