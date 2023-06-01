@@ -1,0 +1,9 @@
+.services-section {
+    &__content {
+        &__image {
+            @media(min-width: 768px) {
+                width: 50%;
+            }
+        }
+    }
+}

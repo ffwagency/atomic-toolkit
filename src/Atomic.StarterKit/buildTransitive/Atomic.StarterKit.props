@@ -1,0 +1,13 @@
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+
+	<PropertyGroup>
+		<WwwRootFolder>wwwroot</WwwRootFolder>
+		<ViewsFolder>Views</ViewsFolder>
+	</PropertyGroup>
+	
+	<ItemGroup>
+		<WwwRootFiles Include="$(MSBuildThisFileDirectory)..\contentFiles\$(WwwRootFolder)\**" />
+		<ViewsFiles Include="$(MSBuildThisFileDirectory)..\contentFiles\$(ViewsFolder)\**" />
+	</ItemGroup>
+	
+</Project>

@@ -1,0 +1,8 @@
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Umbraco.Cms.Core.Models.Blocks.BlockListModel>
+@{ if (Model?.Any() != true) { return; } }
+
+@foreach (var block in Model)
+{
+    if (block?.ContentUdi == null) { continue; }
+    @await Component.InvokeAsync(block.Content.ContentType.Alias, block.Content)
+}

@@ -1,0 +1,11 @@
+.footer {
+    background-color: $main_color_dark;
+
+    &__content {
+        &__right {
+            &__logo {
+                max-height: 60px;
+            }
+        }
+    }
+}

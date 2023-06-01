@@ -1,0 +1,77 @@
+<Project Sdk="Microsoft.NET.Sdk">
+	
+	<PropertyGroup>
+		<TargetFramework>net7.0</TargetFramework>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+	</PropertyGroup>
+
+	<PropertyGroup>
+		<Version>11.1.7</Version>
+		<AssemblyVersion>11.1.7</AssemblyVersion>
+		<Product>Atomic.StarterKit</Product>
+		<PackageId>Atomic.StarterKit</PackageId>
+		<Authors>FFW</Authors>
+		<Copyright>FFW</Copyright>
+		<Title>Atomic.StarterKit</Title>
+		<Description>Atomic.StarterKit is an AtomicToolkit package which provides a friendly, ready to use Umbraco starter kit.</Description>
+		<PackageIcon>logo.png</PackageIcon>
+		<PackageReadmeFile>readme.md</PackageReadmeFile>
+		<PackageProjectUrl>https://atomictoolkit.com/packages/atomicstarterkit</PackageProjectUrl>
+		<PackageTags>umbraco;atomictoolkit;ffw;starterkit;atomicstarterkit;H5YR;</PackageTags>
+		<PackageLicenseExpression>MIT</PackageLicenseExpression>
+		<EnablePackageValidation>true</EnablePackageValidation>
+		<GenerateDocumentationFile>true</GenerateDocumentationFile>
+		<NoWarn>$(NoWarn);CS1591</NoWarn>
+		<DebugType>embedded</DebugType>
+		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+		<RepositoryType>git</RepositoryType>
+		<RepositoryUrl>https://github.com/ffwagency/atomic-toolkit</RepositoryUrl>
+		<PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+		<IncludeSymbols>true</IncludeSymbols>
+		<SymbolPackageFormat>snupkg</SymbolPackageFormat>
+	</PropertyGroup>
+	
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+		<DebugType>portable</DebugType>
+	</PropertyGroup>
+	
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+		<DebugType>portable</DebugType>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="DotNet.ReproducibleBuilds" Version="1.1.1">
+			<PrivateAssets>all</PrivateAssets>
+			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+		</PackageReference>
+		<PackageReference Include="BuildBundlerMinifier2022" Version="*">
+			<PrivateAssets>all</PrivateAssets>
+		</PackageReference>
+		<PackageReference Include="BuildWebCompiler2022" Version="*">
+			<PrivateAssets>all</PrivateAssets>
+		</PackageReference>
+	</ItemGroup>
+
+	<ItemGroup>
+		<Content Include="wwwroot\**" ExcludeFromSingleFile="true" CopyToPublishDirectory="PreserveNewest" Pack="true" PackagePath="\contentFiles\wwwroot" />
+		<Content Include="Views\**" ExcludeFromSingleFile="true" CopyToPublishDirectory="PreserveNewest" Pack="true" PackagePath="\contentFiles\Views" />
+		<None Include="buildTransitive\**" Pack="true" PackagePath="\buildTransitive" />
+		<None Include="logo.png" Pack="true" PackagePath="\" />
+		<None Include="readme.md" Pack="true" PackagePath="\" />
+		<EmbeddedResource Include="Migrations\package.zip" />
+	</ItemGroup>
+
+	<ItemGroup Condition=" '$(Configuration)' == 'Release' ">
+		<PackageReference Include="Atomic.StarterKit.ModelsBuilder" Version="11.1.5" />
+		<PackageReference Include="Atomic.OutputCache" Version="11.1.3" />
+		<PackageReference Include="Atomic.Seo" Version="11.1.3" />
+	</ItemGroup>
+	
+	<ItemGroup Condition=" '$(Configuration)' == 'Debug' ">
+		<ProjectReference Include="..\Atomic.OutputCache\Atomic.OutputCache.csproj" />
+		<ProjectReference Include="..\Atomic.StarterKit.ModelsBuilder\Atomic.StarterKit.ModelsBuilder.csproj" />
+		<ProjectReference Include="..\Atomic.SEO\Atomic.Sео.csproj" />
+	</ItemGroup>
+
+</Project>

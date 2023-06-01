@@ -1,0 +1,11 @@
+.social-media-links {  
+    &__item {
+        &__link {
+            &__icon:hover {
+                fill: #f8f9fa;
+                font-size: 25px;
+                transition: ease-in-out;
+            }
+        }
+    }
+}

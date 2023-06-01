@@ -1,0 +1,60 @@
+﻿@model PortfolioListing
+@{
+	if (Model == null) return;
+}
+
+<section class="bg-light portfolio-section">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-12 text-center">
+				@if (!string.IsNullOrWhiteSpace(Model.PreTitle))
+				{
+					<h2 class="text-uppercase section-heading">@Model.PreTitle</h2>
+				}
+				@if (!string.IsNullOrWhiteSpace(Model.Title))
+				{
+					<h3 class="text-muted section-subheading">@Model.Title</h3>
+				}
+			</div>
+		</div>
+		<div class="row">
+			@if (Model.PortfolioItems != null && Model.PortfolioItems.Any())
+			{
+				foreach (var item in Model.PortfolioItems)
+				{
+					var currentItem = item.Content as PortfolioListingItem;
+					if (currentItem != null)
+					{
+						<div class="col-sm-6 col-md-4 portfolio-section__item">
+							@if (currentItem.Link != null && currentItem.Link.Any())
+							{
+								<a class="portfolio-section__item__link" href="@(currentItem.Link.FirstOrDefault()!.Url ?? "#")">
+									<div class="portfolio-section__item__link__hover">
+										<div class="portfolio-section__item__link__hover__content">
+											<i class="fa fa-arrow-right fa-2x portfolio-section__item__link__hover__content-icon"></i>
+										</div>
+									</div>
+									@if (currentItem.Image != null)
+									{
+										<img class="img-fluid" src="@currentItem.Image.Url()" alt="@currentItem.Image.Name" />
+									}
+								</a>
+							}
+							<div class="portfolio-section__item__caption">
+								@if (!string.IsNullOrWhiteSpace(currentItem.PreTitle))
+								{
+									<h4>@currentItem.PreTitle</h4>
+								}
+								@if (!string.IsNullOrWhiteSpace(currentItem.Title))
+								{
+									<p class="text-muted">@currentItem.Title</p>
+								}
+							</div>
+						</div>
+					}
+
+				}
+			}
+		</div>
+	</div>
+</section>

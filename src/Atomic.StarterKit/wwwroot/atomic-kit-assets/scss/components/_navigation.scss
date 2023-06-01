@@ -1,0 +1,96 @@
+#mainNav {
+    background-color: $c-transparent;
+
+    .navbar-brand {
+        color: $c-white;
+        font-family: $font-family_1;
+        height: 60px;
+        max-height: 60px;
+        margin-right: 20px;
+
+        &:hover {
+            color: $c-white !important;
+        }
+
+        &:focus {
+            color: $c-white !important;
+        }
+
+        .brand-text {
+            font-size: 18px;
+            padding-left: 8px;
+        }
+    }
+
+    .navbar-nav {
+        .nav-item {
+            .nav-link {
+                display: inline-block;
+                position: relative;
+                color: $c-white;
+
+                &:hover {
+                    color: $c-white !important;
+
+                    &:after {
+                        transform: scaleX(1);
+                        transform-origin: bottom left;
+                    }
+                }
+
+                &:after {
+                    content: '';
+                    position: absolute;
+                    width: 100%;
+                    transform: scaleX(0);
+                    height: 4px;
+                    bottom: 0;
+                    left: 0;
+                    background-color: $c-white;
+                    transform-origin: bottom right;
+                    transition: transform 0.25s ease-out;
+                }
+            }
+
+            .nav-link.active {
+                color: $c-white !important;
+            }
+        }
+    }
+
+    .navbar-toggler {
+        background-color: $main_color_light;
+    }
+
+    .logo {
+            max-height: 60px !important;
+        }
+
+    &.navbar-shrink {
+        padding-top: 10px;
+        background-color: $main_color_dark !important;
+
+        .logo {
+            max-height: 60px !important;
+        }
+
+        @media (max-width: 767px) {
+            .logo {
+                max-height: 50px !important;
+            }
+        }
+    }
+
+    @media (max-width: 767px) {
+        .logo {
+            max-height: 40px !important;
+        }
+    }
+}
+
+
+@media (max-width: 992px) {
+    #mainNav {
+        background-color: $main_color_dark;
+    }
+}

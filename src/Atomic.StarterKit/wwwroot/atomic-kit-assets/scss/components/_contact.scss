@@ -1,0 +1,30 @@
+.contact-section {
+    &__contact-form {
+        &__group {
+            &__label {
+                margin-bottom: 0;
+            }
+
+            &__form-control:focus {
+                color: #212529;
+                background-color: #fff;
+                border-color: $main_color_light;
+                outline: 0;
+                box-shadow: 0 0 0 .25rem rgba(0, 61, 109, .25)
+            }
+        }
+
+        &__form-check {
+            &__input:checked {
+                background-color: $main_color_light;
+                border-color: $main_color_light;
+            }
+
+            &__input:focus {
+                border-color: $main_color_light;
+                outline: 0;
+                box-shadow: 0 0 0 .25rem rgba(0, 61, 109, .25)
+            }
+        }
+    }
+}

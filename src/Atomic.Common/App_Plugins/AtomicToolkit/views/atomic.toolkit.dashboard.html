@@ -1,0 +1,31 @@
+﻿<div ng-controller="Atomic.ModelsBuilder.Dashboard.Controller" class="atomic-toolkit-control">
+    <div>
+        <div class="row">
+            <p>Please before generate the models for the Atomic toolkit make sure that ModelsBuilder is enabled, with the following configuration:</p>
+            <ul>
+                <li>The <strong>models mode</strong> is set to either 'SourceCodeManual' or 'SourceCodeAuto'.</li>
+                <li>Models namespace is Umbraco.Cms.Web.Common.PublishedModels.</li>
+            </ul>
+            <p><strong>It is recommended that you first generate the default Models Builder models.</strong></p>
+        </div>
+        <div class="row">
+            <hr />
+        </div>
+        <div class="row">
+            <button preventdefault class="btn btn-primary" ng-click="generateModels()">Generate Atomic Models</button>
+        </div>
+        <div class="row">
+            <hr />
+        </div>
+        <div class="row">
+            <div>
+                <div class="alert alert-success" ng-show="modelsGeneratedRequest && modelsGeneratedSuccess">
+                    Models are succesfully generated!
+                </div>
+                <div class="alert alert-error" ng-show="modelsGeneratedRequest && !modelsGeneratedSuccess">
+                    <strong>Error</strong>, something went wrong trying to generate the models!
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

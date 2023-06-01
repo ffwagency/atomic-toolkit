@@ -1,0 +1,13 @@
+{
+  "javascript": [
+    "/App_Plugins/AtomicToolkit/js/atomic.toolkit.dashboard.js"
+  ],
+    "dashboards":  [
+      {
+        "alias": "atomictoolkit",
+        "view": "/app_plugins/AtomicToolkit/views/atomic.toolkit.dashboard.html",
+        "sections": [ "settings" ],
+        "weight": 40
+      }
+    ]
+}

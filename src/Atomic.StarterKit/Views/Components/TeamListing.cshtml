@@ -1,0 +1,60 @@
+﻿@model TeamListing
+@{
+	if (Model == null) return;
+}
+
+<section class="team-listing-section">
+    <div class="container">
+        <div class="row mb-4 mb-lg-5">
+            <div class="col-md-8 col-xl-6 text-center mx-auto">
+                @if (!string.IsNullOrWhiteSpace(Model.Title))
+                {
+                    <h2 class="text-uppercase section-heading">@Model.Title</h2>
+                }
+                @if (!string.IsNullOrWhiteSpace(Model.Description))
+                {
+                    <h3 class="text-muted section-subheading">@Model.Description</h3>
+                }
+            </div>
+        </div>
+        <div class="row gy-4 row-cols-2 row-cols-md-4 team-listing-section__content">
+            @if (Model.Members != null && Model.Members.Any())
+            {
+                foreach (var item in Model.Members)
+                {
+                    var currentItem = item.Content as TeamListingItem;
+                    @if (currentItem != null)
+                    {
+                        <div class="col">
+                            <div class="card border-0 shadow-none">
+                                <div class="card-body text-center d-flex flex-column align-items-center p-0 team-listing-section__content__member-info">
+                                    @if (currentItem.Image != null)
+                                    {
+                                        <img class="rounded-circle mb-3 fit-cover" width="130" height="130" src="@currentItem.Image.Url()" alt="@currentItem.Image.Name">
+                                    }
+                                    @if (currentItem.ProfileLink != null && currentItem.ProfileLink.Any())
+                                    {
+                                        <a class="team-listing-section__content__member-info__link" href="@currentItem.ProfileLink.FirstOrDefault()!.Url">
+                                            <h5 class="mb-2 team-listing-section__content__member-info__link__title"><strong>@currentItem.FullName</strong></h5>
+                                        </a>
+                                    }
+                                    else
+                                    {
+                                        if (!string.IsNullOrWhiteSpace(currentItem.FullName))
+                                        {
+                                            <h5 class="mb-2 team-listing-section__content__member-info__title"><strong>@currentItem.FullName</strong></h5>
+                                        }
+                                    }
+                                    @if (!string.IsNullOrWhiteSpace(currentItem.Description))
+                                    {
+                                        <p class="text-muted card-text mb-2">@currentItem.Description</p>
+                                    }
+                                </div>
+                            </div>
+                        </div>
+                    }
+                }
+            }
+        </div>
+    </div>
+</section>

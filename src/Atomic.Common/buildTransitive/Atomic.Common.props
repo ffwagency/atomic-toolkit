@@ -1,0 +1,11 @@
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+
+	<PropertyGroup>
+		<AppPluginsFolder>App_Plugins</AppPluginsFolder>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<AppPluginsFiles Include="$(MSBuildThisFileDirectory)..\contentFiles\$(AppPluginsFolder)\**" />
+	</ItemGroup>
+
+</Project>

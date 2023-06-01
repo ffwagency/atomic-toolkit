@@ -1,0 +1,21 @@
+@model Header
+@{ if (Model == null) return; }
+
+<nav>
+    Atomic.Skeleton.Header
+    <ul>
+        @if (Model.MainNavigation != null && Model.MainNavigation.Any())
+        {
+            foreach (var item in Model.MainNavigation)
+            {
+                var currentItem = item.Content as NavigationItem;
+                if (currentItem != null && currentItem.Link != null && currentItem.Link.Any())
+                {
+                    <li>
+                        <a href="@currentItem.Link.First().Url">@currentItem.Link.First().Name</a>
+                    </li>
+                }
+            }
+        }
+    </ul>
+</nav>

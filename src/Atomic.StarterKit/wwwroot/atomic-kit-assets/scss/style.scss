@@ -1,0 +1,29 @@
+@import './base/_fonts.scss';
+@import './base/_variables.scss';
+@import './base/_bs-icons.scss';
+
+@import './base/_links.scss';
+@import './base/_buttons.scss';
+@import './base/_section.scss';
+@import './base/_base.scss';
+
+/*Validation*/
+@import './base/_validation.scss';
+
+/*Components*/
+@import './components/_navigation.scss';
+@import './components/_hero.scss';
+@import './components/_heading.scss';
+@import './components/_portfolio.scss';
+@import './components/_social-media.scss';
+@import './components/_footer.scss';
+@import './components/_cta.scss';
+@import './components/_quote.scss';
+@import './components/_double-image.scss';
+@import './components/_services.scss';
+@import './components/_team-listing.scss';
+@import './components/_team-member-datails.scss';
+@import './components/_contact.scss';
+
+/*Vendor*/
+@import './vendor/baguetteBox.scss';

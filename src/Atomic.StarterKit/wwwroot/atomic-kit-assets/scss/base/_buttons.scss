@@ -1,0 +1,18 @@
+.btn {
+    background-color: $main_color_dark;
+    color: $c-white;
+    --bs-btn-color: #00243D;
+    --bs-btn-border-color: #00243D;
+    --bs-btn-hover-color: #fff;
+    --bs-btn-hover-bg: #003D6D;
+    --bs-btn-hover-border-color: #003D6D;
+    --bs-btn-focus-shadow-rgb: 25, 135, 84;
+    --bs-btn-active-color: #fff;
+    --bs-btn-active-bg: #003D6D;
+    --bs-btn-active-border-color: #003D6D;
+    --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+    --bs-btn-disabled-color: #00243D;
+    --bs-btn-disabled-bg: transparent;
+    --bs-btn-disabled-border-color: #00243D;
+    --bs-gradient: none;
+}
