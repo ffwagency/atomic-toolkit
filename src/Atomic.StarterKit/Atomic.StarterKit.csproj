@@ -7,8 +7,8 @@
 	</PropertyGroup>
 
 	<PropertyGroup>
-		<Version>11.1.7</Version>
-		<AssemblyVersion>11.1.7</AssemblyVersion>
+		<Version>11.1.8</Version>
+		<AssemblyVersion>11.1.8</AssemblyVersion>
 		<Product>Atomic.StarterKit</Product>
 		<PackageId>Atomic.StarterKit</PackageId>
 		<Authors>FFW</Authors>
@@ -18,7 +18,7 @@
 		<PackageIcon>logo.png</PackageIcon>
 		<PackageReadmeFile>readme.md</PackageReadmeFile>
 		<PackageProjectUrl>https://atomictoolkit.com/packages/atomicstarterkit</PackageProjectUrl>
-		<PackageTags>umbraco;atomictoolkit;ffw;starterkit;atomicstarterkit;H5YR;</PackageTags>
+		<PackageTags>umbraco;umbraco-marketplace;atomictoolkit;ffw;starterkit;atomicstarterkit;H5YR;</PackageTags>
 		<PackageLicenseExpression>MIT</PackageLicenseExpression>
 		<EnablePackageValidation>true</EnablePackageValidation>
 		<GenerateDocumentationFile>true</GenerateDocumentationFile>
@@ -54,8 +54,8 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<Content Include="wwwroot\**" ExcludeFromSingleFile="true" CopyToPublishDirectory="PreserveNewest" Pack="true" PackagePath="\contentFiles\wwwroot" />
-		<Content Include="Views\**" ExcludeFromSingleFile="true" CopyToPublishDirectory="PreserveNewest" Pack="true" PackagePath="\contentFiles\Views" />
+		<Content Include="wwwroot\**" ExcludeFromSingleFile="true" CopyToPublishDirectory="PreserveNewest" Pack="true" PackagePath="\wwwroot" />
+		<Content Include="Views\**" ExcludeFromSingleFile="true" CopyToPublishDirectory="PreserveNewest" Pack="true" PackagePath="\Views" />
 		<None Include="buildTransitive\**" Pack="true" PackagePath="\buildTransitive" />
 		<None Include="logo.png" Pack="true" PackagePath="\" />
 		<None Include="readme.md" Pack="true" PackagePath="\" />

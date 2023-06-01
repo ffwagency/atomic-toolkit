@@ -6,8 +6,8 @@
 	</PropertyGroup>
 	
 	<ItemGroup>
-		<WwwRootFiles Include="$(MSBuildThisFileDirectory)..\contentFiles\$(WwwRootFolder)\**" />
-		<ViewsFiles Include="$(MSBuildThisFileDirectory)..\contentFiles\$(ViewsFolder)\**" />
+		<WwwRootFiles Include="$(MSBuildThisFileDirectory)..\$(WwwRootFolder)\**" />
+		<ViewsFiles Include="$(MSBuildThisFileDirectory)..\$(ViewsFolder)\**" />
 	</ItemGroup>
 	
 </Project>

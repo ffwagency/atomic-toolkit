@@ -5,7 +5,7 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-		<AppPluginsFiles Include="$(MSBuildThisFileDirectory)..\contentFiles\$(AppPluginsFolder)\**" />
+		<AppPluginsFiles Include="$(MSBuildThisFileDirectory)..\$(AppPluginsFolder)\**" />
 	</ItemGroup>
 
 </Project>
