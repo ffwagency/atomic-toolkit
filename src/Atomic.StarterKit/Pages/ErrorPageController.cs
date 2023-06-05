@@ -21,7 +21,7 @@ public class ErrorPageController : RenderController
 
     public override IActionResult Index()
     {
-        var vm = ((IErrorPage)CurrentPage!).MapHeaderlessPageToDesignPageViewModel();
+        var vm = ((IErrorPage)CurrentPage!).MapToDesignPageViewModel();
         return View("~/views/DefaultPage.cshtml", vm);
     }
 }

@@ -10,17 +10,10 @@ public static class DesignPageModelMapingExtensions
     {
 		var target = new DesignPageViewModel(source);
 		var components = new List<BlockListItem>();
-		var basePage = source as IBasePage;
-        components.AddRange(basePage!.PageHeader!);
-		components.AddRange(source.DynamicContent!);
-		target.Components = new BlockListModel(components);
-		return target;
-	}
-
-	public static DesignPageViewModel MapHeaderlessPageToDesignPageViewModel<T>(this T source) where T : IPublishedContent, IDynamicContent
-    {
-		var target = new DesignPageViewModel(source);
-		var components = new List<BlockListItem>();
+        if (source is IBasePageWithRequiredHeader basePage)
+        {
+            components.AddRange(basePage!.PageHeader);
+        }
 		components.AddRange(source.DynamicContent!);
 		target.Components = new BlockListModel(components);
 		return target;

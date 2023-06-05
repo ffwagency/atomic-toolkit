@@ -21,7 +21,7 @@ public class HomePageController : RenderController
 
 	public override IActionResult Index()
 	{
-		var vm = ((IHomePage)CurrentPage!).MapHeaderlessPageToDesignPageViewModel();
+		var vm = ((IHomePage)CurrentPage!).MapToDesignPageViewModel();
 		return View("~/views/DefaultPage.cshtml", vm);
 	}
 }
