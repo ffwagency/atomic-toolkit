@@ -2,7 +2,5 @@
 
 namespace Atomic.StarterKit.ModelsBuilder.Interfaces;
 
-public interface IContactPage : IPublishedContent
-{
-    Umbraco.Cms.Core.Models.Blocks.BlockListModel DynamicContent { get; }
-}
+public interface IContactPage : IPublishedContent, IDynamicContent
+{ }
