@@ -20,7 +20,7 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 {
 	/// <summary>Content Page</summary>
 	[PublishedModel("contentPage")]
-	public partial class ContentPage : PublishedContentModel, IBasePage, ISeoBasePage
+	public partial class ContentPage : PublishedContentModel, IBasePageWithRequiredHeader, ISeoBasePage
 	{
 		// helpers
 #pragma warning disable 0109 // new is redundant
@@ -63,7 +63,7 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "11.4.0+e52e987")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
 		[ImplementPropertyType("pageHeader")]
-		public virtual global::Umbraco.Cms.Core.Models.Blocks.BlockListModel PageHeader => global::Umbraco.Cms.Web.Common.PublishedModels.BasePage.GetPageHeader(this, _publishedValueFallback);
+		public virtual global::Umbraco.Cms.Core.Models.Blocks.BlockListModel PageHeader => global::Umbraco.Cms.Web.Common.PublishedModels.BasePageWithRequiredHeader.GetPageHeader(this, _publishedValueFallback);
 
 		///<summary>
 		/// Browser Title

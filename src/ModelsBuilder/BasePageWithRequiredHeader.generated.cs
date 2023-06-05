@@ -18,9 +18,9 @@ using Umbraco.Extensions;
 
 namespace Umbraco.Cms.Web.Common.PublishedModels
 {
-	// Mixin Content Type with alias "basePage"
-	/// <summary>Base Page</summary>
-	public partial interface IBasePage : IPublishedContent
+	// Mixin Content Type with alias "basePageWithRequiredHeader"
+	/// <summary>Base Page With Required Header</summary>
+	public partial interface IBasePageWithRequiredHeader : IPublishedContent
 	{
 		/// <summary>Page Header</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "11.4.0+e52e987")]
@@ -28,14 +28,14 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		global::Umbraco.Cms.Core.Models.Blocks.BlockListModel PageHeader { get; }
 	}
 
-	/// <summary>Base Page</summary>
-	[PublishedModel("basePage")]
-	public partial class BasePage : PublishedContentModel, IBasePage
+	/// <summary>Base Page With Required Header</summary>
+	[PublishedModel("basePageWithRequiredHeader")]
+	public partial class BasePageWithRequiredHeader : PublishedContentModel, IBasePageWithRequiredHeader
 	{
 		// helpers
 #pragma warning disable 0109 // new is redundant
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "11.4.0+e52e987")]
-		public new const string ModelTypeAlias = "basePage";
+		public new const string ModelTypeAlias = "basePageWithRequiredHeader";
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "11.4.0+e52e987")]
 		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "11.4.0+e52e987")]
@@ -44,14 +44,14 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 			=> PublishedModelUtility.GetModelContentType(publishedSnapshotAccessor, ModelItemType, ModelTypeAlias);
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "11.4.0+e52e987")]
 		[return: global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		public static IPublishedPropertyType GetModelPropertyType<TValue>(IPublishedSnapshotAccessor publishedSnapshotAccessor, Expression<Func<BasePage, TValue>> selector)
+		public static IPublishedPropertyType GetModelPropertyType<TValue>(IPublishedSnapshotAccessor publishedSnapshotAccessor, Expression<Func<BasePageWithRequiredHeader, TValue>> selector)
 			=> PublishedModelUtility.GetModelPropertyType(GetModelContentType(publishedSnapshotAccessor), selector);
 #pragma warning restore 0109
 
 		private IPublishedValueFallback _publishedValueFallback;
 
 		// ctor
-		public BasePage(IPublishedContent content, IPublishedValueFallback publishedValueFallback)
+		public BasePageWithRequiredHeader(IPublishedContent content, IPublishedValueFallback publishedValueFallback)
 			: base(content, publishedValueFallback)
 		{
 			_publishedValueFallback = publishedValueFallback;
@@ -70,6 +70,6 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		/// <summary>Static getter for Page Header</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "11.4.0+e52e987")]
 		[return: global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		public static global::Umbraco.Cms.Core.Models.Blocks.BlockListModel GetPageHeader(IBasePage that, IPublishedValueFallback publishedValueFallback) => that.Value<global::Umbraco.Cms.Core.Models.Blocks.BlockListModel>(publishedValueFallback, "pageHeader");
+		public static global::Umbraco.Cms.Core.Models.Blocks.BlockListModel GetPageHeader(IBasePageWithRequiredHeader that, IPublishedValueFallback publishedValueFallback) => that.Value<global::Umbraco.Cms.Core.Models.Blocks.BlockListModel>(publishedValueFallback, "pageHeader");
 	}
 }
