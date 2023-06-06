@@ -19,7 +19,7 @@ using Umbraco.Extensions;
 namespace Umbraco.Cms.Web.Common.PublishedModels
 {
 	// Mixin Content Type with alias "seoBasePage"
-	/// <summary>Seo Base Page</summary>
+	/// <summary>AS - Seo Base Page</summary>
 	public partial interface ISeoBasePage : IPublishedContent
 	{
 		/// <summary>Browser Title</summary>
@@ -75,7 +75,7 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		string ShareTitle { get; }
 	}
 
-	/// <summary>Seo Base Page</summary>
+	/// <summary>AS - Seo Base Page</summary>
 	[PublishedModel("seoBasePage")]
 	public partial class SeoBasePage : PublishedContentModel, ISeoBasePage
 	{
