@@ -3,8 +3,8 @@ using System.ComponentModel;
 
 namespace Atomic.Common.Configuration.Models;
 
-[AtomicStarterKitOptions(Constants.Configuration.ConfigCommon)]
-public class AtomicStarterKitCommonSettings
+[AtomicOptions(Constants.AtomicCommonOptionsConfigurationKey)]
+public class AtomicCommonOptions
 {
 	internal const string WebsiteSharedContentRootDefaultName = "Shared Content";
 	internal const string WebsiteSettingsRootDefaultName = "Settings";

@@ -15,19 +15,19 @@ public class MultisiteContentService
 	private readonly IDomainService _domainService;
 	private readonly IHttpContextAccessor _httpContextAccessor;
 	private readonly IUmbracoContextAccessor _umbracoContextAccessor;
-	private readonly AtomicStarterKitCommonSettings _settings;
+	private readonly AtomicCommonOptions _commonOptions;
 
 	public MultisiteContentService(ILogger<MultisiteContentService> logger,
 	   IDomainService domainService,
 	   IHttpContextAccessor httpContextAccessor,
 	   IUmbracoContextAccessor umbracoContextAccessor,
-	   IOptions<AtomicStarterKitCommonSettings> settings)
+	   IOptions<AtomicCommonOptions> commonOptions)
 	{
 		_logger = logger;
 		_domainService = domainService;
 		_httpContextAccessor = httpContextAccessor;
 		_umbracoContextAccessor = umbracoContextAccessor;
-		_settings = settings.Value;
+		_commonOptions = commonOptions.Value;
 	}
 
 	public T? GetWebsiteRoot<T>() where T : IPublishedContent
@@ -60,7 +60,7 @@ public class MultisiteContentService
 	{
 		var settings = GetWebsiteRoot<IPublishedContent>()
 					   ?.Children
-					   ?.FirstOrDefault(x => x.Name.InvariantEquals(_settings.WebsiteSettingsRootName))
+					   ?.FirstOrDefault(x => x.Name.InvariantEquals(_commonOptions.WebsiteSettingsRootName))
 					   ?.Descendants()
 					   ?.FirstOrDefault(x => x is T);
 
@@ -77,7 +77,7 @@ public class MultisiteContentService
 	{
 		var sharedContent = GetWebsiteRoot<IPublishedContent>()
 							?.Children
-							?.FirstOrDefault(x => x.Name.InvariantEquals(_settings.WebsiteSharedContentRootName))
+							?.FirstOrDefault(x => x.Name.InvariantEquals(_commonOptions.WebsiteSharedContentRootName))
 							?.Descendants()
 							?.FirstOrDefault(x => x is T);
 

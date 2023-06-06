@@ -1,12 +1,10 @@
 ﻿using Umbraco.Cms.Core.Composing;
 using Umbraco.Cms.Core.DependencyInjection;
 
-namespace Atomic.OutputCache;
+namespace Atomic.Sео.DependencyInjection;
 
-public class OutputCacheComposer : IComposer
+public class AtomicSeoComposer : IComposer
 {
 	public void Compose(IUmbracoBuilder builder)
-	{
-		builder.ConfigureOutputCache();
-	}
+		=> builder.AddAtomicSeo();
 }

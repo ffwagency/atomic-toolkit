@@ -1,9 +1,9 @@
 namespace Atomic.Common.Configuration.Attributes;
 
 [AttributeUsage(AttributeTargets.Class)]
-public class AtomicStarterKitOptionsAttribute : Attribute
+public class AtomicOptionsAttribute : Attribute
 {
-	public AtomicStarterKitOptionsAttribute(string configurationKey) => ConfigurationKey = configurationKey;
+	public AtomicOptionsAttribute(string configurationKey) => ConfigurationKey = configurationKey;
 
 	public string ConfigurationKey { get; }
 

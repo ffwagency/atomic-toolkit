@@ -1,13 +1,19 @@
 ﻿using Atomic.Sео.Html.Collections;
+using Atomic.Sео.Html.Services;
 using Atomic.Sео.Html.Tags;
+using Atomic.Sео.SitemapXml.Services;
+using Microsoft.Extensions.DependencyInjection;
 using Umbraco.Cms.Core.DependencyInjection;
 
 namespace Atomic.Sео.DependencyInjection;
 
 public static class IUmbracoBuilderExtensions
 {
-	internal static IUmbracoBuilder AddDefaultSeoHtmlTags(this IUmbracoBuilder builder)
+	internal static IUmbracoBuilder AddAtomicSeo(this IUmbracoBuilder builder)
 	{
+		builder.Services.AddSingleton<SeoHtmlTagsService>();
+		builder.Services.AddSingleton<SitemapService>();
+
 		builder.SeoHtmlTags()
 			.Append<Title>()
 			.Append<Description>()
