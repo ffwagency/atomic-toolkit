@@ -1,0 +1,68 @@
+﻿on:
+  push:
+    branches:
+    - main
+    tags: 
+      - "v[0-9]+.[0-9]+.[0-9]+" 
+env:
+  VERSION: 1.0.0
+  PROJECT_PATH_STARTER_KIT: 'src\Atomic.StarterKit\Atomic.StarterKit.csproj'
+  PROJECT_PATH_SEO: 'src\Atomic.Seo\Atomic.Sео.csproj'
+  PROJECT_PATH_OUTPUT_CACHE: 'src\Atomic.OutputCache\Atomic.OutputCache.csproj'
+  PACKAGE_OUTPUT_DIRECTORY_STARTER_KIT: ${{ github.workspace }}\output\StarterKit
+  PACKAGE_OUTPUT_DIRECTORY_SEO: ${{ github.workspace }}\output\Seo
+  PACKAGE_OUTPUT_DIRECTORY_OUTPUT_CACHE: ${{ github.workspace }}\output\OutputCache
+  NUGET_SOURCE_URL: 'https://api.nuget.org/v3/index.json'
+jobs:
+  build:
+    runs-on: windows-latest
+    timeout-minutes: 5
+    steps:
+    - name: Set Version Variable
+      if: ${{ github.ref_type == 'tag' }}
+      env:
+        TAG: ${{ github.ref_name }}
+      run: echo "VERSION=${TAG#v}" >> $GITHUB_ENV
+    - name: 'Checkout'
+      uses: actions/checkout@v2
+
+    - name: 'Install dotnet'
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: '7.0.x'
+        
+    - name: 'Restore packages Atomic.StarterKit'
+      run: dotnet restore ${{ env.PROJECT_PATH_STARTER_KIT }}
+        
+    - name: 'Restore packages Atomic.Sео'
+      run: dotnet restore ${{ env.PROJECT_PATH_SEO }}
+        
+    - name: 'Restore packages Atomic.OutputCache'
+      run: dotnet restore ${{ env.PROJECT_PATH_OUTPUT_CACHE }}
+
+    - name: 'Build project Atomic.StarterKit'
+      run: dotnet build ${{ env.PROJECT_PATH_STARTER_KIT }} --no-restore --configuration Release /p:Version=$VERSION
+      
+    - name: 'Build project Atomic.Sео'
+      run: dotnet build ${{ env.PROJECT_PATH_SEO }} --no-restore --configuration Release /p:Version=$VERSION
+      
+    - name: 'Build project Atomic.OutputCache'
+      run: dotnet build ${{ env.PROJECT_PATH_OUTPUT_CACHE }} --no-restore --configuration Release /p:Version=$VERSION
+      
+    - name: 'Pack project Atomic.StarterKit'
+      run: dotnet pack ${{ env.PROJECT_PATH_STARTER_KIT }} --no-restore --no-build --configuration Release --include-symbols -output ${{ env.PACKAGE_OUTPUT_DIRECTORY_STARTER_KIT }} /p:PackageVersion=$VERSION
+      
+    - name: 'Pack project Atomic.Sео'
+      run: dotnet pack ${{ env.PROJECT_PATH_SEO }} --no-restore --no-build --configuration Release --include-symbols -output ${{ env.PACKAGE_OUTPUT_DIRECTORY_SEO }} /p:PackageVersion=$VERSION
+      
+    - name: 'Pack project Atomic.OutputCache'
+      run: dotnet pack ${{ env.PROJECT_PATH_OUTPUT_CACHE }} --no-restore --no-build --configuration Release --include-symbols -output ${{ env.PACKAGE_OUTPUT_DIRECTORY_OUTPUT_CACHE }} /p:PackageVersion=$VERSION
+
+    - name: 'Push project Atomic.StarterKit'
+      run: dotnet nuget push ${{ env.PACKAGE_OUTPUT_DIRECTORY_STARTER_KIT }}\*.nupkg -k ${{SECRETS.NUGET_AUTH_TOKEN }} -s ${{ env.NUGET_SOURCE_URL}} /p:Version=$VERSION
+      
+    - name: 'Push project Atomic.ео'
+      run: dotnet nuget push ${{ env.PACKAGE_OUTPUT_DIRECTORY_SEO }}\*.nupkg -k ${{SECRETS.NUGET_AUTH_TOKEN }} -s ${{ env.NUGET_SOURCE_URL}} /p:Version=$VERSION
+      
+    - name: 'Push project Atomic.OutputCache'
+      run: dotnet nuget push ${{ env.PACKAGE_OUTPUT_DIRECTORY_OUTPUT_CACHE }}\*.nupkg -k ${{SECRETS.NUGET_AUTH_TOKEN }} -s ${{ env.NUGET_SOURCE_URL}} /p:Version=$VERSION
