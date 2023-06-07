@@ -3,7 +3,6 @@ using Atomic.Seo.ModelsBuilder.Interfaces;
 using Atomic.Sео.Html.Interfaces;
 using StackExchange.Profiling.Internal;
 using Umbraco.Extensions;
-using Atomic.Sео.Html;
 using Atomic.Sео.Html.Validators;
 
 namespace Atomic.Sео.Html.Tags;
@@ -14,7 +13,7 @@ public class Description : ISeoHtmlTags
 	{
 		string? description = GetDescription(seoPage, seoSettings);
 
-		if (description.HasNoDesctiption())
+		if (!description.HasDescription())
 		{
 			return string.Empty;
 		}
@@ -32,7 +31,7 @@ public class Description : ISeoHtmlTags
     {
         string? description = seoPage.MetaDescription;
 
-        if (description.HasNoDesctiption())
+        if (!description.HasDescription())
         {
             description = seoPage.GetValueWithFallback<string>(seoSettings.TextFallback);
         }
