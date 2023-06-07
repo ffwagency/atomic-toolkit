@@ -18,7 +18,7 @@ using Umbraco.Extensions;
 
 namespace Umbraco.Cms.Web.Common.PublishedModels
 {
-	/// <summary>Seo Virtual Page</summary>
+	/// <summary>AS - Seo Virtual Page</summary>
 	[PublishedModel("seoVirtualPage")]
 	public partial class SeoVirtualPage : PublishedContentModel, ISeoBasePage
 	{

@@ -18,7 +18,7 @@ using Umbraco.Extensions;
 
 namespace Umbraco.Cms.Web.Common.PublishedModels
 {
-	/// <summary>Seo Settings</summary>
+	/// <summary>AS - Seo Settings</summary>
 	[PublishedModel("seoSettings")]
 	public partial class SeoSettings : PublishedContentModel
 	{
