@@ -68,8 +68,4 @@
 		<ProjectReference Include="..\Atomic.Seo.ModelsBuilder\Atomic.Seo.ModelsBuilder.csproj" />
 	</ItemGroup>
 
-	<ItemGroup>
-	  <Folder Include="Html\Constants\" />
-	</ItemGroup>
-
 </Project>

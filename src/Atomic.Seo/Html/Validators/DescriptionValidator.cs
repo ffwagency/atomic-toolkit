@@ -2,7 +2,7 @@
 {
     internal static class DescriptionValidator
     {
-        internal static bool HasDesctiption(this string? text)
+        internal static bool HasNoDesctiption(this string? text)
         {
             return string.IsNullOrWhiteSpace(text);
         }

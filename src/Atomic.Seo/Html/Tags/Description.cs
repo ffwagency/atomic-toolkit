@@ -14,7 +14,7 @@ public class Description : ISeoHtmlTags
 	{
 		string? description = GetDescription(seoPage, seoSettings);
 
-		if (description.HasDesctiption())
+		if (description.HasNoDesctiption())
 		{
 			return string.Empty;
 		}
@@ -32,7 +32,7 @@ public class Description : ISeoHtmlTags
     {
         string? description = seoPage.MetaDescription;
 
-        if (description.HasDesctiption())
+        if (description.HasNoDesctiption())
         {
             description = seoPage.GetValueWithFallback<string>(seoSettings.TextFallback);
         }
