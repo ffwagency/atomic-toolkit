@@ -62,5 +62,9 @@
 	<ItemGroup Condition=" '$(Configuration)' == 'Debug' ">
 		<ProjectReference Include="..\Atomic.Common\Atomic.Common.csproj" />
 	</ItemGroup>
+
+	<ItemGroup>
+	  <Folder Include="Mvc\Controllers\" />
+	</ItemGroup>
 	
 </Project>

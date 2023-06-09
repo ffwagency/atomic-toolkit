@@ -1,4 +1,4 @@
-﻿using Atomic.OutputCache.Controllers;
+﻿using Atomic.OutputCache.Mvc.Controllers;
 using Atomic.StarterKit.Models.Mapping;
 using Atomic.StarterKit.ModelsBuilder.Interfaces;
 using Microsoft.AspNetCore.Mvc;

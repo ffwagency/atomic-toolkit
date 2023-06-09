@@ -6,11 +6,9 @@ namespace Atomic.Common.Backoffice.Extensions
 {
 	public static class HttpContextExtensions
 	{
-		private const string PreviewRequestPathSegment = "/preview";
-
 		public static bool IsPreview(this HttpContext httpContext)
 		{
-			if (httpContext.Request.Path.StartsWithSegments(PreviewRequestPathSegment, StringComparison.OrdinalIgnoreCase))
+			if (httpContext.Request.Path.StartsWithSegments($"/{Constants.UmbracoPreviewKeyword}", StringComparison.OrdinalIgnoreCase))
 				return true;
 
             if (httpContext.RequestServices.GetService<IUmbracoContextAccessor>()?.TryGetUmbracoContext(out var umbracoContext) == true

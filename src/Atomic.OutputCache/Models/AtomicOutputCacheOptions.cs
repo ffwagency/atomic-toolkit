@@ -5,7 +5,6 @@ using Microsoft.AspNetCore.OutputCaching;
 using Microsoft.Extensions.Primitives;
 using System.ComponentModel;
 using System.Text.Json.Serialization;
-using Umbraco.Extensions;
 
 namespace Atomic.OutputCache.Models;
 
@@ -34,10 +33,6 @@ public class AtomicOutputCacheOptions
 
 		// Verify existence of authorization headers
 		if (!StringValues.IsNullOrEmpty(request.Headers.Authorization) || request.HttpContext.User?.Identity?.IsAuthenticated == true)
-			return false;
-
-		// Verify if Local request. Let's don't bother local development
-		if (request.IsLocal())
 			return false;
 
 		// Verify if Umbraco Preview

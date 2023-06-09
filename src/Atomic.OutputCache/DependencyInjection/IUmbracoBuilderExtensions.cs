@@ -1,10 +1,13 @@
 ﻿using Atomic.Common.DependencyInjection;
-using Atomic.OutputCache.Controllers;
 using Atomic.OutputCache.Models;
+using Atomic.OutputCache.Mvc.ApplicationModels;
+using Atomic.OutputCache.Mvc.Controllers;
 using Atomic.OutputCache.NotificationHandlers;
 using Atomic.OutputCache.Policies;
 using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Mvc.ApplicationModels;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.DependencyInjection.Extensions;
 using Microsoft.Extensions.Options;
 using Umbraco.Cms.Core.DependencyInjection;
 using Umbraco.Cms.Core.Notifications;
@@ -45,6 +48,8 @@ public static class IUmbracoBuilderExtensions
 		});
 
 		builder.AddNotificationAsyncHandler<ContentPublishedNotification, ClearOutputCacheOnContentPublishedHandler>();
+
+		builder.Services.TryAddEnumerable(ServiceDescriptor.Transient<IApplicationModelProvider, AtomicOutputCacheApplicationModelProvider>());
 
 		return builder;
 	}

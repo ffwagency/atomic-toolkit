@@ -19,11 +19,11 @@ namespace Atomic.OutputCache.Policies
 
         ValueTask IOutputCachePolicy.CacheRequestAsync(OutputCacheContext context, CancellationToken cancellationToken)
         {
-            var attemptOutputCaching = _options.DoesRequestQualify(context);
+            var doesRequestQualify = _options.DoesRequestQualify(context);
 
             context.EnableOutputCaching = true;
-            context.AllowCacheLookup = attemptOutputCaching;
-            context.AllowCacheStorage = attemptOutputCaching;
+            context.AllowCacheLookup = doesRequestQualify;
+            context.AllowCacheStorage = doesRequestQualify;
             context.AllowLocking = true;
             context.CacheVaryByRules.QueryKeys = "*";
 			context.Tags.Add(DefaultTag);
