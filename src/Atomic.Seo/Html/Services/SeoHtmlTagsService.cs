@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Html;
 using System.Text;
 using Atomic.Sео.Html.Collections;
-using Atomic.Seo.ModelsBuilder.Interfaces;
+using Umbraco.Cms.Web.Common.PublishedModels;
 
 namespace Atomic.Sео.Html.Services;
 
@@ -14,7 +14,7 @@ public class SeoHtmlTagsService
 		_seoHtmlTagsCollection = seoHtmlTagsCollection;
 	}
 
-	public HtmlString GetHtmlTags(ISeoBasePage seoPage, ISeoSettings seoSettings)
+	public HtmlString GetHtmlTags(ISeoBasePage seoPage, SeoSettings seoSettings)
 	{
 		var html = new StringBuilder();
 

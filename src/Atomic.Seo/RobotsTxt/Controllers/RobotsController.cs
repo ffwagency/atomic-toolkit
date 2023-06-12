@@ -1,5 +1,5 @@
 ﻿using Atomic.Common.Content.Services;
-using Atomic.Seo.ModelsBuilder.Interfaces;
+using Umbraco.Cms.Web.Common.PublishedModels;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System.Text;
@@ -24,7 +24,7 @@ public class RobotsController : Controller
 	{
 		using (var umbracoContextRef = _umbracoContextFactory.EnsureUmbracoContext())
 		{
-			var seoSettings = _multisiteContentService.GetSettings<ISeoSettings>();
+			var seoSettings = _multisiteContentService.GetSettings<SeoSettings>();
 
 			if (seoSettings == null)
 				return StatusCode(StatusCodes.Status503ServiceUnavailable);

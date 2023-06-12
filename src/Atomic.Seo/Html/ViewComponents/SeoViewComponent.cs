@@ -1,5 +1,5 @@
 ﻿using Atomic.Common.Content.Services;
-using Atomic.Seo.ModelsBuilder.Interfaces;
+using Umbraco.Cms.Web.Common.PublishedModels;
 using Atomic.Sео.Html.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ViewComponents;
@@ -25,7 +25,7 @@ public class SeoViewComponent : ViewComponent
 
 	public IViewComponentResult Invoke()
 	{
-		var seoSettings = _multisiteContentService.GetSettings<ISeoSettings>();
+		var seoSettings = _multisiteContentService.GetSettings<SeoSettings>();
 
 		if (seoSettings == null)
 			return Content(string.Empty);

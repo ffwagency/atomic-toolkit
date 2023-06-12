@@ -42,6 +42,12 @@
 	</PropertyGroup>
 
 	<ItemGroup>
+	  <Compile Remove="Html\Constants\**" />
+	  <EmbeddedResource Remove="Html\Constants\**" />
+	  <None Remove="Html\Constants\**" />
+	</ItemGroup>
+
+	<ItemGroup>
 		<PackageReference Include="DotNet.ReproducibleBuilds" Version="1.1.1">
 			<PrivateAssets>all</PrivateAssets>
 			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
@@ -66,10 +72,6 @@
 	<ItemGroup Condition=" '$(Configuration)' == 'Debug' ">
 		<ProjectReference Include="..\Atomic.Common\Atomic.Common.csproj" />
 		<ProjectReference Include="..\Atomic.Seo.ModelsBuilder\Atomic.Seo.ModelsBuilder.csproj" />
-	</ItemGroup>
-
-	<ItemGroup>
-	  <Folder Include="Html\Constants\" />
 	</ItemGroup>
 
 </Project>

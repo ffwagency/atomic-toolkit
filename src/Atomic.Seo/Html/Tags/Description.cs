@@ -1,5 +1,5 @@
 ﻿using Atomic.Common.Content.Extensions;
-using Atomic.Seo.ModelsBuilder.Interfaces;
+using Umbraco.Cms.Web.Common.PublishedModels;
 using Atomic.Sео.Html.Interfaces;
 using StackExchange.Profiling.Internal;
 using Umbraco.Extensions;
@@ -10,7 +10,7 @@ namespace Atomic.Sео.Html.Tags;
 
 public class Description : ISeoHtmlTags
 {
-    public virtual string Get(ISeoBasePage seoPage, ISeoSettings seoSettings)
+    public virtual string Get(ISeoBasePage seoPage, SeoSettings seoSettings)
 	{
 		string? description = GetDescription(seoPage, seoSettings);
 
@@ -28,7 +28,7 @@ public class Description : ISeoHtmlTags
 		return $@"<meta name=""description"" content=""{description}"">{Environment.NewLine}";
 	}
 
-	private string? GetDescription(ISeoBasePage seoPage, ISeoSettings seoSettings)
+	private string? GetDescription(ISeoBasePage seoPage, SeoSettings seoSettings)
     {
         string? description = seoPage.MetaDescription;
 
