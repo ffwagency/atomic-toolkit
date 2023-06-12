@@ -3,26 +3,39 @@ using Atomic.Seo.ModelsBuilder.Interfaces;
 using Atomic.Sео.Html.Interfaces;
 using StackExchange.Profiling.Internal;
 using Umbraco.Extensions;
+using Atomic.Sео.Html.Validators;
 
 namespace Atomic.Sео.Html.Tags;
 
 public class Description : ISeoHtmlTags
 {
-	public virtual string Get(ISeoBasePage seoPage, ISeoSettings seoSettings)
+    public virtual string Get(ISeoBasePage seoPage, ISeoSettings seoSettings)
 	{
-		var description = seoPage.MetaDescription;
-		if (string.IsNullOrWhiteSpace(description))
-			description = seoPage.GetValueWithFallback<string>(seoSettings.TextFallback);
+		string? description = GetDescription(seoPage, seoSettings);
 
-		if (string.IsNullOrWhiteSpace(description))
+		if (!description.HasDescription())
+		{
 			return string.Empty;
+		}
 
-		description = description.StripHtml()
+		description = description!.StripHtml()
 								 .RemoveNewLines()
-								 .Truncate(seoSettings.MetaDescriptionMaxLength != 0
+								 .Truncate(seoSettings.MetaDescriptionMaxLength.HasMetaDescriptionMaxLengthDefined()
 										   ? seoSettings.MetaDescriptionMaxLength
-										   : 150);
+										   : Constants.MetaDescriptionDefaultMaxLength);
 
 		return $@"<meta name=""description"" content=""{description}"">{Environment.NewLine}";
 	}
+
+	private string? GetDescription(ISeoBasePage seoPage, ISeoSettings seoSettings)
+    {
+        string? description = seoPage.MetaDescription;
+
+        if (!description.HasDescription())
+        {
+            description = seoPage.GetValueWithFallback<string>(seoSettings.TextFallback);
+        }
+
+        return description;
+    }
 }
