@@ -14,7 +14,7 @@
 		<Authors>FFW</Authors>
 		<Copyright>FFW</Copyright>
 		<Title>Atomic.OutputCache</Title>
-		<Description>Atomic.OutputCache is an AtomicToolkit package which provides easy way to maintain Umbraco Output Cache. It is based on the default dotnet output cache.</Description>
+		<Description>Atomic.OutputCache is an Atomic Toolkit package which provides easy way to maintain Umbraco Output Cache. It is based on the default dotnet output cache.</Description>
 		<PackageIcon>logo.png</PackageIcon>
 		<PackageReadmeFile>readme.md</PackageReadmeFile>
 		<PackageProjectUrl>https://atomictoolkit.com/packages/atomicoutputcache</PackageProjectUrl>
