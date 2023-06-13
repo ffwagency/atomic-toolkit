@@ -1,13 +1,12 @@
-﻿using Atomic.StarterKit.ModelsBuilder;
-using Atomic.StarterKit.ModelsBuilder.Interfaces;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
+using Umbraco.Cms.Web.Common.PublishedModels;
 
 namespace Atomic.StarterKit.Components;
 
-[ViewComponent(Name = Constants.Aliases.Components.TeamMemberDetails)]
+[ViewComponent(Name = TeamMemberDetails.ModelTypeAlias)]
 public class TeamMemberDetailsViewComponent : ViewComponent
 {
-	public IViewComponentResult Invoke(ITeamMemberDetails source)
+	public IViewComponentResult Invoke(TeamMemberDetails source)
 	{
 		return View("~/Views/Components/TeamMemberDetails.cshtml", source);
 	}

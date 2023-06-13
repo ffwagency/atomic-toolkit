@@ -1,13 +1,12 @@
-﻿using Atomic.StarterKit.ModelsBuilder;
-using Atomic.StarterKit.ModelsBuilder.Interfaces;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
+using Umbraco.Cms.Web.Common.PublishedModels;
 
 namespace Atomic.StarterKit.Components;
 
-[ViewComponent(Name = Constants.Aliases.Components.Quote)]
+[ViewComponent(Name = Quote.ModelTypeAlias)]
 public class QuoteViewComponent : ViewComponent
 {
-	public IViewComponentResult Invoke(IQuote source)
+	public IViewComponentResult Invoke(Quote source)
 	{
 		return View("~/Views/Components/Quote.cshtml", source);
 	}

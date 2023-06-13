@@ -1,6 +1,8 @@
-﻿using Atomic.StarterKit.ModelsBuilder.Interfaces;
+﻿using Atomic.StarterKit.Models.Interfaces;
+using Atomic.StarterKit.Models.ViewModels;
 using Umbraco.Cms.Core.Models.Blocks;
 using Umbraco.Cms.Core.Models.PublishedContent;
+using Umbraco.Cms.Web.Common.PublishedModels;
 
 namespace Atomic.StarterKit.Models.Mapping;
 

@@ -1,13 +1,12 @@
-﻿using Atomic.StarterKit.ModelsBuilder;
-using Atomic.StarterKit.ModelsBuilder.Interfaces;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
+using Umbraco.Cms.Web.Common.PublishedModels;
 
 namespace Atomic.StarterKit.Components;
 
-[ViewComponent(Name = Constants.Aliases.Components.PortfolioDetails)]
+[ViewComponent(Name = PortfolioDetails.ModelTypeAlias)]
 public class PortfolioDetailsViewComponent : ViewComponent
 {
-	public IViewComponentResult Invoke(IPortfolioDetails source)
+	public IViewComponentResult Invoke(PortfolioDetails source)
 	{
 		return View("~/Views/Components/PortfolioDetails.cshtml", source);
 	}

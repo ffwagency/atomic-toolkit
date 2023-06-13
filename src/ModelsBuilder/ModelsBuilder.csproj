@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
 		<TargetFramework>net7.0</TargetFramework>
@@ -9,9 +9,5 @@
 
 	<ItemGroup>
 		<PackageReference Include="Umbraco.Cms.Web.Website" Version="11.4.0" />
-	</ItemGroup>
-
-	<ItemGroup>
-	  <ProjectReference Include="..\Atomic.StarterKit.ModelsBuilder\Atomic.StarterKit.ModelsBuilder.csproj" />
 	</ItemGroup>
 </Project>
