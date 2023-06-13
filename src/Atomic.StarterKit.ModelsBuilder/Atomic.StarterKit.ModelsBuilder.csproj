@@ -56,12 +56,4 @@
 		<None Include="readme.md" Pack="true" PackagePath="\" />
 	</ItemGroup>
 
-	<ItemGroup Condition=" '$(Configuration)' == 'Release' ">
-		<PackageReference Include="Atomic.Seo.ModelsBuilder" Version="11.1.3" />
-	</ItemGroup>
-
-	<ItemGroup Condition=" '$(Configuration)' == 'Debug' ">
-		<ProjectReference Include="..\Atomic.Seo.ModelsBuilder\Atomic.Seo.ModelsBuilder.csproj" />
-	</ItemGroup>
-	
 </Project>

@@ -15,8 +15,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Atomic.StarterKit.Website",
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "StarterKits", "StarterKits", "{7FEFAB18-EAB5-4059-A851-DD8A7BF01913}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Atomic.Seo.ModelsBuilder", "src\Atomic.Seo.ModelsBuilder\Atomic.Seo.ModelsBuilder.csproj", "{A233CE80-36D5-4DEB-A95B-3EBB6C4A119F}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ModelsBuilder", "src\ModelsBuilder\ModelsBuilder.csproj", "{CB4AB0A7-CB8D-41A9-BACB-991353EDEDA8}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Atomic.StarterKit.ModelsBuilder", "src\Atomic.StarterKit.ModelsBuilder\Atomic.StarterKit.ModelsBuilder.csproj", "{DFAF189A-4AE9-47DA-B104-65E93EFBA0BD}"
@@ -47,10 +45,6 @@ Global
 		{7E0E0F75-E7A8-4BD3-9344-5107857AA76F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7E0E0F75-E7A8-4BD3-9344-5107857AA76F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7E0E0F75-E7A8-4BD3-9344-5107857AA76F}.Release|Any CPU.Build.0 = Release|Any CPU
-		{A233CE80-36D5-4DEB-A95B-3EBB6C4A119F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A233CE80-36D5-4DEB-A95B-3EBB6C4A119F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A233CE80-36D5-4DEB-A95B-3EBB6C4A119F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A233CE80-36D5-4DEB-A95B-3EBB6C4A119F}.Release|Any CPU.Build.0 = Release|Any CPU
 		{CB4AB0A7-CB8D-41A9-BACB-991353EDEDA8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{CB4AB0A7-CB8D-41A9-BACB-991353EDEDA8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CB4AB0A7-CB8D-41A9-BACB-991353EDEDA8}.Release|Any CPU.ActiveCfg = Release|Any CPU
