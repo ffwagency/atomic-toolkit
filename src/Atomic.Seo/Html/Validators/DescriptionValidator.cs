@@ -1,10 +1,10 @@
-﻿namespace Atomic.Sео.Html.Validators
+namespace Atomic.Sео.Html.Validators
 {
     internal static class DescriptionValidator
     {
-        internal static bool HasDesctiption(this string? text)
+        internal static bool HasDescription(this string? text)
         {
-            return string.IsNullOrWhiteSpace(text);
+            return !string.IsNullOrWhiteSpace(text);
         }
     }
 }
