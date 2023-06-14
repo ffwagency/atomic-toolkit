@@ -1,13 +1,12 @@
-﻿using Atomic.StarterKit.ModelsBuilder;
-using Atomic.StarterKit.ModelsBuilder.Interfaces;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
+using Umbraco.Cms.Web.Common.PublishedModels;
 
 namespace Atomic.StarterKit.Components;
 
-[ViewComponent(Name = Constants.Aliases.Components.Contact)]
+[ViewComponent(Name = Contact.ModelTypeAlias)]
 public class ContactViewComponent : ViewComponent
 {
-	public IViewComponentResult Invoke(IContact source)
+	public IViewComponentResult Invoke(Contact source)
 	{
 		return View("~/views/Components/Contact.cshtml", source);
 	}

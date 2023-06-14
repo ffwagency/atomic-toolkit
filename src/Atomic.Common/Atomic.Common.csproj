@@ -51,7 +51,6 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<Content Include="App_Plugins\**" ExcludeFromSingleFile="true" CopyToPublishDirectory="PreserveNewest" Pack="true" PackagePath="\App_Plugins" />
 		<None Include="logo.png" Pack="true" PackagePath="\" />
 		<None Include="readme.md" Pack="true" PackagePath="\" />
 		<None Include="buildTransitive\**" Pack="true" PackagePath="\buildTransitive" />

@@ -2,7 +2,7 @@
 using System.Xml.Linq;
 using Atomic.Sео.SitemapXml.Models;
 using Atomic.Sео.Common.Extensions;
-using Atomic.Seo.ModelsBuilder.Interfaces;
+using Umbraco.Cms.Web.Common.PublishedModels;
 
 namespace Atomic.Sео.SitemapXml.Services;
 

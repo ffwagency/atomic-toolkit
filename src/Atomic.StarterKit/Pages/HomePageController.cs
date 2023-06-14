@@ -6,7 +6,7 @@ using Microsoft.Extensions.Logging;
 using Microsoft.AspNetCore.OutputCaching;
 using Atomic.OutputCache;
 using Atomic.StarterKit.Models.Mapping;
-using Atomic.StarterKit.ModelsBuilder.Interfaces;
+using Umbraco.Cms.Web.Common.PublishedModels;
 
 namespace Atomic.StarterKit.Pages;
 
@@ -21,7 +21,7 @@ public class HomePageController : RenderController
 
 	public override IActionResult Index()
 	{
-		var vm = ((IHomePage)CurrentPage!).MapToDesignPageViewModel();
+		var vm = ((HomePage)CurrentPage!).MapToDesignPageViewModel();
 		return View("~/views/DefaultPage.cshtml", vm);
 	}
 }

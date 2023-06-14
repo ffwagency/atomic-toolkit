@@ -3,7 +3,7 @@ using Umbraco.Extensions;
 using Umbraco.Cms.Core.Services;
 using Atomic.Sео.Common.Extensions;
 using Atomic.Sео.Html.Interfaces;
-using Atomic.Seo.ModelsBuilder.Interfaces;
+using Umbraco.Cms.Web.Common.PublishedModels;
 
 namespace Atomic.Sео.Html.Tags;
 
@@ -16,7 +16,7 @@ public class AlternateUrls : ISeoHtmlTags
 		_localizationService = localizationService;
 	}
 
-	public virtual string Get(ISeoBasePage seoPage, ISeoSettings seoSettings)
+	public virtual string Get(ISeoBasePage seoPage, SeoSettings seoSettings)
 	{
 		var allCultures = seoPage.Cultures.Keys.ToArray();
 

@@ -1,8 +1,8 @@
-﻿using Atomic.Seo.ModelsBuilder.Interfaces;
+﻿using Umbraco.Cms.Web.Common.PublishedModels;
 
 namespace Atomic.Sео.Html.Interfaces;
 
 public interface ISeoHtmlTags
 {
-	string Get(ISeoBasePage page, ISeoSettings seoSettings);
+	string Get(ISeoBasePage page, SeoSettings seoSettings);
 }

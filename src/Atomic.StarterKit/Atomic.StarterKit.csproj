@@ -63,14 +63,12 @@
 	</ItemGroup>
 
 	<ItemGroup Condition=" '$(Configuration)' == 'Release' ">
-		<PackageReference Include="Atomic.StarterKit.ModelsBuilder" Version="11.1.5" />
 		<PackageReference Include="Atomic.OutputCache" Version="11.1.3" />
 		<PackageReference Include="Atomic.Seo" Version="11.1.3" />
 	</ItemGroup>
 	
 	<ItemGroup Condition=" '$(Configuration)' == 'Debug' ">
 		<ProjectReference Include="..\Atomic.OutputCache\Atomic.OutputCache.csproj" />
-		<ProjectReference Include="..\Atomic.StarterKit.ModelsBuilder\Atomic.StarterKit.ModelsBuilder.csproj" />
 		<ProjectReference Include="..\Atomic.SEO\Atomic.Sео.csproj" />
 	</ItemGroup>
 

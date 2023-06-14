@@ -1,7 +1,7 @@
-﻿using Atomic.StarterKit.ModelsBuilder;
-using Microsoft.Extensions.Logging;
+﻿using Microsoft.Extensions.Logging;
 using Umbraco.Cms.Core.Services;
 using Umbraco.Cms.Infrastructure.Migrations;
+using Umbraco.Cms.Web.Common.PublishedModels;
 
 namespace Atomic.StarterKit.Migrations;
 
@@ -21,7 +21,7 @@ public class PublishRootBranchPostMigration : MigrationBase
 
 	protected override void Migrate()
 	{
-		var contentHome = _contentService.GetRootContent().FirstOrDefault(x => x.ContentType.Alias == Constants.Aliases.Pages.Home);
+		var contentHome = _contentService.GetRootContent().FirstOrDefault(x => x.ContentType.Alias == HomePage.ModelTypeAlias);
 		if (contentHome != null)
 			_contentService.SaveAndPublishBranch(contentHome, true);
 		else

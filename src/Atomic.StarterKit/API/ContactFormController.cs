@@ -5,12 +5,10 @@ using Umbraco.Cms.Core.Routing;
 using Umbraco.Cms.Core.Services;
 using Umbraco.Cms.Core.Web;
 using Umbraco.Cms.Infrastructure.Persistence;
-using Umbraco.Cms.Web.Common.PublishedModels;
 using Umbraco.Cms.Web.Website.Controllers;
-using System;
 using Atomic.Common.Content.Services;
-using Atomic.StarterKit.Models;
-using Atomic.StarterKit.ModelsBuilder.Interfaces;
+using Atomic.StarterKit.Models.ViewModels;
+using Umbraco.Cms.Web.Common.PublishedModels;
 
 namespace Atomic.StarterKit.API;
 
@@ -43,16 +41,16 @@ public class ContactFormController : SurfaceController
 			return BadRequest();
 		}
 
-		var requestsContainer = _multisiteContentService.GetSharedContent<IContactEntriesContainer>();
+		var requestsContainer = _multisiteContentService.GetSharedContent<ContactEntriesContainer>();
 		if (requestsContainer != null)
 		{
 			var entryName = string.IsNullOrWhiteSpace(model.Name) ? null : model.Name;
 
 			var entry = _contentService.CreateAndSave($"Entry-{entryName}-{DateTime.Now}", requestsContainer.Id, "contactEntry");
 
-			entry.SetValue(nameof(IContactEntry.ContactName), model.Name);
-			entry.SetValue(nameof(IContactEntry.Email), model.Email);
-			entry.SetValue(nameof(IContactEntry.Message), model.Message);
+			entry.SetValue(nameof(ContactEntry.ContactName), model.Name);
+			entry.SetValue(nameof(ContactEntry.Email), model.Email);
+			entry.SetValue(nameof(ContactEntry.Message), model.Message);
 
 			_contentService.SaveAndPublish(entry);
 		}

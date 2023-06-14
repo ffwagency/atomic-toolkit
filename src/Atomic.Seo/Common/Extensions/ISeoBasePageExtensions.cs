@@ -1,5 +1,5 @@
 ﻿using Atomic.Common.Content.Extensions;
-using Atomic.Seo.ModelsBuilder.Interfaces;
+using Umbraco.Cms.Web.Common.PublishedModels;
 using Umbraco.Cms.Core.Models;
 using Umbraco.Cms.Core.Models.PublishedContent;
 using Umbraco.Extensions;
@@ -35,7 +35,7 @@ namespace Atomic.Sео.Common.Extensions
 			return url;
 		}
 
-		public static string? GetShareImageAbsoluteUrl(this ISeoBasePage seoPage, ISeoSettings seoSettings)
+		public static string? GetShareImageAbsoluteUrl(this ISeoBasePage seoPage, SeoSettings seoSettings)
 		{
 			var image = seoPage.ShareImage;
 
@@ -49,7 +49,7 @@ namespace Atomic.Sео.Common.Extensions
 			return string.Empty;
 		}
 
-		public static string GetShareTitle(this ISeoBasePage seoPage, ISeoSettings seoSettings)
+		public static string GetShareTitle(this ISeoBasePage seoPage, SeoSettings seoSettings)
 		{
 			var title = seoPage.ShareTitle;
 			if (string.IsNullOrWhiteSpace(title))
@@ -59,7 +59,7 @@ namespace Atomic.Sео.Common.Extensions
 			return title;
 		}
 
-		public static string? GetShareText(this ISeoBasePage seoPage, ISeoSettings seoSettings)
+		public static string? GetShareText(this ISeoBasePage seoPage, SeoSettings seoSettings)
 		{
 			var text = seoPage.ShareText;
 			if (string.IsNullOrWhiteSpace(text))

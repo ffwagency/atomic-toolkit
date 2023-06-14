@@ -1,4 +1,4 @@
-﻿namespace Atomic.Sео.Html.Validators
+namespace Atomic.Sео.Html.Validators
 {
     internal static class DescriptionValidator
     {

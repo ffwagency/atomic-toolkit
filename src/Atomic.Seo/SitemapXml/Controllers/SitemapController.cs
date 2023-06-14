@@ -1,5 +1,5 @@
 ﻿using Atomic.Common.Content.Services;
-using Atomic.Seo.ModelsBuilder.Interfaces;
+using Umbraco.Cms.Web.Common.PublishedModels;
 using Atomic.Sео.SitemapXml.Services;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -35,7 +35,7 @@ public class SitemapController : Controller
 	{
 		using (var umbracoContextRef = _umbracoContextFactory.EnsureUmbracoContext())
 		{
-			var seoSettings = _multisiteContentService.GetSettings<ISeoSettings>();
+			var seoSettings = _multisiteContentService.GetSettings<SeoSettings>();
 
 			if (seoSettings == null)
 				return StatusCode(StatusCodes.Status503ServiceUnavailable);
