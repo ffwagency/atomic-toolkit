@@ -64,7 +64,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <Folder Include="Mvc\Controllers\" />
+	  <Folder Include="Controllers\" />
 	</ItemGroup>
 	
 </Project>

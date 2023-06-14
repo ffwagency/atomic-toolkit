@@ -6,7 +6,7 @@ namespace Atomic.Common.Backoffice.Extensions
 {
 	public static class HttpContextExtensions
 	{
-		public static bool IsPreview(this HttpContext httpContext)
+		public static bool InPreviewMode(this HttpContext httpContext)
 		{
 			if (httpContext.Request.Path.StartsWithSegments($"/{Constants.UmbracoPreviewKeyword}", StringComparison.OrdinalIgnoreCase))
 				return true;

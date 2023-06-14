@@ -4,7 +4,7 @@ using Umbraco.Cms.Core.Web;
 using Microsoft.Extensions.Logging;
 using Atomic.StarterKit.Models.Mapping;
 using Atomic.StarterKit.ModelsBuilder.Interfaces;
-using Atomic.OutputCache.Mvc.Controllers;
+using Atomic.OutputCache.Controllers;
 
 namespace Atomic.StarterKit.Pages;
 

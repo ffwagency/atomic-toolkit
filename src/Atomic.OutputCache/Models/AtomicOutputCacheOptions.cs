@@ -36,7 +36,7 @@ public class AtomicOutputCacheOptions
 			return false;
 
 		// Verify if Umbraco Preview
-		if (context.HttpContext.IsPreview())
+		if (context.HttpContext.InPreviewMode())
 			return false;
 
 		return true;
