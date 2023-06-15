@@ -1,6 +1,6 @@
-﻿using Atomic.StarterKit.ModelsBuilder.Interfaces;
-using Umbraco.Cms.Core.Models.Blocks;
+﻿using Umbraco.Cms.Core.Models.Blocks;
 using Umbraco.Cms.Core.Models.PublishedContent;
+using Umbraco.Cms.Web.Common.PublishedModels;
 
 namespace Atomic.StarterKit.Models.Mapping;
 
@@ -12,7 +12,7 @@ public static class DesignPageModelMapingExtensions
 		var components = new List<BlockListItem>();
         if (source is IBasePageWithRequiredHeader basePage)
         {
-            components.AddRange(basePage!.PageHeader);
+            components.AddRange(basePage!.PageHeader!);
         }
 		components.AddRange(source.DynamicContent!);
 		target.Components = new BlockListModel(components);

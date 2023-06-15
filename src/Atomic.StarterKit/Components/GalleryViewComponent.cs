@@ -1,13 +1,12 @@
-﻿using Atomic.StarterKit.ModelsBuilder;
-using Atomic.StarterKit.ModelsBuilder.Interfaces;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
+using Umbraco.Cms.Web.Common.PublishedModels;
 
 namespace Atomic.StarterKit.Components;
 
-[ViewComponent(Name = Constants.Aliases.Components.Gallery)]
+[ViewComponent(Name = Gallery.ModelTypeAlias)]
 public class GalleryViewComponent : ViewComponent
 {
-	public IViewComponentResult Invoke(IGallery source)
+	public IViewComponentResult Invoke(Gallery source)
 	{
 		return View("~/Views/Components/Gallery.cshtml", source);
 	}

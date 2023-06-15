@@ -1,13 +1,12 @@
-﻿using Atomic.StarterKit.ModelsBuilder;
-using Atomic.StarterKit.ModelsBuilder.Interfaces;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
+using Umbraco.Cms.Web.Common.PublishedModels;
 
 namespace Atomic.StarterKit.Components;
 
-[ViewComponent(Name = Constants.Aliases.Components.CTA)]
+[ViewComponent(Name = CTA.ModelTypeAlias)]
 public class CTAViewComponent : ViewComponent
 {
-	public IViewComponentResult Invoke(ICTA source)
+	public IViewComponentResult Invoke(CTA source)
 	{
 		return View("~/Views/Components/CTA.cshtml", source);
 	}

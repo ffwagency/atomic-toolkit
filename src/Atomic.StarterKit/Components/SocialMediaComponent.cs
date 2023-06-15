@@ -1,11 +1,10 @@
-﻿using Atomic.Common.Content.Services;
-using Atomic.StarterKit.ModelsBuilder;
-using Atomic.StarterKit.ModelsBuilder.Interfaces;
+﻿using Atomic.Common.Content;
 using Microsoft.AspNetCore.Mvc;
+using Umbraco.Cms.Web.Common.PublishedModels;
 
 namespace Atomic.StarterKit.Components;
 
-[ViewComponent(Name = Constants.Aliases.Components.SocialMedia)]
+[ViewComponent(Name = "SocialMedia")]
 public class SocialMediaComponent : ViewComponent
 {
 	private readonly MultisiteContentService _multisiteContentService;
@@ -17,7 +16,7 @@ public class SocialMediaComponent : ViewComponent
 
 	public IViewComponentResult Invoke()
 	{
-		var vm = _multisiteContentService.GetSettings<ISocialMediaSettings>();
+		var vm = _multisiteContentService.GetSettings<SocialMediaSettings>();
 		return View("~/Views/Components/SocialMedia.cshtml", vm);
 	}
 }

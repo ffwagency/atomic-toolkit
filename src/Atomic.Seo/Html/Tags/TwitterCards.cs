@@ -1,15 +1,13 @@
 ﻿using System.Text;
 using Umbraco.Extensions;
-using Atomic.Common.Content.Extensions;
-using Atomic.Sео.Common.Extensions;
-using Atomic.Sео.Html.Interfaces;
-using Atomic.Seo.ModelsBuilder.Interfaces;
+using Umbraco.Cms.Web.Common.PublishedModels;
+using Atomic.Common.Content;
 
 namespace Atomic.Sео.Html.Tags;
 
 public class TwitterCards : ISeoHtmlTags
 {
-	public virtual string Get(ISeoBasePage seoPage, ISeoSettings seoSettings)
+	public virtual string Get(ISeoBasePage seoPage, SeoSettings seoSettings)
 	{
 		var html = new StringBuilder();
 

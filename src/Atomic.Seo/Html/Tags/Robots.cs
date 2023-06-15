@@ -1,11 +1,10 @@
-﻿using Atomic.Seo.ModelsBuilder.Interfaces;
-using Atomic.Sео.Html.Interfaces;
+﻿using Umbraco.Cms.Web.Common.PublishedModels;
 
 namespace Atomic.Sео.Html.Tags;
 
 public class Robots : ISeoHtmlTags
 {
-	public virtual string Get(ISeoBasePage seoPage, ISeoSettings seoSettings)
+	public virtual string Get(ISeoBasePage seoPage, SeoSettings seoSettings)
 	{
 		var index = "index";
 		var follow = "follow";

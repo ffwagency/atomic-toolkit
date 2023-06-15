@@ -6,9 +6,9 @@ namespace Atomic.StarterKit.Models;
 
 public class DesignPageViewModel : ContentModel
 {
-	public string? CssClass { get; set; }
+    public string? CssClass { get; set; }
 
-	public BlockListModel? Components { get; set; }
+    public BlockListModel? Components { get; set; }
 
-	public DesignPageViewModel(IPublishedContent content) : base(content) { }
+    public DesignPageViewModel(IPublishedContent content) : base(content) { }
 }

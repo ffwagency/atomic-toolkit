@@ -1,8 +1,4 @@
 ﻿using Atomic.Common.DependencyInjection;
-using Atomic.OutputCache.Controllers;
-using Atomic.OutputCache.Models;
-using Atomic.OutputCache.NotificationHandlers;
-using Atomic.OutputCache.Policies;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Options;

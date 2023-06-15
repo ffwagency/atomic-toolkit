@@ -3,8 +3,8 @@ using Microsoft.AspNetCore.Mvc.ViewEngines;
 using Umbraco.Cms.Core.Web;
 using Microsoft.Extensions.Logging;
 using Atomic.StarterKit.Models.Mapping;
-using Atomic.StarterKit.ModelsBuilder.Interfaces;
-using Atomic.OutputCache.Controllers;
+using Atomic.OutputCache;
+using Umbraco.Cms.Web.Common.PublishedModels;
 
 namespace Atomic.StarterKit.Pages;
 
@@ -18,7 +18,7 @@ public class ContactPageController : CachedRenderController
 
 	public override IActionResult Index()
 	{
-		var vm = ((IContactPage)CurrentPage!).MapToDesignPageViewModel();
+		var vm = ((ContactPage)CurrentPage!).MapToDesignPageViewModel();
 		return View("~/views/DefaultPage.cshtml", vm);
 	}
 }

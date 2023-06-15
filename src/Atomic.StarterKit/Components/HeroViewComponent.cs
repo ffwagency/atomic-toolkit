@@ -1,13 +1,12 @@
-﻿using Atomic.StarterKit.ModelsBuilder;
-using Atomic.StarterKit.ModelsBuilder.Interfaces;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
+using Umbraco.Cms.Web.Common.PublishedModels;
 
 namespace Atomic.StarterKit.Components;
 
-[ViewComponent(Name = Constants.Aliases.Components.Hero)]
+[ViewComponent(Name = Hero.ModelTypeAlias)]
 public class HeroViewComponent : ViewComponent
 {
-	public IViewComponentResult Invoke(IHero source)
+	public IViewComponentResult Invoke(Hero source)
 	{
 		return View("~/Views/Components/Hero.cshtml", source);
 	}

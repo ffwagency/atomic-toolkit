@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
 		<TargetFramework>net7.0</TargetFramework>
@@ -7,12 +7,7 @@
 		<NoWarn>CS0108</NoWarn>
 	</PropertyGroup>
 
-	<ItemGroup Condition=" '$(Configuration)' == 'Release' ">
-		<PackageReference Include="Atomic.StarterKit.ModelsBuilder" Version="11.1.5" />
+	<ItemGroup>
+		<PackageReference Include="Umbraco.Cms.Web.Website" Version="11.4.0" />
 	</ItemGroup>
-
-	<ItemGroup Condition=" '$(Configuration)' == 'Debug' ">
-		<ProjectReference Include="..\Atomic.StarterKit.ModelsBuilder\Atomic.StarterKit.ModelsBuilder.csproj" />
-	</ItemGroup>
-
 </Project>

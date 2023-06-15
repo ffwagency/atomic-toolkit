@@ -1,7 +1,6 @@
-﻿using Atomic.Sео.Html.Collections;
-using Atomic.Sео.Html.Services;
+﻿using Atomic.Sео.Html;
 using Atomic.Sео.Html.Tags;
-using Atomic.Sео.SitemapXml.Services;
+using Atomic.Sео.SitemapXml;
 using Microsoft.Extensions.DependencyInjection;
 using Umbraco.Cms.Core.DependencyInjection;
 
