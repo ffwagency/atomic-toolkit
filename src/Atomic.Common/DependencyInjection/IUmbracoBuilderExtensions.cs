@@ -1,9 +1,10 @@
-﻿using Atomic.Common.Api.PreviewRoute;
+﻿using Atomic.Common.Api.Preview;
 using Atomic.Common.Api.Services;
 using Atomic.Common.Backoffice.Services;
 using Atomic.Common.Configuration.Attributes;
 using Atomic.Common.Configuration.Models;
 using Atomic.Common.Content.Services;
+using Atomic.Common.Multilanguage;
 using Microsoft.AspNetCore.Mvc.ApplicationModels;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
@@ -22,6 +23,7 @@ public static class IUmbracoBuilderExtensions
 		builder.Services.AddSingleton<MultisiteContentService>();
 		builder.Services.AddSingleton<ModelsBuilderService>();
 		builder.Services.AddScoped<ApiLinkGenerator>();
+		builder.Services.AddTransient<CulturesService>();
 
 		builder.Services.TryAddEnumerable(ServiceDescriptor.Transient<IApplicationModelProvider, PreviewRouteApplicationModelProvider>());
 

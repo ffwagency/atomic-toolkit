@@ -1,4 +1,4 @@
-﻿using Atomic.Common.Api.PreviewRoute;
+﻿using Atomic.Common.Api.Preview;
 using Atomic.Common.Backoffice.Extensions;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Routing;
@@ -9,7 +9,7 @@ using Umbraco.Extensions;
 
 namespace Atomic.Common.Api.Services
 {
-	public class ApiLinkGenerator
+    public class ApiLinkGenerator
 	{
 		private readonly LinkGenerator _linkGenerator;
 

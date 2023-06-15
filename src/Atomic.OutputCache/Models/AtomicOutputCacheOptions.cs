@@ -11,14 +11,11 @@ namespace Atomic.OutputCache.Models;
 [AtomicOptions(Constants.AtomicOutputCacheOptionsConfigurationKey)]
 public class AtomicOutputCacheOptions
 {
-	internal const bool DefaultEnabled = true;
-	internal const int DefaultCacheExpirationInMinutes = 15;
+	[DefaultValue(true)]
+	public bool Enabled { get; set; } = true;
 
-	[DefaultValue(DefaultEnabled)]
-	public bool Enabled { get; set; } = DefaultEnabled;
-
-	[DefaultValue(DefaultCacheExpirationInMinutes)]
-	public int CacheExpirationInMinutes { get; set; } = DefaultCacheExpirationInMinutes;
+	[DefaultValue(15)]
+	public int CacheExpirationInMinutes { get; set; } = 15;
 
 	[JsonIgnore]
 	public Func<OutputCacheContext, bool> DoesRequestQualify { get; set; } = DefaultRequestQualifier;

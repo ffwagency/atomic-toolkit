@@ -6,14 +6,13 @@ namespace Atomic.Common.Configuration.Models;
 [AtomicOptions(Constants.AtomicCommonOptionsConfigurationKey)]
 public class AtomicCommonOptions
 {
-	internal const string WebsiteSharedContentRootDefaultName = "Shared Content";
-	internal const string WebsiteSettingsRootDefaultName = "Settings";
+	[DefaultValue("Shared Content")]
+	public string WebsiteSharedContentRootName { get; set; } = "Shared Content";
 
 
-	[DefaultValue(WebsiteSharedContentRootDefaultName)]
-	public string WebsiteSharedContentRootName { get; set; } = WebsiteSharedContentRootDefaultName;
+	[DefaultValue("Settings")]
+	public string WebsiteSettingsRootName { get; set; } = "Settings";
 
-
-	[DefaultValue(WebsiteSettingsRootDefaultName)]
-	public string WebsiteSettingsRootName { get; set; } = WebsiteSettingsRootDefaultName;
+	[DefaultValue(new[] { "culture", "language", "locale" })]
+	public string[] ApiParamsAffectingContextCulture { get; set; } = new[] { "culture", "language", "locale" };
 }
