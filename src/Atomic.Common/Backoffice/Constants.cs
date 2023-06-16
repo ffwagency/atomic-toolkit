@@ -2,6 +2,7 @@
 {
 	public static class Constants
 	{
-		public const string UmbracoPreviewKeyword = "preview";
+		public const string PreviewKeyword = "preview";
+		public const string UmbracoBackofficeUrl = "/umbraco";
 	}
 }

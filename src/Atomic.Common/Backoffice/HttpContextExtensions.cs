@@ -8,10 +8,13 @@ namespace Atomic.Common.Backoffice
     {
         public static bool InPreviewMode(this HttpContext httpContext)
         {
-            if (httpContext.Request.Path.StartsWithSegments($"/{Constants.UmbracoPreviewKeyword}", StringComparison.OrdinalIgnoreCase))
+            if (httpContext.Request.Path.StartsWithSegments($"/{Constants.PreviewKeyword}", StringComparison.OrdinalIgnoreCase))
                 return true;
 
-            if (httpContext.RequestServices.GetService<IUmbracoContextAccessor>()?.TryGetUmbracoContext(out var umbracoContext) == true
+			if (httpContext.Request.Path.StartsWithSegments($"{Constants.UmbracoBackofficeUrl}/{Constants.PreviewKeyword}", StringComparison.OrdinalIgnoreCase))
+				return true;
+
+			if (httpContext.RequestServices.GetService<IUmbracoContextAccessor>()?.TryGetUmbracoContext(out var umbracoContext) == true
                 && umbracoContext.InPreviewMode)
                 return true;
 

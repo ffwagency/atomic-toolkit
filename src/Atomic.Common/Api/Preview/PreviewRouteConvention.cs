@@ -16,7 +16,7 @@ public class PreviewRouteConvention : IActionModelConvention
 
     public static string BuildPreviewRoute(string defaultRoute)
     {
-        return Backoffice.Constants.UmbracoPreviewKeyword + defaultRoute;
+        return $"/{Backoffice.Constants.PreviewKeyword}/{defaultRoute.TrimStart('/')}";
     }
 
     public void Apply(ActionModel action)
@@ -120,7 +120,7 @@ public class PreviewRouteConvention : IActionModelConvention
 
     private static bool IsPreviewRouteAttribute(AttributeRouteModel attributeRouteModel)
     {
-        return attributeRouteModel.Name.InvariantEquals(Backoffice.Constants.UmbracoPreviewKeyword);
+        return attributeRouteModel.Name.InvariantEquals(Backoffice.Constants.PreviewKeyword);
     }
 
     private static string? GetUmbracoApiDefaultRoute(ActionModel action)

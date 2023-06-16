@@ -7,7 +7,7 @@ using Umbraco.Cms.Web.Common.Controllers;
 
 namespace Atomic.OutputCache;
 
-[OutputCache]
+[OutputCache(PolicyName = Constants.AtomicPolicyName)]
 public class CachedRenderController : RenderController
 {
     public CachedRenderController(ILogger<RenderController> logger,

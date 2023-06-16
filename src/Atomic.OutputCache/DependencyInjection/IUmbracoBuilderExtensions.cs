@@ -16,7 +16,7 @@ public static class IUmbracoBuilderExtensions
 		builder.AddAtomicOptions<AtomicOutputCacheOptions>();
 
 		builder.Services.AddOutputCache(options
-			=> options.AddBasePolicy(builder => builder.AddPolicy<AtomicOutputCachePolicy>(),
+			=> options.AddPolicy(Constants.AtomicPolicyName, builder => builder.AddPolicy<AtomicOutputCachePolicy>(),
 			                         excludeDefaultPolicy: true));
 
 		builder.Services.Configure<UmbracoPipelineOptions>(options =>

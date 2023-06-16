@@ -38,4 +38,23 @@ public class AtomicOutputCacheOptions
 
 		return true;
 	};
+
+	[JsonIgnore]
+	public Func<OutputCacheContext, bool> DoesResponseQualify { get; set; } = DefaultResponseQualifier;
+
+	public static Func<OutputCacheContext, bool> DefaultResponseQualifier = (context) =>
+	{
+		var response = context.HttpContext.Response;
+
+		// Verify existence of cookie headers
+		if (!StringValues.IsNullOrEmpty(response.Headers.SetCookie))
+			return false;
+
+		// Check response code
+		if (response.StatusCode != StatusCodes.Status200OK)
+			return false;
+
+		return true;
+
+	};
 }

@@ -5,7 +5,7 @@ using Umbraco.Cms.Web.Common.Controllers;
 
 namespace Atomic.OutputCache;
 
-[OutputCache]
+[OutputCache(PolicyName = Constants.AtomicPolicyName)]
 [EnablePreviewRoute]
 [SetContextCulture]
 public class CachedUmbracoApiController : UmbracoApiController

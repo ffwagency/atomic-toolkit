@@ -32,7 +32,7 @@ public class ClearOutputCacheOnContentPublishedHandler : INotificationAsyncHandl
 
         _logger.LogInformation("Output Cache Cleared (Publish) for {SiteName}", _hostingEnvironment.SiteName);
         notification.Messages.Add(new EventMessage("Output Cache", "Cleared", EventMessageType.Success));
-		var eviction = _outputCacheStore.EvictByTagAsync(AtomicOutputCachePolicy.DefaultTag, cancellationToken);
+		var eviction = _outputCacheStore.EvictByTagAsync(Constants.AtomicPolicyTag, cancellationToken);
 		return eviction.AsTask();
     }
 }

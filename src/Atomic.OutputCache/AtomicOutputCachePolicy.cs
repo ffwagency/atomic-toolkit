@@ -7,8 +7,6 @@ namespace Atomic.OutputCache
 {
     public sealed class AtomicOutputCachePolicy : IOutputCachePolicy
     {
-		public const string DefaultTag = "AtomicOutputCachePolicy";
-
 		private readonly AtomicOutputCacheOptions _options;
 
         public AtomicOutputCachePolicy(IOptions<AtomicOutputCacheOptions> options)
@@ -25,7 +23,7 @@ namespace Atomic.OutputCache
             context.AllowCacheStorage = doesRequestQualify;
             context.AllowLocking = true;
             context.CacheVaryByRules.QueryKeys = "*";
-			context.Tags.Add(DefaultTag);
+			context.Tags.Add(Constants.AtomicPolicyTag);
 			context.ResponseExpirationTimeSpan = TimeSpan.FromMinutes(_options.CacheExpirationInMinutes);
 
 			return ValueTask.CompletedTask;
@@ -38,22 +36,7 @@ namespace Atomic.OutputCache
 
         ValueTask IOutputCachePolicy.ServeResponseAsync(OutputCacheContext context, CancellationToken cancellationToken)
         {
-            var response = context.HttpContext.Response;
-
-            // Verify existence of cookie headers
-            if (!StringValues.IsNullOrEmpty(response.Headers.SetCookie))
-            {
-                context.AllowCacheStorage = false;
-                return ValueTask.CompletedTask;
-            }
-
-            // Check response code
-            if (response.StatusCode != StatusCodes.Status200OK)
-            {
-                context.AllowCacheStorage = false;
-                return ValueTask.CompletedTask;
-            }
-
+            context.AllowCacheStorage = _options.DoesResponseQualify(context);
             return ValueTask.CompletedTask;
         }
     }
