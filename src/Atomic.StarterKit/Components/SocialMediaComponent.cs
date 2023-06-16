@@ -1,4 +1,4 @@
-﻿using Atomic.Common.Content.Services;
+﻿using Atomic.Common.Content;
 using Microsoft.AspNetCore.Mvc;
 using Umbraco.Cms.Web.Common.PublishedModels;
 

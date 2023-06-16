@@ -6,9 +6,9 @@ using Umbraco.Cms.Core.Services;
 using Umbraco.Cms.Core.Web;
 using Umbraco.Cms.Infrastructure.Persistence;
 using Umbraco.Cms.Web.Website.Controllers;
-using Atomic.Common.Content.Services;
-using Atomic.StarterKit.Models.ViewModels;
 using Umbraco.Cms.Web.Common.PublishedModels;
+using Atomic.Common.Content;
+using Atomic.StarterKit.Models;
 
 namespace Atomic.StarterKit.API;
 
@@ -33,7 +33,6 @@ public class ContactFormController : SurfaceController
 	}
 
 	[HttpPost]
-	[ValidateAntiForgeryToken]
 	public IActionResult Submit(ContactFormViewModel model)
 	{
 		if (!ModelState.IsValid)

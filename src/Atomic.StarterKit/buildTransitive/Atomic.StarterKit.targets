@@ -2,12 +2,12 @@
 
   <Target Name="CopyWwwRootFiles" BeforeTargets="Build">
     <Message Text="Copying $(WwwRootFolder) files: $(WwwRootFiles) - #@(WwwRootFiles->Count()) files" Importance="high" />
-    <Copy SourceFiles="@(WwwRootFiles)" DestinationFiles="@(WwwRootFiles->'$(MSBuildProjectDirectory)\$(WwwRootFolder)\%(RecursiveDir)%(Filename)%(Extension)')" SkipUnchangedFiles="true" />
+    <Copy SourceFiles="@(WwwRootFiles)" DestinationFiles="@(WwwRootFiles->'$(MSBuildProjectDirectory)\$(WwwRootFolder)\%(RecursiveDir)%(Filename)%(Extension)')" OverwriteReadOnlyFiles="true" />
   </Target>
 
   <Target Name="CopyViewsFiles" BeforeTargets="Build">
     <Message Text="Copying $(ViewsFolder) files: $(ViewsFiles) - #@(ViewsFiles->Count()) files" Importance="high" />
-    <Copy SourceFiles="@(ViewsFiles)" DestinationFiles="@(ViewsFiles->'$(MSBuildProjectDirectory)\$(ViewsFolder)\%(RecursiveDir)%(Filename)%(Extension)')" SkipUnchangedFiles="true" />
+    <Copy SourceFiles="@(ViewsFiles)" DestinationFiles="@(ViewsFiles->'$(MSBuildProjectDirectory)\$(ViewsFolder)\%(RecursiveDir)%(Filename)%(Extension)')" OverwriteReadOnlyFiles="true" />
   </Target>
 
 </Project>

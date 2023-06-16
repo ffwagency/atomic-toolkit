@@ -14,7 +14,7 @@
 		<Authors>FFW</Authors>
 		<Copyright>FFW</Copyright>
 		<Title>Atomic.OutputCache</Title>
-		<Description>Atomic.OutputCache is an AtomicToolkit package which provides easy way to maintain Umbraco Output Cache. It is based on the default dotnet output cache.</Description>
+		<Description>Atomic.OutputCache is an Atomic Toolkit package which provides easy way to maintain Umbraco Output Cache. It is based on the default dotnet output cache.</Description>
 		<PackageIcon>logo.png</PackageIcon>
 		<PackageReadmeFile>readme.md</PackageReadmeFile>
 		<PackageProjectUrl>https://atomictoolkit.com/packages/atomicoutputcache</PackageProjectUrl>
@@ -47,11 +47,20 @@
 		  <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
 		</PackageReference>
 		<PackageReference Include="Umbraco.Cms.Web.Website" Version="11.4.0" />
+		<PackageReference Include="Umbraco.Cms.Web.BackOffice" Version="11.4.0" />
 	</ItemGroup>
 
 	<ItemGroup>
 		<None Include="logo.png" Pack="true" PackagePath="\" />
 		<None Include="readme.md" Pack="true" PackagePath="\" />
+	</ItemGroup>
+
+	<ItemGroup Condition=" '$(Configuration)' == 'Release' ">
+		<PackageReference Include="Atomic.Common" Version="11.1.3" />
+	</ItemGroup>
+
+	<ItemGroup Condition=" '$(Configuration)' == 'Debug' ">
+		<ProjectReference Include="..\Atomic.Common\Atomic.Common.csproj" />
 	</ItemGroup>
 	
 </Project>

@@ -170,9 +170,7 @@
 		<RazorCompileOnPublish>true</RazorCompileOnPublish>
 	</PropertyGroup>
 
-	<Import Project="..\Atomic.Common\buildTransitive\Atomic.Common.props" Condition=" '$(Configuration)' == 'Debug' " />
-	<Import Project="..\Atomic.Common\buildTransitive\Atomic.Common.targets" Condition=" '$(Configuration)' == 'Debug' " />
-	<Import Project="..\Atomic.StarterKit\buildTransitive\Atomic.StarterKit.props" Condition=" '$(Configuration)' == 'Debug' " />
-	<Import Project="..\Atomic.StarterKit\buildTransitive\Atomic.StarterKit.targets" Condition=" '$(Configuration)' == 'Debug' " />
+	<Import Project="..\Atomic.StarterKit\buildTransitive\Atomic.StarterKit.props" />
+	<Import Project="..\Atomic.StarterKit\buildTransitive\Atomic.StarterKit.targets" />
 
 </Project>

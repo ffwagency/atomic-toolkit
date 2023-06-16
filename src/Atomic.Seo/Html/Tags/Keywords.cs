@@ -1,5 +1,4 @@
 ﻿using Umbraco.Cms.Web.Common.PublishedModels;
-using Atomic.Sео.Html.Interfaces;
 
 namespace Atomic.Sео.Html.Tags;
 

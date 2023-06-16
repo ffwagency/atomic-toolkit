@@ -1,9 +1,7 @@
-using Atomic.Common.Content.Extensions;
 using Umbraco.Cms.Web.Common.PublishedModels;
-using Atomic.Sео.Html.Interfaces;
 using StackExchange.Profiling.Internal;
 using Umbraco.Extensions;
-using Atomic.Sео.Html.Validators;
+using Atomic.Common.Content;
 
 namespace Atomic.Sео.Html.Tags;
 

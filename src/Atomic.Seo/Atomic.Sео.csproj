@@ -14,7 +14,7 @@
 		<Authors>FFW</Authors>
 		<Copyright>FFW</Copyright>
 		<Title>Atomic.Seo</Title>
-		<Description>Atomic.Seo is an AtomicToolkit package which provides easy to maintain SEO settings for your Umbraco website.</Description>
+		<Description>Atomic.Seo is an Atomic Toolkit package which provides easy to maintain SEO settings for your Umbraco website.</Description>
 		<PackageIcon>logo.png</PackageIcon>
 		<PackageReadmeFile>readme.md</PackageReadmeFile>
 		<PackageProjectUrl>https://atomictoolkit.com/packages/aromicseo</PackageProjectUrl>

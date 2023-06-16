@@ -2,16 +2,13 @@
 using Atomic.StarterKit.Models.Mapping;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ViewEngines;
-using Microsoft.AspNetCore.OutputCaching;
 using Microsoft.Extensions.Logging;
 using Umbraco.Cms.Core.Web;
-using Umbraco.Cms.Web.Common.Controllers;
 using Umbraco.Cms.Web.Common.PublishedModels;
 
 namespace Atomic.StarterKit.Pages;
 
-[OutputCache(PolicyName = Constants.DefaultPolicy)]
-public class GalleryPageController : RenderController
+public class GalleryPageController : CachedRenderController
 {
 	public GalleryPageController(ILogger<GalleryPageController> logger,
 							  ICompositeViewEngine compositeViewEngine,

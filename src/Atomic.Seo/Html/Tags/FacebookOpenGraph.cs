@@ -1,9 +1,7 @@
-﻿using Atomic.Common.Content.Extensions;
-using Atomic.Sео.Common.Extensions;
-using Atomic.Sео.Html.Interfaces;
-using System.Text;
+﻿using System.Text;
 using Umbraco.Extensions;
 using Umbraco.Cms.Web.Common.PublishedModels;
+using Atomic.Common.Content;
 
 namespace Atomic.Sео.Html.Tags;
 

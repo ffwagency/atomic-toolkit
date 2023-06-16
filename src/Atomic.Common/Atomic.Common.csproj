@@ -14,7 +14,7 @@
 		<Authors>FFW</Authors>
 		<Copyright>FFW</Copyright>
 		<Title>Atomic.Common</Title>
-		<Description>Atomic.Common is a base package for AtomicToolkit. It contains a shared logic used among verious AtomicToolkit packages for Umbraco.</Description>
+		<Description>Atomic.Common is a base package for Atomic Toolkit. It contains a shared logic used among verious Atomic Toolkit packages for Umbraco.</Description>
 		<PackageIcon>logo.png</PackageIcon>
 		<PackageReadmeFile>readme.md</PackageReadmeFile>
 		<PackageProjectUrl>https://atomictoolkit.com</PackageProjectUrl>
@@ -53,7 +53,6 @@
 	<ItemGroup>
 		<None Include="logo.png" Pack="true" PackagePath="\" />
 		<None Include="readme.md" Pack="true" PackagePath="\" />
-		<None Include="buildTransitive\**" Pack="true" PackagePath="\buildTransitive" />
 	</ItemGroup>
 
 </Project>

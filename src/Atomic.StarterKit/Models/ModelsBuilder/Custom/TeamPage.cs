@@ -1,4 +1,4 @@
-using Atomic.StarterKit.Models.Interfaces;
+using Atomic.StarterKit.Models;
 
 namespace Umbraco.Cms.Web.Common.PublishedModels;
 

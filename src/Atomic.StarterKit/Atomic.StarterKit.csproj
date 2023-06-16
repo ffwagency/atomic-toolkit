@@ -14,7 +14,7 @@
 		<Authors>FFW</Authors>
 		<Copyright>FFW</Copyright>
 		<Title>Atomic.StarterKit</Title>
-		<Description>Atomic.StarterKit is an AtomicToolkit package which provides a friendly, ready to use Umbraco starter kit.</Description>
+		<Description>Atomic.StarterKit is an Atomic Toolkit package which provides a friendly, ready to use Umbraco starter kit.</Description>
 		<PackageIcon>logo.png</PackageIcon>
 		<PackageReadmeFile>readme.md</PackageReadmeFile>
 		<PackageProjectUrl>https://atomictoolkit.com/packages/atomicstarterkit</PackageProjectUrl>
@@ -70,6 +70,10 @@
 	<ItemGroup Condition=" '$(Configuration)' == 'Debug' ">
 		<ProjectReference Include="..\Atomic.OutputCache\Atomic.OutputCache.csproj" />
 		<ProjectReference Include="..\Atomic.SEO\Atomic.Sео.csproj" />
+	</ItemGroup>
+	
+	<ItemGroup>
+	  <Folder Include="Models\ViewModels\" />
 	</ItemGroup>
 
 </Project>

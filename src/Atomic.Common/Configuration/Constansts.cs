@@ -1,10 +1,7 @@
 ﻿namespace Atomic.Common.Configuration;
 
-public static partial class Constants
+public static class Constants
 {
-	public static class Configuration
-	{
-		public const string ConfigPrefix = "AtomicStarterKit:";
-		public const string ConfigCommon = ConfigPrefix + "Common";
-	}
+	public const string AtomicOptionsConfigurationKeyPrefix = "AtomicToolkit:";
+	public const string AtomicCommonOptionsConfigurationKey = AtomicOptionsConfigurationKeyPrefix + "Common";
 }
