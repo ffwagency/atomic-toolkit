@@ -1,4 +1,5 @@
 ﻿using System.Reflection;
+using Atomic.Api.Controllers;
 using Umbraco.Cms.Web.Common.Controllers;
 using Umbraco.Extensions;
 
@@ -14,7 +15,7 @@ public static class TypeExtensions
 	public static bool SupportsPreview(this TypeInfo typeInfo)
 	{
 		return typeInfo.Inherits<UmbracoApiController>()
-			   && typeInfo.Implements<IAtomicUmbracoApiController>()
+			   && typeInfo.Implements<IAtomicApiController>()
 			   && typeInfo.HasCustomAttribute<EnablePreviewAttribute>(inherit: true /*could be configured on a base class */);
 	}
 }

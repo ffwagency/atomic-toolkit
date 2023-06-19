@@ -1,4 +1,5 @@
-﻿using Atomic.Api.Preview;
+﻿using Atomic.Api.Controllers;
+using Atomic.Api.Preview;
 using Atomic.Common.Backoffice;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Routing;
@@ -9,7 +10,7 @@ using Umbraco.Extensions;
 
 namespace Atomic.Api
 {
-	public class ApiLinkGenerator
+    public class ApiLinkGenerator
 	{
 		private readonly LinkGenerator _linkGenerator;
 
@@ -25,7 +26,7 @@ namespace Atomic.Api
 		/// /// <param name="httpContext"></param>
 		/// <param name="actionSelector">Controller Action Selector</param>
 		/// <returns>Umbraco Api Url</returns>
-		public string GetUmbracoApiUrl<T>(HttpContext httpContext, Expression<Func<T, object>> actionSelector) where T : UmbracoApiController
+		public string GetUmbracoApiUrl<T>(HttpContext httpContext, Expression<Func<T, object>> actionSelector) where T : UmbracoApiController, IAtomicApiController
 		{
 			ArgumentNullException.ThrowIfNull(httpContext);
 
@@ -64,7 +65,7 @@ namespace Atomic.Api
 		/// <typeparam name="T">T UmbracoApiController, IAtomicUmbracoApiController</typeparam>
 		/// <param name="actionSelector">Controller Action Selector</param>
 		/// <returns>Umbraco Api Preview Url</returns>
-		public string GetUmbracoApiPreviewUrl<T>(Expression<Func<T, object>> actionSelector) where T : UmbracoApiController, IAtomicUmbracoApiController
+		public string GetUmbracoApiPreviewUrl<T>(Expression<Func<T, object>> actionSelector) where T : UmbracoApiController, IAtomicApiController
 		{
 			NotSupportedPreviewException.ThrowIfDoesNotSupportPreview(typeof(T));
 

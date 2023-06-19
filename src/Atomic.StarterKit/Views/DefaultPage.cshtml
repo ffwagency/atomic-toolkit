@@ -6,8 +6,6 @@
 
 @(await Component.InvokeAsync(Header.ModelTypeAlias))
 
-@Html.Raw((Umbraco.AssignedContentItem as HomePage)?.BrowserTitle)
-
 @Html.GetBlockListHtml(Model.Components, "DynamicContent")
 
 @(await Component.InvokeAsync(Footer.ModelTypeAlias))

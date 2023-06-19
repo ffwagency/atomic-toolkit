@@ -2,13 +2,13 @@
 using Microsoft.Extensions.DependencyInjection;
 using Umbraco.Cms.Core;
 using Umbraco.Cms.Core.Web;
-using Umbraco.Cms.Web.Common.Controllers;
+using Umbraco.Cms.Web.BackOffice.Controllers;
 
-namespace Atomic.Api
+namespace Atomic.Api.Controllers
 {
 	[EnablePreview]
 	[SetContextCulture]
-	public class AtomicApiController : UmbracoApiController, IAtomicUmbracoApiController
+	public class AtomicAuthorizedJsonController : UmbracoAuthorizedJsonController, IAtomicApiController
 	{
 		private UmbracoContextReference? _umbracoContextReference;
 		private bool _disposed;
@@ -35,9 +35,11 @@ namespace Atomic.Api
 
 			if (disposing)
 				_umbracoContextReference?.Dispose();
+
+			_disposed = true;
 		}
 
-		~AtomicApiController()
+		~AtomicAuthorizedJsonController()
 		{
 			Dispose(false);
 		}

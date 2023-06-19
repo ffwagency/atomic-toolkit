@@ -1,4 +1,4 @@
-﻿using Atomic.Api;
+﻿using Atomic.Api.Controllers;
 using Microsoft.AspNetCore.OutputCaching;
 
 namespace Atomic.OutputCache;
