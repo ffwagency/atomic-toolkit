@@ -14,7 +14,7 @@
 		<Authors>FFW</Authors>
 		<Copyright>FFW</Copyright>
 		<Title>Atomic.Api</Title>
-		<Description>Atomic.Api is an Atomic Toolkit package which enhances the default Umbraco Api Controllers with features like Preview and others.</Description>
+		<Description>Atomic.Api is an Atomic Toolkit package which enhances the default Umbraco Api Controllers with features like Preview, autotomatic configuration of context culture and others.</Description>
 		<PackageIcon>logo.png</PackageIcon>
 		<PackageReadmeFile>readme.md</PackageReadmeFile>
 		<PackageProjectUrl>https://atomictoolkit.com/packages/atomicoapi</PackageProjectUrl>
