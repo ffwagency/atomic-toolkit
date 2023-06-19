@@ -42,25 +42,14 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-	  <Compile Remove="Html\Constants\**" />
-	  <EmbeddedResource Remove="Html\Constants\**" />
-	  <None Remove="Html\Constants\**" />
-	</ItemGroup>
-
-	<ItemGroup>
-		<PackageReference Include="DotNet.ReproducibleBuilds" Version="1.1.1">
-			<PrivateAssets>all</PrivateAssets>
-			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-		</PackageReference>
+		<PackageReference Include="DotNet.ReproducibleBuilds" Version="1.1.1" PrivateAssets="All" IncludeAssets="runtime; build; native; contentfiles; analyzers; buildtransitive" />
+		<PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.1.1" PrivateAssets="All" />
 		<PackageReference Include="Umbraco.Cms.Web.Website" Version="11.4.0" />
 	</ItemGroup>
 
 	<ItemGroup>
 		<None Include="logo.png" Pack="true" PackagePath="\" />
 		<None Include="readme.md" Pack="true" PackagePath="\" />
-	</ItemGroup>
-
-	<ItemGroup>
 		<EmbeddedResource Include="Migrations\package.zip" />
 	</ItemGroup>
 
