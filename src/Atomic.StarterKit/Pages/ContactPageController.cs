@@ -8,7 +8,7 @@ using Umbraco.Cms.Web.Common.PublishedModels;
 
 namespace Atomic.StarterKit.Pages;
 
-public class ContactPageController : CachedRenderController
+public class ContactPageController : CachedAtomicController
 {
 	public ContactPageController(ILogger<ContactPageController> logger,
 							  ICompositeViewEngine compositeViewEngine,

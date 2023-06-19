@@ -8,7 +8,7 @@ using Umbraco.Cms.Web.Common.PublishedModels;
 
 namespace Atomic.StarterKit.Pages;
 
-public class GalleryPageController : CachedRenderController
+public class GalleryPageController : CachedAtomicController
 {
 	public GalleryPageController(ILogger<GalleryPageController> logger,
 							  ICompositeViewEngine compositeViewEngine,

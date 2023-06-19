@@ -9,7 +9,7 @@ using Umbraco.Cms.Web.Common.PublishedModels;
 
 namespace Atomic.StarterKit.Pages;
 
-public class PortfolioSinglePageController : CachedRenderController
+public class PortfolioSinglePageController : CachedAtomicController
 {
 	public PortfolioSinglePageController(ILogger<PortfolioSinglePageController> logger,
 							  ICompositeViewEngine compositeViewEngine,

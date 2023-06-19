@@ -8,7 +8,7 @@ using Umbraco.Cms.Web.Common.PublishedModels;
 
 namespace Atomic.StarterKit.Pages;
 
-public class ErrorPageController : CachedRenderController
+public class ErrorPageController : CachedAtomicController
 {
     public ErrorPageController(ILogger<ErrorPageController> logger,
                               ICompositeViewEngine compositeViewEngine,
