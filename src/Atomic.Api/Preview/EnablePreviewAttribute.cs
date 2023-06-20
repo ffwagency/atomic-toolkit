@@ -17,7 +17,7 @@ namespace Atomic.Api.Preview
 
 			NotSupportedPreviewException.ThrowIfDoesNotSupportPreview(controller.GetType());
 
-			if (!context.HttpContext.InPreviewMode())
+			if (!context.HttpContext.Request.IsPreviewRequest())
 				return;
 
 			EnablePreview((IAtomicApiController)controller);

@@ -2,7 +2,8 @@
 {
 	public static class Constants
 	{
-		public const string PreviewKeyword = "preview";
-		public const string UmbracoBackofficeUrl = "/umbraco";
+		public const string UmbracoRelativeUrlStartPath = "/Umbraco";
+		public const string UmbracoAuthorizedApiRelativeUrlStartPath = UmbracoRelativeUrlStartPath + "/backoffice";
+		public const string PreviewRelativeUrlStartPath = UmbracoRelativeUrlStartPath + "/preview";
 	}
 }

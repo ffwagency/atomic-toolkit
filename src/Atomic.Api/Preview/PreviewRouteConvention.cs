@@ -10,14 +10,26 @@ namespace Atomic.Api.Preview;
 
 public class PreviewRouteConvention : IActionModelConvention
 {
-	private const string UmbracoNotAuthorizedApiDefaultRouteStartPath = "Umbraco";
-	private const string UmbracoAuthorizedApiDefaultRouteStartPath = "Umbraco/backoffice";
 	private const string UmbracoApiDefaultRouteArea = "Api";
 	private const int PreviewAttributeRouteOrder = 1000; // Higher number means low priority. We don't want this to be the default picked route.
 
+
 	public static string BuildPreviewRoute(string defaultRoute)
 	{
-		return $"/{Constants.PreviewKeyword}/{defaultRoute.TrimStart('/')}";
+		defaultRoute = CleanDefaultUmbracoStartPath(defaultRoute);
+		return $"{Constants.PreviewRelativeUrlStartPath}{defaultRoute.EnsureStartsWith('/')}";
+	}
+
+	private static string CleanDefaultUmbracoStartPath(string defaultRoute)
+	{
+		defaultRoute = defaultRoute.EnsureStartsWith('/');
+
+		if (defaultRoute.InvariantStartsWith(Constants.UmbracoAuthorizedApiRelativeUrlStartPath))
+			defaultRoute = defaultRoute.Replace(Constants.UmbracoAuthorizedApiRelativeUrlStartPath, string.Empty, StringComparison.OrdinalIgnoreCase);
+		if (defaultRoute.InvariantStartsWith(Constants.UmbracoRelativeUrlStartPath))
+			defaultRoute = defaultRoute.Replace(Constants.UmbracoRelativeUrlStartPath, string.Empty, StringComparison.OrdinalIgnoreCase);
+
+		return defaultRoute;
 	}
 
 	public void Apply(ActionModel action)
@@ -102,6 +114,7 @@ public class PreviewRouteConvention : IActionModelConvention
 		{
 			AttributeRouteModel = new AttributeRouteModel
 			{
+				Name = nameof(EnablePreviewAttribute),
 				Order = PreviewAttributeRouteOrder,
 				Template = previewRouteTemplate
 			}
@@ -121,7 +134,7 @@ public class PreviewRouteConvention : IActionModelConvention
 
 	private static bool IsPreviewRouteAttribute(AttributeRouteModel attributeRouteModel)
 	{
-		return attributeRouteModel.Name.InvariantEquals(Constants.PreviewKeyword);
+		return attributeRouteModel.Name.InvariantEquals(nameof(EnablePreviewAttribute));
 	}
 
 	private static string? GetUmbracoApiDefaultRoute(ActionModel action)
@@ -131,9 +144,9 @@ public class PreviewRouteConvention : IActionModelConvention
 		var actionName = action.ActionName;
 
 		if (IsUmbracoAuthorizedApiController(controller))
-			return $"{UmbracoAuthorizedApiDefaultRouteStartPath}/{GetUmbracoApiDefaultRouteArea(controller)}/{controllerName}/{actionName}";
+			return $"{Constants.UmbracoAuthorizedApiRelativeUrlStartPath}/{GetUmbracoApiDefaultRouteArea(controller)}/{controllerName}/{actionName}";
 		if (IsUmbracoNotAuthorizedApiController(controller))
-			return $"{UmbracoNotAuthorizedApiDefaultRouteStartPath}/{GetUmbracoApiDefaultRouteArea(controller)}/{controllerName}/{actionName}";
+			return $"{Constants.UmbracoRelativeUrlStartPath}/{GetUmbracoApiDefaultRouteArea(controller)}/{controllerName}/{actionName}";
 
 		return string.Empty;
 	}

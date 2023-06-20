@@ -1,4 +1,5 @@
 ﻿using Atomic.Api.Preview;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.Extensions.DependencyInjection;
 using Umbraco.Cms.Core;
 using Umbraco.Cms.Core.Web;
@@ -8,6 +9,7 @@ namespace Atomic.Api.Controllers
 {
     [EnablePreview]
     [SetContextCulture]
+    [Authorize(Policy = PreviewAuthPolicy.Name)]
     public class AtomicApiController : UmbracoApiController, IAtomicApiController
     {
         private UmbracoContextReference? _umbracoContextReference;
