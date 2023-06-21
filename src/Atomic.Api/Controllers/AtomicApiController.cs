@@ -1,16 +1,19 @@
-﻿using Atomic.Api.Preview;
+﻿using Atomic.Api.Auth;
+using Atomic.Api.Preview;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.Extensions.DependencyInjection;
 using Umbraco.Cms.Core;
 using Umbraco.Cms.Core.Web;
+using Umbraco.Cms.Web.BackOffice.Filters;
 using Umbraco.Cms.Web.Common.Controllers;
 
 namespace Atomic.Api.Controllers
 {
-    [EnablePreview]
+	[EnablePreview]
     [SetContextCulture]
-    [Authorize(Policy = PreviewAuthPolicy.Name)]
-    public class AtomicApiController : UmbracoApiController, IAtomicApiController
+	[UmbracoRequireHttps]
+	[Authorize(Policy = AtomicAuthPolicy.Name)]
+	public class AtomicApiController : UmbracoApiController, IAtomicApiController
     {
         private UmbracoContextReference? _umbracoContextReference;
         private bool _disposed;

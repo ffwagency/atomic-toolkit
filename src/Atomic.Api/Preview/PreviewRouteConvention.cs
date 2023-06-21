@@ -1,5 +1,4 @@
-﻿using Atomic.Common.Backoffice;
-using Microsoft.AspNetCore.Mvc.ApplicationModels;
+﻿using Microsoft.AspNetCore.Mvc.ApplicationModels;
 using System.Reflection;
 using Umbraco.Cms.Web.BackOffice.Controllers;
 using Umbraco.Cms.Web.Common.Attributes;
@@ -17,17 +16,17 @@ public class PreviewRouteConvention : IActionModelConvention
 	public static string BuildPreviewRoute(string defaultRoute)
 	{
 		defaultRoute = CleanDefaultUmbracoStartPath(defaultRoute);
-		return $"{Constants.PreviewRelativeUrlStartPath}{defaultRoute.EnsureStartsWith('/')}";
+		return $"{Common.Backoffice.Constants.PreviewRelativeUrlStartPath}{defaultRoute.EnsureStartsWith('/')}";
 	}
 
 	private static string CleanDefaultUmbracoStartPath(string defaultRoute)
 	{
 		defaultRoute = defaultRoute.EnsureStartsWith('/');
 
-		if (defaultRoute.InvariantStartsWith(Constants.UmbracoAuthorizedApiRelativeUrlStartPath))
-			defaultRoute = defaultRoute.Replace(Constants.UmbracoAuthorizedApiRelativeUrlStartPath, string.Empty, StringComparison.OrdinalIgnoreCase);
-		if (defaultRoute.InvariantStartsWith(Constants.UmbracoRelativeUrlStartPath))
-			defaultRoute = defaultRoute.Replace(Constants.UmbracoRelativeUrlStartPath, string.Empty, StringComparison.OrdinalIgnoreCase);
+		if (defaultRoute.InvariantStartsWith(Common.Backoffice.Constants.UmbracoAuthorizedApiRelativeUrlStartPath))
+			defaultRoute = defaultRoute.Replace(Common.Backoffice.Constants.UmbracoAuthorizedApiRelativeUrlStartPath, string.Empty, StringComparison.OrdinalIgnoreCase);
+		if (defaultRoute.InvariantStartsWith(Common.Backoffice.Constants.UmbracoRelativeUrlStartPath))
+			defaultRoute = defaultRoute.Replace(Common.Backoffice.Constants.UmbracoRelativeUrlStartPath, string.Empty, StringComparison.OrdinalIgnoreCase);
 
 		return defaultRoute;
 	}
@@ -144,9 +143,9 @@ public class PreviewRouteConvention : IActionModelConvention
 		var actionName = action.ActionName;
 
 		if (IsUmbracoAuthorizedApiController(controller))
-			return $"{Constants.UmbracoAuthorizedApiRelativeUrlStartPath}/{GetUmbracoApiDefaultRouteArea(controller)}/{controllerName}/{actionName}";
+			return $"{Common.Backoffice.Constants.UmbracoAuthorizedApiRelativeUrlStartPath}/{GetUmbracoApiDefaultRouteArea(controller)}/{controllerName}/{actionName}";
 		if (IsUmbracoNotAuthorizedApiController(controller))
-			return $"{Constants.UmbracoRelativeUrlStartPath}/{GetUmbracoApiDefaultRouteArea(controller)}/{controllerName}/{actionName}";
+			return $"{Common.Backoffice.Constants.UmbracoRelativeUrlStartPath}/{GetUmbracoApiDefaultRouteArea(controller)}/{controllerName}/{actionName}";
 
 		return string.Empty;
 	}

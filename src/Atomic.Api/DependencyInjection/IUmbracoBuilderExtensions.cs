@@ -1,9 +1,8 @@
-﻿using Atomic.Api.Preview;
+﻿using Atomic.Api.Auth;
+using Atomic.Api.Preview;
+using Atomic.Common.DependencyInjection;
 using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Mvc.ApplicationModels;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.DependencyInjection.Extensions;
-using Umbraco.Cms.Core;
 using Umbraco.Cms.Core.DependencyInjection;
 
 namespace Atomic.Api.DependencyInjection;
@@ -12,20 +11,13 @@ public static class IUmbracoBuilderExtensions
 {
 	internal static IUmbracoBuilder AddAtomicApi(this IUmbracoBuilder builder)
 	{
+		builder.AddAtomicOptions<AtomicApiOptions>();
+
 		builder.Services.AddScoped<ApiLinkGenerator>();
 
-		builder.Services.TryAddEnumerable(ServiceDescriptor.Transient<IApplicationModelProvider, PreviewRouteApplicationModelProvider>());
+		builder.AddAtomicApiPreview();
 
-		builder.Services.AddSingleton<IAuthorizationHandler, PreviewAuthHandler>();
-
-		builder.Services.PostConfigure<AuthorizationOptions>(options =>
-		{
-			options.AddPolicy(PreviewAuthPolicy.Name, policy =>
-			{
-				policy.AuthenticationSchemes.Add(Constants.Security.BackOfficeAuthenticationType);
-				policy.Requirements.Add(new PreviewAuthRequirement());
-			});
-		});
+		builder.AddAtomicApiAuth();
 
 		return builder;
 	}

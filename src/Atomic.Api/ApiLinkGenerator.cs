@@ -26,14 +26,14 @@ namespace Atomic.Api
 		/// /// <param name="httpContext"></param>
 		/// <param name="actionSelector">Controller Action Selector</param>
 		/// <returns>Umbraco Api Url</returns>
-		public string GetUmbracoApiUrl<T>(HttpContext httpContext, Expression<Func<T, object>> actionSelector) where T : UmbracoApiController, IAtomicApiController
+		public string GetAtomicApiUrl<T>(HttpContext httpContext, Expression<Func<T, object>> actionSelector) where T : UmbracoApiController, IAtomicApiController
 		{
 			ArgumentNullException.ThrowIfNull(httpContext);
 
-			var defaultRoute = GetUmbracoApiDefaultUrl(actionSelector);
+			var defaultRoute = GetUmbracoApiUrl(actionSelector);
 
 			if (UsePreviewRoute<T>(httpContext))
-				return PreviewRouteConvention.BuildPreviewRoute(defaultRoute);
+				return PreviewRouteConvention.BuildPreviewRoute(defaultRoute).ToLower();
 
 			return defaultRoute;
 		}
@@ -44,7 +44,7 @@ namespace Atomic.Api
 		/// <typeparam name="T">T UmbracoApiController</typeparam>
 		/// <param name="actionSelector">Controller Action Selector</param>
 		/// <returns>Default Umbraco Api Url</returns>
-		public string GetUmbracoApiDefaultUrl<T>(Expression<Func<T, object>> actionSelector) where T : UmbracoApiController
+		public string GetUmbracoApiUrl<T>(Expression<Func<T, object>> actionSelector) where T : UmbracoApiController
 		{
 			var method = ExpressionHelper.GetMethodInfo(actionSelector);
 			ArgumentNullException.ThrowIfNull(method);
@@ -56,7 +56,7 @@ namespace Atomic.Api
 								: _linkGenerator.GetUmbracoApiService<T>(method.Name, methodParams);
 			ArgumentException.ThrowIfNullOrEmpty(defaultRoute);
 
-			return defaultRoute;
+			return defaultRoute.ToLower();
 		}
 
 		/// <summary>
@@ -65,13 +65,13 @@ namespace Atomic.Api
 		/// <typeparam name="T">T UmbracoApiController, IAtomicUmbracoApiController</typeparam>
 		/// <param name="actionSelector">Controller Action Selector</param>
 		/// <returns>Umbraco Api Preview Url</returns>
-		public string GetUmbracoApiPreviewUrl<T>(Expression<Func<T, object>> actionSelector) where T : UmbracoApiController, IAtomicApiController
+		public string GetAtomicApiPreviewUrl<T>(Expression<Func<T, object>> actionSelector) where T : UmbracoApiController, IAtomicApiController
 		{
 			NotSupportedPreviewException.ThrowIfDoesNotSupportPreview(typeof(T));
 
-			var defaultRoute = GetUmbracoApiDefaultUrl(actionSelector);
+			var defaultRoute = GetUmbracoApiUrl(actionSelector);
 
-			return PreviewRouteConvention.BuildPreviewRoute(defaultRoute);
+			return PreviewRouteConvention.BuildPreviewRoute(defaultRoute).ToLower();
 		}
 
 		private static bool UsePreviewRoute<T>(HttpContext httpContext) where T : UmbracoApiController

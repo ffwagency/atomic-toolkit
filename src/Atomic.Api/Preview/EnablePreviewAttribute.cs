@@ -31,6 +31,10 @@ namespace Atomic.Api.Preview
 		private void EnablePreview(IAtomicApiController controller)
 		{
 			var umbracoContext = controller.UmbracoContext;
+
+			if (umbracoContext.InPreviewMode)
+				return;
+
 			_forcedPreview = umbracoContext.ForcedPreview(true);
 			_publishedSnapshot = umbracoContext.PublishedSnapshot as PublishedSnapshot;
 			_publishedSnapshot?.Resync(); // ForcedPreview(true) doesn't work by its own. this is needed as well (probably Umbraco Bug)
