@@ -2,23 +2,16 @@
 using Microsoft.Extensions.DependencyInjection;
 using Umbraco.Cms.Core.Web;
 
-namespace Atomic.Common.Backoffice
+namespace Atomic.Common.Backoffice;
+
+public static class HttpContextExtensions
 {
-    public static class HttpContextExtensions
-    {
-        public static bool InPreviewMode(this HttpContext httpContext)
-        {
-            if (httpContext.Request.Path.StartsWithSegments($"/{Constants.PreviewKeyword}", StringComparison.OrdinalIgnoreCase))
-                return true;
+	public static bool InPreviewMode(this HttpContext? httpContext)
+	{
+		if (httpContext == null)
+			return false;
 
-			if (httpContext.Request.Path.StartsWithSegments($"{Constants.UmbracoBackofficeUrl}/{Constants.PreviewKeyword}", StringComparison.OrdinalIgnoreCase))
-				return true;
-
-			if (httpContext.RequestServices.GetService<IUmbracoContextAccessor>()?.TryGetUmbracoContext(out var umbracoContext) == true
-                && umbracoContext.InPreviewMode)
-                return true;
-
-            return false;
-        }
-    }
+		return httpContext.RequestServices.GetService<IUmbracoContextAccessor>()?.TryGetUmbracoContext(out var umbracoContext) == true
+			   && umbracoContext.InPreviewMode;
+	}
 }

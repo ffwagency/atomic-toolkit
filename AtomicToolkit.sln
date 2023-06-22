@@ -17,6 +17,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "StarterKits", "StarterKits"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ModelsBuilder", "src\ModelsBuilder\ModelsBuilder.csproj", "{CB4AB0A7-CB8D-41A9-BACB-991353EDEDA8}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Atomic.Api", "src\Atomic.Api\Atomic.Api.csproj", "{5CCC0C46-3C53-4B41-B5E1-CBB552F05D11}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -47,6 +49,10 @@ Global
 		{CB4AB0A7-CB8D-41A9-BACB-991353EDEDA8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CB4AB0A7-CB8D-41A9-BACB-991353EDEDA8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CB4AB0A7-CB8D-41A9-BACB-991353EDEDA8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5CCC0C46-3C53-4B41-B5E1-CBB552F05D11}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5CCC0C46-3C53-4B41-B5E1-CBB552F05D11}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5CCC0C46-3C53-4B41-B5E1-CBB552F05D11}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5CCC0C46-3C53-4B41-B5E1-CBB552F05D11}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

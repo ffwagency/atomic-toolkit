@@ -8,9 +8,9 @@ using Umbraco.Cms.Web.Common.Controllers;
 namespace Atomic.OutputCache;
 
 [OutputCache(PolicyName = Constants.AtomicPolicyName)]
-public class CachedRenderController : RenderController
+public class CachedAtomicController : RenderController
 {
-    public CachedRenderController(ILogger<RenderController> logger,
+    public CachedAtomicController(ILogger<RenderController> logger,
         ICompositeViewEngine compositeViewEngine,
         IUmbracoContextAccessor umbracoContextAccessor)
         : base(logger, compositeViewEngine, umbracoContextAccessor)

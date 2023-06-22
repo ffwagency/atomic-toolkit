@@ -8,7 +8,7 @@ using Umbraco.Cms.Web.Common.PublishedModels;
 
 namespace Atomic.StarterKit.Pages;
 
-public class ContentPageController : CachedRenderController
+public class ContentPageController : CachedAtomicController
 {
 	public ContentPageController(ILogger<ContentPageController> logger,
 							  ICompositeViewEngine compositeViewEngine,

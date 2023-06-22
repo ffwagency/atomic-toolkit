@@ -37,7 +37,7 @@ public static class IUmbracoBuilderExtensions
 
 		builder.Services.Configure<UmbracoRenderingDefaultsOptions>(c =>
 		{
-			c.DefaultControllerType = typeof(CachedRenderController);
+			c.DefaultControllerType = typeof(CachedAtomicController);
 		});
 
 		builder.AddNotificationAsyncHandler<ContentPublishedNotification, ClearOutputCacheOnContentPublishedHandler>();

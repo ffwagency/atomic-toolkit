@@ -8,7 +8,7 @@ using Atomic.OutputCache;
 
 namespace Atomic.StarterKit.Pages;
 
-public class ServicesPageController : CachedRenderController
+public class ServicesPageController : CachedAtomicController
 {
 	public ServicesPageController(ILogger<ServicesPageController> logger,
 							  ICompositeViewEngine compositeViewEngine,

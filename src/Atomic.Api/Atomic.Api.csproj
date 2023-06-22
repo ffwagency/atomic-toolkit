@@ -7,18 +7,18 @@
 	</PropertyGroup>
 
 	<PropertyGroup>
-		<Version>11.1.4</Version>
-		<AssemblyVersion>11.1.4</AssemblyVersion>
-		<Product>Atomic.OutputCache</Product>
-		<PackageId>Atomic.OutputCache</PackageId>
+		<Version>11.0.0</Version>
+		<AssemblyVersion>11.0.0</AssemblyVersion>
+		<Product>Atomic.Api</Product>
+		<PackageId>Atomic.Api</PackageId>
 		<Authors>FFW</Authors>
 		<Copyright>FFW</Copyright>
-		<Title>Atomic.OutputCache</Title>
-		<Description>Atomic.OutputCache is an Atomic Toolkit package which provides easy way to maintain Umbraco Output Cache. It is based on the default dotnet output cache.</Description>
+		<Title>Atomic.Api</Title>
+		<Description>Atomic.Api is an Atomic Toolkit package which enhances the default Umbraco Api Controllers with features like Preview, autotomatic configuration of context culture and others.</Description>
 		<PackageIcon>logo.png</PackageIcon>
 		<PackageReadmeFile>readme.md</PackageReadmeFile>
-		<PackageProjectUrl>https://atomictoolkit.com/packages/atomicoutputcache</PackageProjectUrl>
-		<PackageTags>umbraco;umbraco-marketplace;atomictoolkit;cache;atomicoutputcache;ffw;H5YR</PackageTags>
+		<PackageProjectUrl>https://atomictoolkit.com/packages/atomicoapi</PackageProjectUrl>
+		<PackageTags>umbraco;umbraco-marketplace;atomictoolkit;api;atomicapi;ffw;H5YR</PackageTags>
 		<PackageLicenseExpression>MIT</PackageLicenseExpression>
 
 		<EnablePackageValidation>true</EnablePackageValidation>
@@ -45,7 +45,6 @@
 		<PackageReference Include="DotNet.ReproducibleBuilds" Version="1.1.1" PrivateAssets="All" IncludeAssets="runtime; build; native; contentfiles; analyzers; buildtransitive" />
 		<PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.1.1" PrivateAssets="All" />
 		<PackageReference Include="Umbraco.Cms.Web.Website" Version="11.4.0" />
-		<PackageReference Include="Umbraco.Cms.Web.BackOffice" Version="11.4.0" />
 	</ItemGroup>
 
 	<ItemGroup>
@@ -54,11 +53,11 @@
 	</ItemGroup>
 
 	<ItemGroup Condition=" '$(Configuration)' == 'Release' ">
-		<PackageReference Include="Atomic.Api" Version="11.0.0" />
+		<PackageReference Include="Atomic.Common" Version="11.1.3" />
 	</ItemGroup>
 
 	<ItemGroup Condition=" '$(Configuration)' == 'Debug' ">
-		<ProjectReference Include="..\Atomic.Api\Atomic.Api.csproj" />
+		<ProjectReference Include="..\Atomic.Common\Atomic.Common.csproj" />
 	</ItemGroup>
-
+	
 </Project>
