@@ -55,7 +55,7 @@
 
 	<ItemGroup Condition=" '$(Configuration)' == 'Release' ">
 		<PackageReference Include="Atomic.OutputCache" Version="[11.1.5]" />
-		<PackageReference Include="Atomic.Seo" Version="[11.1.5]" />
+		<PackageReference Include="Atomic.Seo" Version="[11.1.7]" />
 	</ItemGroup>
 	
 	<ItemGroup Condition=" '$(Configuration)' == 'Debug' ">
