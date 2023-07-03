@@ -51,7 +51,7 @@
 	</ItemGroup>
 
 	<ItemGroup Condition=" '$(Configuration)' == 'Release' ">
-		<PackageReference Include="Atomic.Common" Version="11.1.3" />
+		<PackageReference Include="Atomic.Common" Version="[11.1.6]" />
 	</ItemGroup>
 
 	<ItemGroup Condition=" '$(Configuration)' == 'Debug' ">
