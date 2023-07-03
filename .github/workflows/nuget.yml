@@ -53,11 +53,11 @@ jobs:
         run: dotnet restore 'src\${{ env.ProjectName }}\${{ env.ProjectName }}.csproj'
 
       - name: 'Build project ${{ env.ProjectName }}'
-        run: dotnet build 'src\${{ env.ProjectName }}\${{ env.ProjectName }}.csproj' --no-restore --configuration Release /p:Version=${{ env.VERSION }}
+        run: dotnet build 'src\${{ env.ProjectName }}\${{ env.ProjectName }}.csproj' --no-restore --configuration Release /p:Version=${{ env.VERSION }} /p:AssemblyVersion=${{ env.VERSION }}
 
       
       - name: 'Pack project ${{ env.ProjectName }}'
-        run: dotnet pack 'src\${{ env.ProjectName }}\${{ env.ProjectName }}.csproj' --no-restore --no-build --configuration Release --include-symbols --output ${{ github.workspace }}\output\${{ env.ProjectName }} /p:PackageVersion=${{ env.VERSION }} /p:AssemblyVersion=${{ env.VERSION }}
+        run: dotnet pack 'src\${{ env.ProjectName }}\${{ env.ProjectName }}.csproj' --no-restore --no-build --configuration Release --output ${{ github.workspace }}\output\${{ env.ProjectName }} /p:PackageVersion=${{ env.VERSION }} /p:AssemblyVersion=${{ env.VERSION }}
           
      
       - name: 'Push project ${{ env.ProjectName }}'

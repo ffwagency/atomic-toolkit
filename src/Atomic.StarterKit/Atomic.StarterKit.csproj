@@ -7,8 +7,6 @@
 	</PropertyGroup>
 
 	<PropertyGroup>
-		<Version>11.1.8</Version>
-		<AssemblyVersion>11.1.8</AssemblyVersion>
 		<Product>Atomic.StarterKit</Product>
 		<PackageId>Atomic.StarterKit</PackageId>
 		<Authors>FFW</Authors>

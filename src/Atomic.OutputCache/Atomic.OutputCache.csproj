@@ -7,8 +7,6 @@
 	</PropertyGroup>
 
 	<PropertyGroup>
-		<Version>11.1.4</Version>
-		<AssemblyVersion>11.1.4</AssemblyVersion>
 		<Product>Atomic.OutputCache</Product>
 		<PackageId>Atomic.OutputCache</PackageId>
 		<Authors>FFW</Authors>
