@@ -350,8 +350,6 @@ MigrationBackup/
 .ionide/
 
 # Atomic Starter Kit
-/src/Atomic.StarterKit/wwwroot/atomic-kit-assets/css/style.css
-/src/Atomic.StarterKit/wwwroot/atomic-kit-assets/css/style.min.css
 /src/Atomic.StarterKit.Website/wwwroot/atomic-kit-assets/css/style.css
 /src/Atomic.StarterKit.Website/wwwroot/atomic-kit-assets/css/style.min.css
 /src/Atomic.StarterKit.Website/Views/_ViewImports.cshtml
