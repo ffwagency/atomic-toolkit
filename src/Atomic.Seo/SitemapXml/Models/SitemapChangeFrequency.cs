@@ -1,4 +1,4 @@
-﻿namespace Atomic.Sео.SitemapXml.Models;
+﻿namespace Atomic.Seo.SitemapXml.Models;
 
 public enum SitemapChangeFrequency
 {

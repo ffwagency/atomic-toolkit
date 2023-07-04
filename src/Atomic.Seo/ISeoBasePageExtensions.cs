@@ -4,7 +4,7 @@ using Umbraco.Cms.Core.Models.PublishedContent;
 using Umbraco.Extensions;
 using Atomic.Common.Content;
 
-namespace Atomic.Sео
+namespace Atomic.Seo
 {
     public static class ISeoBasePageExtensions
     {

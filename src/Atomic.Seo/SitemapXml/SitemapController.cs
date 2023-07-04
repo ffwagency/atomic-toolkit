@@ -7,7 +7,7 @@ using Umbraco.Cms.Core.Web;
 using Umbraco.Extensions;
 using Atomic.Common.Content;
 
-namespace Atomic.Sео.SitemapXml;
+namespace Atomic.Seo.SitemapXml;
 
 public class SitemapController : Controller
 {

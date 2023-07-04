@@ -1,7 +1,7 @@
 ﻿using Umbraco.Cms.Web.Common.PublishedModels;
 using Atomic.Common.Content;
 
-namespace Atomic.Sео.Html.Tags;
+namespace Atomic.Seo.Html.Tags;
 
 public class Title : ISeoHtmlTags
 {

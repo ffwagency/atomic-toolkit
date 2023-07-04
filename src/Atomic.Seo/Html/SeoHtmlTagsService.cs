@@ -2,7 +2,7 @@
 using System.Text;
 using Umbraco.Cms.Web.Common.PublishedModels;
 
-namespace Atomic.Sео.Html;
+namespace Atomic.Seo.Html;
 
 public class SeoHtmlTagsService
 {

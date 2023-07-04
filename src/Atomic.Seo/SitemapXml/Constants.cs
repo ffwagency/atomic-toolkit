@@ -1,4 +1,4 @@
-﻿namespace Atomic.Sео.SitemapXml;
+﻿namespace Atomic.Seo.SitemapXml;
 
 public static class Constants
 {

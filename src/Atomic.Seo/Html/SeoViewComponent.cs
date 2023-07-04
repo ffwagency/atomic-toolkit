@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Mvc.ViewComponents;
 using Umbraco.Cms.Core.Web;
 using Atomic.Common.Content;
 
-namespace Atomic.Sео.Html;
+namespace Atomic.Seo.Html;
 
 [ViewComponent(Name = Constants.SeoViewComponentName)]
 public class SeoViewComponent : ViewComponent

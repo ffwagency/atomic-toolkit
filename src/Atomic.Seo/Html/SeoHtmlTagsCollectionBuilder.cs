@@ -1,6 +1,6 @@
 ﻿using Umbraco.Cms.Core.Composing;
 
-namespace Atomic.Sео.Html;
+namespace Atomic.Seo.Html;
 
 public class SeoHtmlTagsCollectionBuilder : OrderedCollectionBuilderBase<SeoHtmlTagsCollectionBuilder, SeoHtmlTagsCollection, ISeoHtmlTags>
 {

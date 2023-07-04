@@ -1,12 +1,12 @@
 ﻿using Umbraco.Cms.Web.Common.PublishedModels;
 
-namespace Atomic.Sео.Html.Tags;
+namespace Atomic.Seo.Html.Tags;
 
 public class CanonicalUrl : ISeoHtmlTags
 {
-	public virtual string Get(ISeoBasePage seoPage, SeoSettings seoSettings)
-	{
-		var url = seoPage.GetAbsoluteUrl();
-		return $@"<link rel=""canonical"" href=""{url}"">{Environment.NewLine}";
-	}
+    public virtual string Get(ISeoBasePage seoPage, SeoSettings seoSettings)
+    {
+        var url = seoPage.GetAbsoluteUrl();
+        return $@"<link rel=""canonical"" href=""{url}"">{Environment.NewLine}";
+    }
 }

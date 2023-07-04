@@ -1,6 +1,6 @@
 ﻿using Umbraco.Cms.Core.Packaging;
 
-namespace Atomic.Sео.Migrations;
+namespace Atomic.Seo.Migrations;
 
 public class AtomicStarterKitSEOPackageMigrationPlan : PackageMigrationPlan
 {
