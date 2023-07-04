@@ -48,7 +48,6 @@
 		<Content Include="wwwroot\**" ExcludeFromSingleFile="true" CopyToPublishDirectory="PreserveNewest" Pack="true" PackagePath="\wwwroot" />
 		<Content Include="Views\**" ExcludeFromSingleFile="true" CopyToPublishDirectory="PreserveNewest" Pack="true" PackagePath="\Views" />
 		<None Include="buildTransitive\**" Pack="true" PackagePath="\buildTransitive" />
-		<None Include="tools\**" Pack="true" PackagePath="\tools" />
 		<None Include="logo.png" Pack="true" PackagePath="\" />
 		<None Include="readme.md" Pack="true" PackagePath="\" />
 		<EmbeddedResource Include="Migrations\package.zip" />
