@@ -48,15 +48,14 @@
 		<Content Include="wwwroot\**" ExcludeFromSingleFile="true" CopyToPublishDirectory="PreserveNewest" Pack="true" PackagePath="\wwwroot" />
 		<Content Include="Views\**" ExcludeFromSingleFile="true" CopyToPublishDirectory="PreserveNewest" Pack="true" PackagePath="\Views" />
 		<None Include="buildTransitive\**" Pack="true" PackagePath="\buildTransitive" />
-		<None Include="tools\**" Pack="true" PackagePath="\tools" />
 		<None Include="logo.png" Pack="true" PackagePath="\" />
 		<None Include="readme.md" Pack="true" PackagePath="\" />
 		<EmbeddedResource Include="Migrations\package.zip" />
 	</ItemGroup>
 
 	<ItemGroup Condition=" '$(Configuration)' == 'Release' ">
-		<PackageReference Include="Atomic.OutputCache" Version="[11.1.5]" />
-		<PackageReference Include="Atomic.Seo" Version="[11.1.8]" />
+		<PackageReference Include="Atomic.OutputCache" Version="[12.0.0]" />
+		<PackageReference Include="Atomic.Seo" Version="[12.0.0]" />
 	</ItemGroup>
 	
 	<ItemGroup Condition=" '$(Configuration)' == 'Debug' ">
