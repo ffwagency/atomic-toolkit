@@ -10,8 +10,4 @@
 		<Copy SourceFiles="@(ViewsFiles)" DestinationFiles="@(ViewsFiles->'$(MSBuildProjectDirectory)\$(ViewsFolder)\%(RecursiveDir)%(Filename)%(Extension)')" OverwriteReadOnlyFiles="true" />
 	</Target>
 
-	<Target Name="RestrictUpdate">
-		<Exec Command="powershell.exe -ExecutionPolicy Bypass -File $(ToolsFiles)RestrictUpdate.ps1" />
-	</Target>
-
 </Project>
