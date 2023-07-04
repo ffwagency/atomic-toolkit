@@ -3,11 +3,13 @@
 	<PropertyGroup>
 		<WwwRootFolder>wwwroot</WwwRootFolder>
 		<ViewsFolder>Views</ViewsFolder>
+		<ToolsFolder>tools</ToolsFolder>
 	</PropertyGroup>
 	
 	<ItemGroup>
 		<WwwRootFiles Include="$(MSBuildThisFileDirectory)..\$(WwwRootFolder)\**" />
 		<ViewsFiles Include="$(MSBuildThisFileDirectory)..\$(ViewsFolder)\**" />
+		<ToolsFiles Include="$(MSBuildThisFileDirectory)..\$(ToolsFolder)\" />
 	</ItemGroup>
 	
 </Project>
