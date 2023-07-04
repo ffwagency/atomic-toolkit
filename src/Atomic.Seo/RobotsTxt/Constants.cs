@@ -1,4 +1,4 @@
-﻿namespace Atomic.Sео.RobotsTxt;
+﻿namespace Atomic.Seo.RobotsTxt;
 
 public static class Constants
 {

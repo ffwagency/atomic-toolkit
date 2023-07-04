@@ -1,6 +1,6 @@
 ﻿using Umbraco.Cms.Web.Common.PublishedModels;
 
-namespace Atomic.Sео.Html.Tags;
+namespace Atomic.Seo.Html.Tags;
 
 public class Keywords : ISeoHtmlTags
 {

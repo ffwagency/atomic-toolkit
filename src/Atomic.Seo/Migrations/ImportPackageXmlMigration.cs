@@ -7,7 +7,7 @@ using Umbraco.Cms.Core.Strings;
 using Umbraco.Cms.Infrastructure.Migrations;
 using Umbraco.Cms.Infrastructure.Packaging;
 
-namespace Atomic.Sео.Migrations;
+namespace Atomic.Seo.Migrations;
 
 public class ImportPackageXmlMigration : PackageMigrationBase
 {
@@ -33,6 +33,6 @@ public class ImportPackageXmlMigration : PackageMigrationBase
 
 	protected override void Migrate()
 	{
-		ImportPackage.FromEmbeddedResource(GetType()).Do();
+        ImportPackage.FromEmbeddedResource(GetType()).Do();
 	}
 }

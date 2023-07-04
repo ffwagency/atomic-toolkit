@@ -1,9 +1,9 @@
 ﻿using System.Globalization;
 using System.Xml.Linq;
-using Atomic.Sео.SitemapXml.Models;
+using Atomic.Seo.SitemapXml.Models;
 using Umbraco.Cms.Web.Common.PublishedModels;
 
-namespace Atomic.Sео.SitemapXml;
+namespace Atomic.Seo.SitemapXml;
 
 public class SitemapService
 {

@@ -1,10 +1,10 @@
-﻿using Atomic.Sео.Html;
-using Atomic.Sео.Html.Tags;
-using Atomic.Sео.SitemapXml;
+﻿using Atomic.Seo.Html;
+using Atomic.Seo.Html.Tags;
+using Atomic.Seo.SitemapXml;
 using Microsoft.Extensions.DependencyInjection;
 using Umbraco.Cms.Core.DependencyInjection;
 
-namespace Atomic.Sео.DependencyInjection;
+namespace Atomic.Seo.DependencyInjection;
 
 public static class IUmbracoBuilderExtensions
 {

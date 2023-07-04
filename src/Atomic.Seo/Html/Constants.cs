@@ -1,4 +1,4 @@
-﻿namespace Atomic.Sео.Html;
+﻿namespace Atomic.Seo.Html;
 
 public static class Constants
 {

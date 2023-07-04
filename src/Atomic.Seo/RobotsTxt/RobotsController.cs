@@ -5,7 +5,7 @@ using System.Text;
 using Umbraco.Cms.Core.Web;
 using Atomic.Common.Content;
 
-namespace Atomic.Sео.RobotsTxt;
+namespace Atomic.Seo.RobotsTxt;
 
 public class RobotsController : Controller
 {
