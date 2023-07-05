@@ -7,8 +7,8 @@
 	</PropertyGroup>
 
 	<PropertyGroup>
-		<Version>12.0.0</Version>
-		<AssemblyVersion>12.0.0</AssemblyVersion>
+		<Version>12.0.1</Version>
+		<AssemblyVersion>12.0.1</AssemblyVersion>
 		<Product>Atomic.Seo</Product>
 		<PackageId>Atomic.Seo</PackageId>
 		<Authors>FFW</Authors>
@@ -17,7 +17,7 @@
 		<Description>Atomic.Seo is an Atomic Toolkit package which provides easy to maintain SEO settings for your Umbraco website.</Description>
 		<PackageIcon>logo.png</PackageIcon>
 		<PackageReadmeFile>readme.md</PackageReadmeFile>
-		<PackageProjectUrl>https://atomictoolkit.com/packages/aromicseo</PackageProjectUrl>
+		<PackageProjectUrl>https://atomictoolkit.com/packages/atomicseo</PackageProjectUrl>
 		<PackageTags>umbraco;umbraco-marketplace;atomictoolkit;seo;atomicseo;ffw;H5YR</PackageTags>
 		<PackageLicenseExpression>MIT</PackageLicenseExpression>
 
