@@ -7,6 +7,8 @@
 	</PropertyGroup>
 
 	<PropertyGroup>
+		<Version>11.1.6</Version>
+		<AssemblyVersion>11.1.6</AssemblyVersion>
 		<Product>Atomic.Common</Product>
 		<PackageId>Atomic.Common</PackageId>
 		<Authors>FFW</Authors>
