@@ -1,5 +1,4 @@
-﻿using Atomic.Common.Configuration;
-using Atomic.Common.Multilanguage;
+﻿using Atomic.Common.Multilanguage;
 using Microsoft.AspNetCore.Mvc.Filters;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Options;
@@ -12,7 +11,7 @@ public class SetContextCultureAttribute : ActionFilterAttribute
 	{
 		var query = context.HttpContext.Request.Query;
 
-		var options = context.HttpContext.RequestServices.GetRequiredService<IOptions<AtomicCommonOptions>>().Value;
+		var options = context.HttpContext.RequestServices.GetRequiredService<IOptions<AtomicApiOptions>>().Value;
 
 		foreach (var param in options.ApiParamsAffectingContextCulture)
 		{
