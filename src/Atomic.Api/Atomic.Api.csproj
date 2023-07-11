@@ -7,14 +7,14 @@
 	</PropertyGroup>
 
 	<PropertyGroup>
-		<Version>11.0.1</Version>
-		<AssemblyVersion>11.0.1</AssemblyVersion>
+		<Version>11.0.2</Version>
+		<AssemblyVersion>11.0.2</AssemblyVersion>
 		<Product>Atomic.Api</Product>
 		<PackageId>Atomic.Api</PackageId>
 		<Authors>FFW</Authors>
 		<Copyright>FFW</Copyright>
 		<Title>Atomic.Api</Title>
-		<Description>Atomic.Api is an Atomic Toolkit package which enhances the default Umbraco Api Controllers with features like Preview, autotomatic configuration of context culture and others.</Description>
+		<Description>Atomic.Api is an Atomic Toolkit package which enhances the default Umbraco Api Controllers with features like Preview, automatic configuration of context culture and others.</Description>
 		<PackageIcon>logo.png</PackageIcon>
 		<PackageReadmeFile>readme.md</PackageReadmeFile>
 		<PackageProjectUrl>https://atomictoolkit.com/packages/atomicapi</PackageProjectUrl>
@@ -52,7 +52,7 @@
 	</ItemGroup>
 
 	<ItemGroup Condition=" '$(Configuration)' == 'Release' ">
-		<PackageReference Include="Atomic.Common" Version="[11.1.6]" />
+		<PackageReference Include="Atomic.Common" Version="[11.1.7]" />
 	</ItemGroup>
 
 	<ItemGroup Condition=" '$(Configuration)' == 'Debug' ">

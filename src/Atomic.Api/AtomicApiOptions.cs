@@ -1,4 +1,5 @@
 ﻿using Atomic.Common.Configuration;
+using System.ComponentModel;
 using System.Text.Json.Serialization;
 
 namespace Atomic.Api;
@@ -10,6 +11,9 @@ public class AtomicApiOptions
 
 	public string? PublicApiAuthToken { get; set; }
 
-	[JsonIgnore]
+    [DefaultValue(new[] { "culture", "language", "locale" })]
+    public string[] ApiParamsAffectingContextCulture { get; set; } = new[] { "culture", "language", "locale" };
+
+    [JsonIgnore]
 	public bool RequiresPublicApiAuthentication => !string.IsNullOrWhiteSpace(PublicApiAuthToken);
 }

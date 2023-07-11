@@ -11,7 +11,4 @@ public class AtomicCommonOptions
 
     [DefaultValue("Settings")]
     public string WebsiteSettingsRootName { get; set; } = "Settings";
-
-    [DefaultValue(new[] { "culture", "language", "locale" })]
-    public string[] ApiParamsAffectingContextCulture { get; set; } = new[] { "culture", "language", "locale" };
 }

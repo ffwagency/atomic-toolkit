@@ -7,8 +7,8 @@
 	</PropertyGroup>
 
 	<PropertyGroup>
-		<Version>11.1.6</Version>
-		<AssemblyVersion>11.1.6</AssemblyVersion>
+		<Version>11.1.7</Version>
+		<AssemblyVersion>11.1.7</AssemblyVersion>
 		<Product>Atomic.OutputCache</Product>
 		<PackageId>Atomic.OutputCache</PackageId>
 		<Authors>FFW</Authors>
@@ -53,7 +53,7 @@
 	</ItemGroup>
 
 	<ItemGroup Condition=" '$(Configuration)' == 'Release' ">
-		<PackageReference Include="Atomic.Api" Version="[11.0.1]" />
+		<PackageReference Include="Atomic.Api" Version="[11.0.2]" />
 	</ItemGroup>
 
 	<ItemGroup Condition=" '$(Configuration)' == 'Debug' ">

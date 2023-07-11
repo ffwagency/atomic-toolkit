@@ -7,8 +7,8 @@
 	</PropertyGroup>
 
 	<PropertyGroup>
-		<Version>11.2.3</Version>
-		<AssemblyVersion>11.2.3</AssemblyVersion>
+		<Version>11.2.4</Version>
+		<AssemblyVersion>11.2.4</AssemblyVersion>
 		<Product>Atomic.StarterKit</Product>
 		<PackageId>Atomic.StarterKit</PackageId>
 		<Authors>FFW</Authors>
@@ -56,8 +56,8 @@
 	</ItemGroup>
 
 	<ItemGroup Condition=" '$(Configuration)' == 'Release' ">
-		<PackageReference Include="Atomic.OutputCache" Version="[11.1.6]" />
-		<PackageReference Include="Atomic.Seo" Version="[11.1.9]" />
+		<PackageReference Include="Atomic.OutputCache" Version="[11.1.7]" />
+		<PackageReference Include="Atomic.Seo" Version="[11.1.10]" />
 	</ItemGroup>
 	
 	<ItemGroup Condition=" '$(Configuration)' == 'Debug' ">
