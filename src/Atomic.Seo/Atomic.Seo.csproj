@@ -7,8 +7,8 @@
 	</PropertyGroup>
 
 	<PropertyGroup>
-		<Version>11.1.10</Version>
-		<AssemblyVersion>11.1.10</AssemblyVersion>
+		<Version>11.1.11</Version>
+		<AssemblyVersion>11.1.11</AssemblyVersion>
 		<Product>Atomic.Seo</Product>
 		<PackageId>Atomic.Seo</PackageId>
 		<Authors>FFW</Authors>
@@ -53,7 +53,7 @@
 	</ItemGroup>
 
 	<ItemGroup Condition=" '$(Configuration)' == 'Release' ">
-		<PackageReference Include="Atomic.Common" Version="[11.1.7]" />
+		<PackageReference Include="Atomic.Common" Version="[11.1.8]" />
 	</ItemGroup>
 
 	<ItemGroup Condition=" '$(Configuration)' == 'Debug' ">

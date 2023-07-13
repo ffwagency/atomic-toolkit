@@ -7,8 +7,8 @@
 	</PropertyGroup>
 
 	<PropertyGroup>
-		<Version>11.0.2</Version>
-		<AssemblyVersion>11.0.2</AssemblyVersion>
+		<Version>11.0.3</Version>
+		<AssemblyVersion>11.0.3</AssemblyVersion>
 		<Product>Atomic.Api</Product>
 		<PackageId>Atomic.Api</PackageId>
 		<Authors>FFW</Authors>
@@ -52,7 +52,7 @@
 	</ItemGroup>
 
 	<ItemGroup Condition=" '$(Configuration)' == 'Release' ">
-		<PackageReference Include="Atomic.Common" Version="[11.1.7]" />
+		<PackageReference Include="Atomic.Common" Version="[11.1.8]" />
 	</ItemGroup>
 
 	<ItemGroup Condition=" '$(Configuration)' == 'Debug' ">

@@ -7,14 +7,14 @@
 	</PropertyGroup>
 
 	<PropertyGroup>
-		<Version>11.1.7</Version>
-		<AssemblyVersion>11.1.7</AssemblyVersion>
+		<Version>11.1.8</Version>
+		<AssemblyVersion>11.1.8</AssemblyVersion>
 		<Product>Atomic.OutputCache</Product>
 		<PackageId>Atomic.OutputCache</PackageId>
 		<Authors>FFW</Authors>
 		<Copyright>FFW</Copyright>
 		<Title>Atomic.OutputCache</Title>
-		<Description>Atomic.OutputCache is an Atomic Toolkit package which provides easy way to maintain Umbraco Output Cache. It is based on the default dotnet output cache.</Description>
+		<Description>Atomic.OutputCache is an Atomic Toolkit package which provides an easy way to maintain Umbraco output cache. It is based on the default .NET output cache introduced in .NET 7.</Description>
 		<PackageIcon>logo.png</PackageIcon>
 		<PackageReadmeFile>readme.md</PackageReadmeFile>
 		<PackageProjectUrl>https://atomictoolkit.com/packages/atomicoutputcache</PackageProjectUrl>
@@ -53,7 +53,7 @@
 	</ItemGroup>
 
 	<ItemGroup Condition=" '$(Configuration)' == 'Release' ">
-		<PackageReference Include="Atomic.Api" Version="[11.0.2]" />
+		<PackageReference Include="Atomic.Api" Version="[11.0.3]" />
 	</ItemGroup>
 
 	<ItemGroup Condition=" '$(Configuration)' == 'Debug' ">
