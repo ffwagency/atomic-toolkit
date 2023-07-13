@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using Umbraco.Cms.Core.Models.PublishedContent;
+using Umbraco.Cms.Core.PublishedCache;
 using Umbraco.Cms.Core.Services;
 using Umbraco.Cms.Core.Web;
 using Umbraco.Extensions;
@@ -33,6 +34,10 @@ public class MultisiteContentService
     public T? GetWebsiteRoot<T>() where T : IPublishedContent
     {
         var umbracoContext = _umbracoContextAccessor.GetRequiredUmbracoContext();
+
+        var root = GetSingeRoot<T>(umbracoContext.Content!);
+        if (root != null)
+            return root;
 
         if (umbracoContext.PublishedRequest?.PublishedContent is T)
             return (T)umbracoContext.PublishedRequest.PublishedContent.Root();
@@ -103,5 +108,14 @@ public class MultisiteContentService
         }
 
         return (T)contentRoot;
+    }
+
+    private static T? GetSingeRoot<T>(IPublishedContentCache contentCache) where T : IPublishedContent
+    {
+        var roots = contentCache.GetAtRoot().Where(x => x is T).ToArray();
+        if (roots.Length == 1)
+            return (T)roots[0];
+
+        return default;
     }
 }
