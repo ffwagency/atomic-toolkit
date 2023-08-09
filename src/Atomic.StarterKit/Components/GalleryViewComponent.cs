@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Umbraco.Cms.Core.Models.Blocks;
 using Umbraco.Cms.Web.Common.PublishedModels;
 
 namespace Atomic.StarterKit.Components;
@@ -6,8 +7,8 @@ namespace Atomic.StarterKit.Components;
 [ViewComponent(Name = Gallery.ModelTypeAlias)]
 public class GalleryViewComponent : ViewComponent
 {
-	public IViewComponentResult Invoke(Gallery source)
+	public IViewComponentResult Invoke(BlockListItem<Gallery> source)
 	{
-		return View("~/Views/Components/Gallery.cshtml", source);
+		return View("~/Views/Partials/blocklist/Components/Gallery.cshtml", source);
 	}
 }

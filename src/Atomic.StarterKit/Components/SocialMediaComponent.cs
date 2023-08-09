@@ -17,6 +17,6 @@ public class SocialMediaComponent : ViewComponent
 	public IViewComponentResult Invoke()
 	{
 		var vm = _multisiteContentService.GetSettings<SocialMediaSettings>();
-		return View("~/Views/Components/SocialMedia.cshtml", vm);
+		return View("~/Views/Partials/blocklist/Components/SocialMedia.cshtml", vm);
 	}
 }

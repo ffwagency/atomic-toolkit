@@ -1,0 +1,95 @@
+﻿@model Umbraco.Cms.Core.Models.Blocks.BlockListItem<Footer>
+@{
+	if (Model == null) return;
+}
+
+<footer class="text-white footer">
+	<div class="container py-4 py-lg-5">
+		<div class="row justify-content-center footer__content">
+			@if (Model.Content.LeftColumnNavigation != null && Model.Content.LeftColumnNavigation.Any())
+			{
+				<div class="col-sm-4 col-md-3 text-center text-lg-start d-flex flex-column">
+					@if (!string.IsNullOrWhiteSpace(Model.Content.LeftColumTitle))
+					{
+						<h3 class="fs-6 text-white">@Model.Content.LeftColumTitle</h3>
+					}
+					<ul class="list-unstyled">
+						@foreach (var item in Model.Content.LeftColumnNavigation)
+						{
+							var currentItem = item.Content as NavigationItem;
+							if (currentItem != null && currentItem.Link != null)
+							{
+								<li><a class="link-light" href="@currentItem.Link.FirstOrDefault()!.Url">@currentItem.Link.FirstOrDefault()!.Name</a></li>
+							}
+						}
+
+					</ul>
+				</div>
+			}
+			@if (Model.Content.MiddleColumnNavigation != null && Model.Content.MiddleColumnNavigation.Any())
+			{
+			<div class="col-sm-4 col-md-3 text-center text-lg-start d-flex flex-column">
+					@if (!string.IsNullOrWhiteSpace(Model.Content.MiddleColumnTitle))
+				{
+						<h3 class="fs-6 text-white">@Model.Content.MiddleColumnTitle</h3>
+				}
+				<ul class="list-unstyled">
+						@foreach (var item in Model.Content.MiddleColumnNavigation)
+					{
+						var currentItem = item.Content as NavigationItem;
+						if (currentItem != null && currentItem.Link != null)
+						{
+							<li><a class="link-light" href="@currentItem.Link.FirstOrDefault()!.Url">@currentItem.Link.FirstOrDefault()!.Name</a></li>
+						}
+					}
+
+				</ul>
+			</div>
+			}
+			@if (Model.Content.RightColumnNavigation != null && Model.Content.RightColumnNavigation.Any())
+			{
+			<div class="col-sm-4 col-md-3 text-center text-lg-start d-flex flex-column">
+				@if (!string.IsNullOrWhiteSpace(Model.Content.RightColumnTitle))
+				{
+					<h3 class="fs-6 text-white">@Model.Content.RightColumnTitle</h3>
+				}
+				<ul class="list-unstyled">
+						@foreach (var item in Model.Content.RightColumnNavigation)
+					{
+						var currentItem = item.Content as NavigationItem;
+						if (currentItem != null && currentItem.Link != null)
+						{
+							<li><a class="link-light" href="@currentItem.Link.FirstOrDefault()!.Url">@currentItem.Link.FirstOrDefault()!.Name</a></li>
+						}
+					}
+
+				</ul>
+			</div>
+			}
+			<div class="col-lg-3 text-center text-lg-start d-flex flex-column align-items-center order-first align-items-lg-start order-lg-last footer__content__right">
+				<div class="fw-bold d-flex align-items-center flex-column justify-content-between mb-2">
+					@if (Model.Content.Logo != null)
+					{
+						<img class="footer__content__right__logo" src="@Model.Content.Logo.Url()" alt="@Model.Content.Logo.Name" />
+					}
+					@if (!string.IsNullOrWhiteSpace(Model.Content.BrandText))
+					{
+						<span>@Model.Content.BrandText</span>
+					}
+				</div>
+				@if (!string.IsNullOrWhiteSpace(Model.Content.Desciption))
+				{
+					<p class="text-muted">@Model.Content.Desciption</p>
+				}
+			</div>
+		</div>
+		<hr>
+		<div class="d-flex justify-content-between align-items-center pt-3 footer__copyrights">
+			@if (!string.IsNullOrWhiteSpace(Model.Content.CopyrightText))
+			{
+				<p class="mb-0">@Model.Content.CopyrightText</p>
+			}
+			@(await Component.InvokeAsync("SocialMedia"))
+		</div>
+	</div>
+</footer>

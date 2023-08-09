@@ -1,0 +1,63 @@
+﻿@model Umbraco.Cms.Core.Models.Blocks.BlockListItem<Timeline>
+@{
+	if (Model == null) return;
+}
+
+<section class="about-section" id="about">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-12 text-center">
+				@if (!string.IsNullOrWhiteSpace(Model.Content.PreTitle))
+				{
+					<h2 class="text-uppercase">@Model.Content.PreTitle</h2>
+				}
+				@if (!string.IsNullOrWhiteSpace(Model.Content.Title))
+				{
+					<h3 class="text-muted section-subheading">@Model.Content.Title</h3>
+				}
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-lg-12">
+				<ul class="list-group timeline">
+					@if (Model.Content.TimelineItems != null && Model.Content.TimelineItems.Any())
+					{
+						for (int i = 0; i < Model.Content.TimelineItems.Count(); i++)
+						{
+							var currentItem = Model.Content.TimelineItems[i].Content as TimelineItem;
+							var cssClass = i % 2 == 0 ? "" : "timeline-inverted";
+
+							if (currentItem != null)
+							{
+								<li class="list-group-item @cssClass">
+									@if (currentItem.Image != null)
+									{
+										<div class="timeline-image"><img class="rounded-circle img-fluid" src="@currentItem.Image.Url()" alt="@currentItem.Image.Name"></div>
+									}
+									<div class="timeline-panel">
+										<div class="timeline-heading">
+											@if (!string.IsNullOrWhiteSpace(currentItem.YearsRange))
+											{
+												<h4>@currentItem.YearsRange</h4>
+											}
+											@if (!string.IsNullOrWhiteSpace(currentItem.Title))
+											{
+												<h4 class="subheading">@currentItem.Title</h4>
+											}
+										</div>
+										<div class="timeline-body">
+											@if (!string.IsNullOrWhiteSpace(currentItem.Description))
+											{
+												<p class="text-muted">@currentItem.Description</p>
+											}
+										</div>
+									</div>
+								</li>
+							}
+						}
+					}
+				</ul>
+			</div>
+		</div>
+	</div>
+</section>

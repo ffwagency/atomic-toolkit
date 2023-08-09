@@ -1,4 +1,4 @@
-﻿@model Quote
+﻿@model Umbraco.Cms.Core.Models.Blocks.BlockListItem<Quote>
 @{
 	if (Model == null) return;
 }
@@ -6,7 +6,7 @@
 	<div class="container">
 		<div class="quote-section__content">
 			<h2 class="text-center quote-section__content__title"><i class="fa fa-quote-left"></i> </h2>
-			<p class="text-center">@Model.Text </p>
+			<p class="text-center">@Model.Content.Text </p>
 		</div>
 	</div>
 </section>

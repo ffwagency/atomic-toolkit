@@ -1,0 +1,25 @@
+﻿@model Umbraco.Cms.Core.Models.Blocks.BlockListItem<Hero>
+@{
+	if (Model == null) return;
+}
+
+<header class="masthead hero-section" style="@(Model.Content.BackgroundImage != null ? $"background: url('{Model.Content.BackgroundImage.Url()}') center / cover no-repeat;" : "background-color: transparent;")">
+	<div class="container">
+		<div class="intro-text">
+			@if (!string.IsNullOrWhiteSpace(Model.Content.Title))
+			{
+				<div class="intro-heading text-uppercase">
+					<h1>@Model.Content.Title</h1>
+				</div>
+			}
+			@if (!string.IsNullOrWhiteSpace(Model.Content.SubTitle))
+			{
+				<div class="intro-lead-in"><span>@Model.Content.SubTitle</span></div>
+			}
+			@if (Model.Content.ButtonLink != null && Model.Content.ButtonLink.Any())
+			{
+				<a class="btn btn-lg text-uppercase" role="button" href="@Model.Content.ButtonLink.FirstOrDefault()!.Url">@Model.Content.ButtonLink.FirstOrDefault()!.Name <i class="fa fa-arrow-right fa-1x"></i></a>
+			}
+		</div>
+	</div>
+</header>

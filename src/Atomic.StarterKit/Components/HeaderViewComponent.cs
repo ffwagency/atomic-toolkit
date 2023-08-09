@@ -17,8 +17,8 @@ public class HeaderViewComponent : ViewComponent
 	public IViewComponentResult Invoke()
 	{
 		var sharedComponents = _multisiteContentService.GetSharedContent<Layout>();
-		var header = sharedComponents?.Header?.FirstOrDefault()?.Content as Header;
+		var header = sharedComponents?.Header?.FirstOrDefault();
 		ViewData["currentUrl"] = Request.Path.Value;
-		return View("~/Views/Components/Header.cshtml", header);
+		return View("~/Views/Partials/blocklist/Components/Header.cshtml", header);
 	}
 }

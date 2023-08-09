@@ -1,4 +1,4 @@
-﻿@model FeaturedPortfolio
+﻿@model Umbraco.Cms.Core.Models.Blocks.BlockListItem<FeaturedPortfolio>
 @{
 	if (Model == null) return;
 }
@@ -7,21 +7,21 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-12 text-center">
-				@if (!string.IsNullOrWhiteSpace(Model.PreTitle))
+				@if (!string.IsNullOrWhiteSpace(Model.Content.PreTitle))
 				{
-					<h2 class="text-uppercase section-heading">@Model.PreTitle</h2>
+					<h2 class="text-uppercase section-heading">@Model.Content.PreTitle</h2>
 				}
-				@if (!string.IsNullOrWhiteSpace(Model.Title))
+				@if (!string.IsNullOrWhiteSpace(Model.Content.Title))
 				{
-				<h3 class="text-muted section-subheading">@Model.Title</h3>
+					<h3 class="text-muted section-subheading">@Model.Content.Title</h3>
 				}
 			</div>
 		</div>
 		<div class="row">
 
-			@if(Model.Cases != null && Model.Cases.Any())
+			@if (Model.Content.Cases != null && Model.Content.Cases.Any())
 			{
-				foreach (var item in Model.Cases)
+				foreach (var item in Model.Content.Cases)
 				{
 					var currentItem = item.Content as FeaturedPortfolioItem;
 
@@ -55,10 +55,10 @@
 				}
 			}
 		</div>
-		@if (Model.SeeMoreLink != null && Model.SeeMoreLink.Any())
+		@if (Model.Content.SeeMoreLink != null && Model.Content.SeeMoreLink.Any())
 		{
 			<div class="row">
-				<div class="col-lg-12 text-center portfolio-section__see-all-link"><a class="btn" href="@Model.SeeMoreLink.FirstOrDefault()!.Url"><span>@Model.SeeMoreLink.FirstOrDefault()!.Name</span><i class="fa fa-arrow-right fa-1x"></i></a></div>
+				<div class="col-lg-12 text-center portfolio-section__see-all-link"><a class="btn" href="@Model.Content.SeeMoreLink.FirstOrDefault()!.Url"><span>@Model.Content.SeeMoreLink.FirstOrDefault()!.Name</span><i class="fa fa-arrow-right fa-1x"></i></a></div>
 			</div>
 		}
 	</div>

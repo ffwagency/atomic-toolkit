@@ -1,4 +1,4 @@
-﻿@model TeamListing
+﻿@model Umbraco.Cms.Core.Models.Blocks.BlockListItem<TeamListing>
 @{
 	if (Model == null) return;
 }
@@ -7,20 +7,20 @@
     <div class="container">
         <div class="row mb-4 mb-lg-5">
             <div class="col-md-8 col-xl-6 text-center mx-auto">
-                @if (!string.IsNullOrWhiteSpace(Model.Title))
+                @if (!string.IsNullOrWhiteSpace(Model.Content.Title))
                 {
-                    <h2 class="text-uppercase section-heading">@Model.Title</h2>
+                    <h2 class="text-uppercase section-heading">@Model.Content.Title</h2>
                 }
-                @if (!string.IsNullOrWhiteSpace(Model.Description))
+                @if (!string.IsNullOrWhiteSpace(Model.Content.Description))
                 {
-                    <h3 class="text-muted section-subheading">@Model.Description</h3>
+                    <h3 class="text-muted section-subheading">@Model.Content.Description</h3>
                 }
             </div>
         </div>
         <div class="row gy-4 row-cols-2 row-cols-md-4 team-listing-section__content">
-            @if (Model.Members != null && Model.Members.Any())
+            @if (Model.Content.Members != null && Model.Content.Members.Any())
             {
-                foreach (var item in Model.Members)
+                foreach (var item in Model.Content.Members)
                 {
                     var currentItem = item.Content as TeamListingItem;
                     @if (currentItem != null)

@@ -1,4 +1,4 @@
-﻿@model PortfolioListing
+﻿@model Umbraco.Cms.Core.Models.Blocks.BlockListItem<PortfolioListing>
 @{
 	if (Model == null) return;
 }
@@ -7,20 +7,20 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-12 text-center">
-				@if (!string.IsNullOrWhiteSpace(Model.PreTitle))
+				@if (!string.IsNullOrWhiteSpace(Model.Content.PreTitle))
 				{
-					<h2 class="text-uppercase section-heading">@Model.PreTitle</h2>
+					<h2 class="text-uppercase section-heading">@Model.Content.PreTitle</h2>
 				}
-				@if (!string.IsNullOrWhiteSpace(Model.Title))
+				@if (!string.IsNullOrWhiteSpace(Model.Content.Title))
 				{
-					<h3 class="text-muted section-subheading">@Model.Title</h3>
+					<h3 class="text-muted section-subheading">@Model.Content.Title</h3>
 				}
 			</div>
 		</div>
 		<div class="row">
-			@if (Model.PortfolioItems != null && Model.PortfolioItems.Any())
+			@if (Model.Content.PortfolioItems != null && Model.Content.PortfolioItems.Any())
 			{
-				foreach (var item in Model.PortfolioItems)
+				foreach (var item in Model.Content.PortfolioItems)
 				{
 					var currentItem = item.Content as PortfolioListingItem;
 					if (currentItem != null)
