@@ -1,4 +1,6 @@
-﻿using Atomic.Api.Preview;
+﻿using Atomic.Api.ErrorHandling;
+using Atomic.Api.Preview;
+using Atomic.Api.Request;
 using Microsoft.Extensions.DependencyInjection;
 using Umbraco.Cms.Core;
 using Umbraco.Cms.Core.Web;
@@ -8,7 +10,9 @@ namespace Atomic.Api.Controllers
 {
 	[EnablePreview]
 	[SetContextCulture]
-	public class AtomicAuthorizedApiController : UmbracoAuthorizedApiController, IAtomicApiController
+	[ValidateAtomicRequestModel]
+    [AtomicExceptionFilter]
+    public class AtomicAuthorizedApiController : UmbracoAuthorizedApiController, IAtomicApiController
 	{
 		private UmbracoContextReference? _umbracoContextReference;
 		private bool _disposed;

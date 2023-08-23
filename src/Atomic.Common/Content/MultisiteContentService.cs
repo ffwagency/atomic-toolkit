@@ -1,4 +1,5 @@
 using Atomic.Common.Configuration;
+using Atomic.Search.Fields.Exceptions;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
@@ -31,7 +32,7 @@ public class MultisiteContentService
         _commonOptions = commonOptions.Value;
     }
 
-    public T? GetWebsiteRoot<T>() where T : IPublishedContent
+    public T GetWebsiteRoot<T>() where T : IPublishedContent
     {
         var umbracoContext = _umbracoContextAccessor.GetRequiredUmbracoContext();
 
@@ -43,27 +44,22 @@ public class MultisiteContentService
             return (T)umbracoContext.PublishedRequest.PublishedContent.Root();
 
         var websiteHostname = _httpContextAccessor.HttpContext?.Request?.Host.Value ?? string.Empty;
+        CannotResolveWebsiteRootException.ThrowIfCannotResolveRequestHostname(websiteHostname);
 
         var domain = _domainService.GetAll(true).FirstOrDefault(x => x.DomainName.Contains(websiteHostname));
-        if (domain?.RootContentId == null)
-        {
-            _logger.LogError("Cannot find Umbraco domain definition for {hostname}.", websiteHostname);
-            return default;
-        }
+        CannotResolveWebsiteRootException.ThrowIfHostnameIsNotConfigured(domain, websiteHostname);
 
-        var websiteRoot = umbracoContext.Content?.GetById(domain.RootContentId.Value);
-        if (websiteRoot is not T t)
-        {
-            _logger.LogError("Cannot find website root item.");
-            return default;
-        }
+        var websiteRoot = umbracoContext.Content!.GetById(domain!.RootContentId!.Value);
+        CannotResolveWebsiteRootException.ThrowIfWebsiteRootIsNotOfType<T>(websiteRoot);
 
-        return t;
+        return (T)websiteRoot!;
     }
 
-    public T? GetSettings<T>() where T : IPublishedContent
+    public T? GetSettings<T>(IPublishedContent? websiteRoot = null) where T : IPublishedContent
     {
-        var settings = GetWebsiteRoot<IPublishedContent>()
+        websiteRoot ??= GetWebsiteRoot<IPublishedContent>();
+
+        var settings = websiteRoot
                        ?.Children
                        ?.FirstOrDefault(x => x.Name.InvariantEquals(_commonOptions.WebsiteSettingsRootName))
                        ?.Descendants()
@@ -78,9 +74,18 @@ public class MultisiteContentService
         return (T)settings;
     }
 
-    public T? GetSharedContent<T>() where T : IPublishedContent
+    public T GetRequiredSettings<T>(IPublishedContent? websiteRoot = null) where T : IPublishedContent
     {
-        var sharedContent = GetWebsiteRoot<IPublishedContent>()
+        var settings = GetSettings<T>(websiteRoot);
+        InvalidSettingsException.ThrowIfNull(settings);
+        return settings!;
+    }
+
+    public T? GetSharedContent<T>(IPublishedContent? websiteRoot = null) where T : IPublishedContent
+    {
+        websiteRoot ??= GetWebsiteRoot<IPublishedContent>();
+
+        var sharedContent = websiteRoot
                             ?.Children
                             ?.FirstOrDefault(x => x.Name.InvariantEquals(_commonOptions.WebsiteSharedContentRootName))
                             ?.Descendants()
@@ -95,9 +100,11 @@ public class MultisiteContentService
         return (T)sharedContent;
     }
 
-    public T? GetContent<T>() where T : IPublishedContent
+    public T? GetContent<T>(IPublishedContent? websiteRoot = null) where T : IPublishedContent
     {
-        var contentRoot = GetWebsiteRoot<IPublishedContent>()
+        websiteRoot ??= GetWebsiteRoot<IPublishedContent>();
+
+        var contentRoot = websiteRoot
                           ?.Children
                           ?.FirstOrDefault(x => x is T);
 

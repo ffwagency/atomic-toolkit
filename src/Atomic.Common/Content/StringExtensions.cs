@@ -1,12 +1,9 @@
-﻿using System.Net;
-using System.Text.RegularExpressions;
+﻿using System.Text.RegularExpressions;
 using System.Text;
-using HtmlAgilityPack;
-using NUglify.Helpers;
 
 namespace Atomic.Common.Content;
 
-public static partial class StringExtensions
+public static class StringExtensions
 {
     public static string ReplaceMultiple(this string value, Dictionary<string, string>? replacements, ReplaceStrategy strategy = ReplaceStrategy.Default)
     {

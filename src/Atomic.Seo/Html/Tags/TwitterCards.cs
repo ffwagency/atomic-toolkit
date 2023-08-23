@@ -2,12 +2,13 @@
 using Umbraco.Extensions;
 using Umbraco.Cms.Web.Common.PublishedModels;
 using Atomic.Common.Content;
+using Atomic.Common.Configuration;
 
 namespace Atomic.Seo.Html.Tags;
 
 public class TwitterCards : ISeoHtmlTags
 {
-	public virtual string Get(ISeoBasePage seoPage, SeoSettings seoSettings)
+	public virtual string Get(ISeoBasePage seoPage, SeoSettings seoSettings, AtomicCommonOptions options)
 	{
 		var html = new StringBuilder();
 
@@ -18,15 +19,15 @@ public class TwitterCards : ISeoHtmlTags
 		if (!string.IsNullOrWhiteSpace(shareText))
 		{
 			shareText = shareText.StripHtml()
-									 .RemoveNewLines()
-									 .Truncate(seoSettings.ShareTextMaxLength != 0
+							     .RemoveNewLines()
+								 .Truncate(seoSettings.ShareTextMaxLength != 0
 											   ? seoSettings.ShareTextMaxLength
 											   : 190);
 
 			html.AppendLine(@$"<meta property=""twitter:description"" content=""{shareText}"">");
 		}
 
-		var shareImage = seoPage.GetShareImageAbsoluteUrl(seoSettings);
+		var shareImage = seoPage.GetShareImageAbsoluteUrl(seoSettings, options);
 		if (!string.IsNullOrWhiteSpace(shareImage))
 			html.AppendLine(@$"<meta property=""twitter:image"" content=""{shareImage}"">");
 

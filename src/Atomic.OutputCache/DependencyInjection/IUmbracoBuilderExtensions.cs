@@ -1,10 +1,11 @@
-﻿using Atomic.Common.DependencyInjection;
+﻿using Atomic.Common.Configuration;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Options;
 using Umbraco.Cms.Core.DependencyInjection;
 using Umbraco.Cms.Core.Notifications;
 using Umbraco.Cms.Web.Common.ApplicationBuilder;
+using Umbraco.Cms.Web.Common.Mvc;
 using Umbraco.Cms.Web.Website.Controllers;
 
 namespace Atomic.OutputCache.DependencyInjection;
@@ -35,7 +36,7 @@ public static class IUmbracoBuilderExtensions
 			});
 		});
 
-		builder.Services.Configure<UmbracoRenderingDefaultsOptions>(c =>
+        builder.Services.Configure<UmbracoRenderingDefaultsOptions>(c =>
 		{
 			c.DefaultControllerType = typeof(CachedAtomicController);
 		});

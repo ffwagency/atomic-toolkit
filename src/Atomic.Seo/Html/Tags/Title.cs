@@ -1,11 +1,12 @@
 ﻿using Umbraco.Cms.Web.Common.PublishedModels;
 using Atomic.Common.Content;
+using Atomic.Common.Configuration;
 
 namespace Atomic.Seo.Html.Tags;
 
 public class Title : ISeoHtmlTags
 {
-	public virtual string Get(ISeoBasePage seoPage, SeoSettings seoSettings)
+	public virtual string Get(ISeoBasePage seoPage, SeoSettings seoSettings, AtomicCommonOptions options)
 	{
 		var title = seoPage.BrowserTitle;
 		if (string.IsNullOrWhiteSpace(title))

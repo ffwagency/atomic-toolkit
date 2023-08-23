@@ -25,7 +25,4 @@ public static class IUmbracoBuilderExtensions
 
 		return builder;
 	}
-
-	public static SeoHtmlTagsCollectionBuilder SeoHtmlTags(this IUmbracoBuilder builder)
-		=> builder.WithCollectionBuilder<SeoHtmlTagsCollectionBuilder>();
 }

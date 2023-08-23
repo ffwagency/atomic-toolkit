@@ -58,11 +58,13 @@
 	<ItemGroup Condition=" '$(Configuration)' == 'Release' ">
 		<PackageReference Include="Atomic.OutputCache" Version="[12.0.3]" />
 		<PackageReference Include="Atomic.Seo" Version="[12.0.3]" />
+		<PackageReference Include="Atomic.Search" Version="[12.0.0]" />
 	</ItemGroup>
 	
 	<ItemGroup Condition=" '$(Configuration)' == 'Debug' ">
 		<ProjectReference Include="..\Atomic.OutputCache\Atomic.OutputCache.csproj" />
 		<ProjectReference Include="..\Atomic.Seo\Atomic.Seo.csproj" />
+		<ProjectReference Include="..\Atomic.Search\Atomic.Search.csproj" />
 	</ItemGroup>
 	
 </Project>

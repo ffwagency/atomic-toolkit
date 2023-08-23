@@ -3,6 +3,7 @@ using Umbraco.Cms.Core.Models;
 using Umbraco.Cms.Core.Models.PublishedContent;
 using Umbraco.Extensions;
 using Atomic.Common.Content;
+using Atomic.Common.Configuration;
 
 namespace Atomic.Seo
 {
@@ -25,7 +26,7 @@ namespace Atomic.Seo
             }
             else
             {
-                var canonicalUrl = seoPage.ValueFor(x => x.CanonicalUrl, culture);
+                var canonicalUrl = seoPage.Value<string>(nameof(ISeoBasePage.CanonicalUrl).ToFirstLower(), culture);
                 if (!string.IsNullOrWhiteSpace(canonicalUrl))
                     url = canonicalUrl;
                 else
@@ -35,7 +36,7 @@ namespace Atomic.Seo
             return url;
         }
 
-        public static string? GetShareImageAbsoluteUrl(this ISeoBasePage seoPage, SeoSettings seoSettings)
+        public static string? GetShareImageAbsoluteUrl(this ISeoBasePage seoPage, SeoSettings seoSettings, AtomicCommonOptions options)
         {
             var image = seoPage.ShareImage;
 
@@ -44,7 +45,7 @@ namespace Atomic.Seo
             if (image == null)
                 image = seoSettings.ShareDefaultImage;
             if (image != null)
-                return image.MediaUrl(null, UrlMode.Absolute);
+                return image.AtomicMediaUrl(options, null, UrlMode.Absolute);
 
             return string.Empty;
         }

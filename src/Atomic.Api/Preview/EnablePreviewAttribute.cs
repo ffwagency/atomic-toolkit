@@ -44,6 +44,7 @@ namespace Atomic.Api.Preview
 		{
 			_forcedPreview?.Dispose();
 			_publishedSnapshot?.Resync(); // ForcedPreview(true) doesn't work by its own. this is needed as well (probably Umbraco Bug)
+			_publishedSnapshot?.Dispose();
 		}
 	}
 }

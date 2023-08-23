@@ -14,7 +14,7 @@ public static class IPublishedContentExtensions
         foreach (var fieldQuery in fieldQueries)
         {
             T? result = fieldQuery.Contains('/')
-                ? GetValueFromBlockListComponents<T>(publishedContent, fieldQuery, GetValueMode.FirstAvailableValueInComponent, culture).FirstOrDefault()
+                ? GetValueFromBlockListComponents<T>(publishedContent, fieldQuery, GetValueMode.FirstAvailable, culture).FirstOrDefault()
                 : GetValueFromPublishedContent<T>(publishedContent, fieldQuery, culture);
             if (ResultHasValue(result))
                 return result;
@@ -23,7 +23,7 @@ public static class IPublishedContentExtensions
         return default;
     }
 
-    public static IEnumerable<T> CollectValues<T>(this IPublishedContent publishedContent, IEnumerable<string> fieldQueries, string? culture = null)
+    public static IEnumerable<T> CollectValues<T>(this IPublishedContent publishedContent, IEnumerable<string>? fieldQueries, string? culture = null)
     {
         if (publishedContent == null || fieldQueries == null)
             return Enumerable.Empty<T>();
@@ -34,7 +34,7 @@ public static class IPublishedContentExtensions
         {
             if (fieldQuery.Contains('/'))
             {
-                var blockListValues = GetValueFromBlockListComponents<T>(publishedContent, fieldQuery, GetValueMode.AvailableValuesFromAllComponents, culture);
+                var blockListValues = GetValueFromBlockListComponents<T>(publishedContent, fieldQuery, GetValueMode.AllAvailable, culture);
                 values.AddRange(blockListValues);
             }
             else
@@ -113,7 +113,7 @@ public static class IPublishedContentExtensions
                 if (ResultHasValue(result))
                     values.Add(result!);
 
-                if (mode == GetValueMode.FirstAvailableValueInComponent && values.Count > 0)
+                if (mode == GetValueMode.FirstAvailable && values.Count > 0)
                     return values;
             }
         }
@@ -167,9 +167,9 @@ public static class IPublishedContentExtensions
         return resultBlockListElements;
     }
 
-    private enum GetValueMode
+    public enum GetValueMode
     {
-        FirstAvailableValueInComponent,
-        AvailableValuesFromAllComponents
+        FirstAvailable,
+        AllAvailable
     }
 }

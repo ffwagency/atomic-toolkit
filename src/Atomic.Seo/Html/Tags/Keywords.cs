@@ -1,10 +1,11 @@
-﻿using Umbraco.Cms.Web.Common.PublishedModels;
+﻿using Atomic.Common.Configuration;
+using Umbraco.Cms.Web.Common.PublishedModels;
 
 namespace Atomic.Seo.Html.Tags;
 
 public class Keywords : ISeoHtmlTags
 {
-	public virtual string Get(ISeoBasePage seoPage, SeoSettings seoSettings)
+	public virtual string Get(ISeoBasePage seoPage, SeoSettings seoSettings, AtomicCommonOptions options)
 	{
 		var keywords = seoPage.MetaKeywords?.ToArray() ?? Array.Empty<string>();
 		if (keywords.Length == 0)

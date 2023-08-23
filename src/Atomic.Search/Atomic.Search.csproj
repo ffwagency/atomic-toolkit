@@ -1,0 +1,65 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>net7.0</TargetFramework>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+	</PropertyGroup>
+
+	<PropertyGroup>
+		<Version>12.0.0</Version>
+		<AssemblyVersion>12.0.0</AssemblyVersion>
+		<Product>Atomic.Search</Product>
+		<PackageId>Atomic.Search</PackageId>
+		<Authors>FFW</Authors>
+		<Copyright>FFW</Copyright>
+		<Title>Atomic.Search</Title>
+		<Description>Atomic.Search is a package for Atomic Toolkit which uses Examine to enable searching on your website. With only a few configurations and almost zero code you get custom Crawling, Boosting and Search API.</Description>
+		<PackageIcon>logo.png</PackageIcon>
+		<PackageReadmeFile>readme.md</PackageReadmeFile>
+		<PackageProjectUrl>https://atomictoolkit.com/packages/atomicsearch</PackageProjectUrl>
+		<PackageTags>umbraco;atomictoolkit;ffw;H5YR;search;</PackageTags>
+		<PackageLicenseExpression>MIT</PackageLicenseExpression>
+
+		<EnablePackageValidation>true</EnablePackageValidation>
+		<GenerateDocumentationFile>true</GenerateDocumentationFile>
+		<NoWarn>$(NoWarn);CS1591</NoWarn>
+		<DebugType>embedded</DebugType>
+		<RepositoryType>git</RepositoryType>
+		<RepositoryUrl>https://github.com/ffwagency/atomic-toolkit</RepositoryUrl>
+		<PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+		<IncludeSymbols>true</IncludeSymbols>
+		<SymbolPackageFormat>snupkg</SymbolPackageFormat>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+	  <DebugType>portable</DebugType>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+	  <DebugType>portable</DebugType>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="DotNet.ReproducibleBuilds" Version="1.1.1" PrivateAssets="All" IncludeAssets="runtime; build; native; contentfiles; analyzers; buildtransitive" />
+		<PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.1.1" PrivateAssets="All" />
+		<PackageReference Include="Umbraco.Cms.Web.Website" Version="[12.0.0,13.0.0)" />
+		<PackageReference Include="Umbraco.Cms.Web.BackOffice" Version="[12.0.0,13.0.0)" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<None Include="logo.png" Pack="true" PackagePath="\" />
+		<None Include="readme.md" Pack="true" PackagePath="\" />
+	</ItemGroup>
+
+	<ItemGroup Condition=" '$(Configuration)' == 'Release' ">
+		<PackageReference Include="Atomic.Common" Version="[12.0.2]" />
+		<PackageReference Include="Atomic.Api" Version="[12.0.3]" />
+	</ItemGroup>
+
+	<ItemGroup Condition=" '$(Configuration)' == 'Debug' ">
+		<ProjectReference Include="..\Atomic.Common\Atomic.Common.csproj" />
+		<ProjectReference Include="..\Atomic.Api\Atomic.Api.csproj" />
+	</ItemGroup>
+
+</Project>

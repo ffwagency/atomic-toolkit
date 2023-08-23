@@ -2,12 +2,13 @@ using Umbraco.Cms.Web.Common.PublishedModels;
 using StackExchange.Profiling.Internal;
 using Umbraco.Extensions;
 using Atomic.Common.Content;
+using Atomic.Common.Configuration;
 
 namespace Atomic.Seo.Html.Tags;
 
 public class Description : ISeoHtmlTags
 {
-    public virtual string Get(ISeoBasePage seoPage, SeoSettings seoSettings)
+    public virtual string Get(ISeoBasePage seoPage, SeoSettings seoSettings, AtomicCommonOptions options)
 	{
 		string? description = GetDescription(seoPage, seoSettings);
 
@@ -17,8 +18,8 @@ public class Description : ISeoHtmlTags
 		}
 
 		description = description!.StripHtml()
-								 .RemoveNewLines()
-								 .Truncate(seoSettings.MetaDescriptionMaxLength.HasMetaDescriptionMaxLengthDefined()
+								  .RemoveNewLines()
+								  .Truncate(seoSettings.MetaDescriptionMaxLength.HasMetaDescriptionMaxLengthDefined()
 										   ? seoSettings.MetaDescriptionMaxLength
 										   : Constants.MetaDescriptionDefaultMaxLength);
 

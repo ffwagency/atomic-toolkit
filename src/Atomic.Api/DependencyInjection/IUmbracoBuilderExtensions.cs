@@ -1,6 +1,6 @@
 ﻿using Atomic.Api.Auth;
 using Atomic.Api.Preview;
-using Atomic.Common.DependencyInjection;
+using Atomic.Common.Configuration;
 using Umbraco.Cms.Core.DependencyInjection;
 
 namespace Atomic.Api.DependencyInjection;

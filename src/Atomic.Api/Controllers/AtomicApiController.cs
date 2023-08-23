@@ -1,5 +1,7 @@
 ﻿using Atomic.Api.Auth;
+using Atomic.Api.ErrorHandling;
 using Atomic.Api.Preview;
+using Atomic.Api.Request;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.Extensions.DependencyInjection;
 using Umbraco.Cms.Core;
@@ -12,6 +14,8 @@ namespace Atomic.Api.Controllers
 	[EnablePreview]
     [SetContextCulture]
 	[UmbracoRequireHttps]
+    [ValidateAtomicRequestModel]
+    [AtomicExceptionFilter]
 	[Authorize(Policy = AtomicAuthPolicy.Name)]
 	public class AtomicApiController : UmbracoApiController, IAtomicApiController
     {
