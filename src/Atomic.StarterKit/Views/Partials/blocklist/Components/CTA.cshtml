@@ -1,0 +1,37 @@
+﻿@model Umbraco.Cms.Core.Models.Blocks.BlockListItem<CTA>
+@{
+	if (Model == null) return;
+}
+
+<section class="py-4 py-xl-5 cta-section">
+	<div class="container">
+		<div class="border rounded border-0 border-dark overflow-hidden cta-section__content">
+			<div class="row g-0">
+				<div class="col-md-6 ">
+					<div class="text-white p-4 p-md-5">
+						@if (!string.IsNullOrWhiteSpace(Model.Content.Title))
+						{
+							<h2 class="fw-bold text-white mb-3">@Model.Content.Title</h2>
+						}
+						@if (!string.IsNullOrWhiteSpace(Model.Content.Description))
+						{
+							<p class="mb-4">@Model.Content.Description</p>
+						}
+						@if (Model.Content.CTalink != null && Model.Content.CTalink.Any())
+						{
+							<div class="my-3">
+								<a class="btn btn-light btn-lg" role="button" href="@Model.Content.CTalink.FirstOrDefault()!.Url">@Model.Content.CTalink.FirstOrDefault()!.Name</a>
+							</div>
+						}
+					</div>
+				</div>
+				@if (Model.Content.Image != null)
+				{
+					<div class="col-md-6 order-first order-md-last cta-section__content__image">
+						<img class="w-100 h-100" src="@Model.Content.Image.Url()" alt="@Model.Content.Image.Name">
+					</div>
+				}
+			</div>
+		</div>
+	</div>
+</section>

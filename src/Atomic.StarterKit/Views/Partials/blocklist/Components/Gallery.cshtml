@@ -1,0 +1,38 @@
+﻿@model Umbraco.Cms.Core.Models.Blocks.BlockListItem<Gallery>
+@{
+	if (Model == null) return;
+}
+
+<section class="py-4 py-xl-5 gallery">
+	<div class="container">
+		<div class="row mb-5">
+			<div class="col-md-8 col-xl-6 text-center mx-auto">
+				@if (!string.IsNullOrWhiteSpace(Model.Content.PreTitle))
+				{
+					<h2 class="text-uppercase section-heading">@Model.Content.PreTitle</h2>
+				}
+				@if (!string.IsNullOrWhiteSpace(Model.Content.Title))
+				{
+					<h3 class="text-muted section-subheading">@Model.Content.Title</h3>
+				}
+			</div>
+		</div>
+		<div class="row gx-2 gy-2 row-cols-1 row-cols-md-3 row-cols-xl-4 gallery__images" data-bss-baguettebox="">
+			@if (Model.Content.MediaItems != null && Model.Content.MediaItems.Any())
+			{
+				foreach (var item in Model.Content.MediaItems)
+				{
+					var srcSmall = item.Url() + "?width=450";
+					var srcMedium = item.Url() + "?width=1366";
+					var srcLarge = item.Url() + "?width=1920";
+					<a href="@item.Url()"
+					   data-at-450="@srcSmall"
+					   data-at-1366="@srcMedium"
+					   data-at-1920="@srcLarge">
+						<img class="img-fluid" src="@item.Url()" alt="@item.Name" loading="lazy">
+					</a>
+				}
+			}
+		</div>
+	</div>
+</section>

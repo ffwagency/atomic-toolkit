@@ -1,0 +1,25 @@
+@model Umbraco.Cms.Core.Models.Blocks.BlockListItem<Error>
+@{
+	if (Model == null) return;
+}
+
+<section class="py-4 py-xl-5 heading-section" style="background-color: #00243d;">
+	<div class="container h-100 heading-section__content">
+		<div class="row h-100">
+			<div class="col-md-10 col-xl-8 text-center d-flex d-sm-flex d-md-flex flex-column justify-content-center align-items-center mx-auto justify-content-md-start align-items-md-center justify-content-xl-center">
+				@if (Model.Content.ErrorCode != 0)
+				{
+					<h1 class="text-uppercase fw-bold text-white mb-3 heading-section__content__title">@Model.Content.ErrorCode</h1>
+				}
+				@if (!string.IsNullOrWhiteSpace(Model.Content.ErrorMessage))
+				{
+					<h2 class="mb-4 text-white">@Model.Content.ErrorMessage</h2>
+				}
+				@if (Model.Content.RedirectPage != null && Model.Content.RedirectPage.Any())
+				{
+					<a class="btn btn-lg text-uppercase" role="button" href="@Model.Content.RedirectPage.First().Url">@Model.Content.RedirectPage.First().Name <i class="fa fa-arrow-right fa-1x"></i></a>
+				}
+			</div>
+		</div>
+	</div>
+</section>

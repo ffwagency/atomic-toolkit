@@ -1,4 +1,4 @@
-﻿@model Gallery
+﻿@model Umbraco.Cms.Core.Models.Blocks.BlockListItem<Gallery>
 @{
 	if (Model == null) return;
 }
@@ -7,20 +7,20 @@
 	<div class="container">
 		<div class="row mb-5">
 			<div class="col-md-8 col-xl-6 text-center mx-auto">
-				@if (!string.IsNullOrWhiteSpace(Model.PreTitle))
+				@if (!string.IsNullOrWhiteSpace(Model.Content.PreTitle))
 				{
-					<h2 class="text-uppercase section-heading">@Model.PreTitle</h2>
+					<h2 class="text-uppercase section-heading">@Model.Content.PreTitle</h2>
 				}
-				@if (!string.IsNullOrWhiteSpace(Model.Title))
+				@if (!string.IsNullOrWhiteSpace(Model.Content.Title))
 				{
-					<h3 class="text-muted section-subheading">@Model.Title</h3>
+					<h3 class="text-muted section-subheading">@Model.Content.Title</h3>
 				}
 			</div>
 		</div>
 		<div class="row gx-2 gy-2 row-cols-1 row-cols-md-3 row-cols-xl-4 gallery__images" data-bss-baguettebox="">
-			@if (Model.MediaItems != null && Model.MediaItems.Any())
+			@if (Model.Content.MediaItems != null && Model.Content.MediaItems.Any())
 			{
-				foreach (var item in Model.MediaItems)
+				foreach (var item in Model.Content.MediaItems)
 				{
 					var srcSmall = item.Url() + "?width=450";
 					var srcMedium = item.Url() + "?width=1366";

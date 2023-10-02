@@ -1,4 +1,4 @@
-﻿@model DoubleImage
+﻿@model Umbraco.Cms.Core.Models.Blocks.BlockListItem<DoubleImage>
 @{
     if (Model == null) return;
 }
@@ -8,27 +8,27 @@
         <div class="row">
             <div class="col-md-6 mb-lg-0 double-image__left">
                 <div class="single-image single-image-5 text-white rounded">
-                    @if (Model.LeftImageSource != null)
+                    @if (Model.Content.LeftImageSource != null)
                     {
-                        <img src="@Model.LeftImageSource.Url()" alt="@Model.LeftImageSource.Name">
+                        <img src="@Model.Content.LeftImageSource.Url()" alt="@Model.Content.LeftImageSource.Name">
                     }
                     <div class="single-image-overlay"></div>
                     <div class="single-image-5-content">
-                        <h2 class="text-uppercase single-image-5-title fw-light mb-0">@Model.LeftImageCaption</h2>
-                        <p class="single-image-5-description fw-light mb-0">@Model.LeftImageDescription</p>
+                        <h2 class="text-uppercase single-image-5-title fw-light mb-0">@Model.Content.LeftImageCaption</h2>
+                        <p class="single-image-5-description fw-light mb-0">@Model.Content.LeftImageDescription</p>
                     </div>
                 </div>
             </div>
             <div class="col-md-6 mb-lg-0  double-image__right">
                 <div class="single-image single-image-5 text-white rounded">
-                    @if (Model.RightImageSource != null)
+                    @if (Model.Content.RightImageSource != null)
                     {
-                        <img src="@Model.RightImageSource.Url()" alt="@Model.RightImageSource.Name">
+                        <img src="@Model.Content.RightImageSource.Url()" alt="@Model.Content.RightImageSource.Name">
                     }
                     <div class="single-image-overlay"></div>
                     <div class="single-image-5-content">
-                        <h2 class="text-uppercase single-image-5-title fw-light mb-0">@Model.RightImageCaption</h2>
-                        <p class="single-image-5-description fw-light mb-0">@Model.RightImageDescription</p>
+                        <h2 class="text-uppercase single-image-5-title fw-light mb-0">@Model.Content.RightImageCaption</h2>
+                        <p class="single-image-5-description fw-light mb-0">@Model.Content.RightImageDescription</p>
                     </div>
                 </div>
             </div>

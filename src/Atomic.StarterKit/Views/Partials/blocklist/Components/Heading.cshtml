@@ -1,0 +1,17 @@
+﻿@model Umbraco.Cms.Core.Models.Blocks.BlockListItem<Heading>
+@{
+	if (Model == null) return;
+}
+<section class="py-4 py-xl-5 heading-section" style="@(Model.Content.BackgroundImage != null ? $"background: url('{Model.Content.BackgroundImage.Url()}');" : "background-color: #00243d;")">
+	<div class="heading-section__overlay"></div>
+	<div class="container h-100 heading-section__content">
+		<div class="row h-100">
+			<div class="col-md-10 col-xl-8 text-center d-flex d-sm-flex d-md-flex flex-column justify-content-center align-items-center mx-auto justify-content-md-start align-items-md-center justify-content-xl-center">
+				@if (!string.IsNullOrWhiteSpace(Model.Content.Title))
+				{
+					<h1 class="text-uppercase fw-bold text-white mb-3 heading-section__content__title">@Model.Content.Title</h1>
+				}
+			</div>
+		</div>
+	</div>
+</section>

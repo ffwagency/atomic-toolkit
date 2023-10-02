@@ -1,4 +1,4 @@
-﻿@model Services
+﻿@model Umbraco.Cms.Core.Models.Blocks.BlockListItem<Services>
 @{
 	if (Model == null) return;
 }
@@ -7,20 +7,20 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-12 text-center">
-				@if (!string.IsNullOrWhiteSpace(Model.PreTitle))
+				@if (!string.IsNullOrWhiteSpace(Model.Content.PreTitle))
 				{
-					<h2 class="text-uppercase section-heading">@Model.PreTitle</h2>
+					<h2 class="text-uppercase section-heading">@Model.Content.PreTitle</h2>
 				}
-				@if (!string.IsNullOrWhiteSpace(Model.Title))
+				@if (!string.IsNullOrWhiteSpace(Model.Content.Title))
 				{
-					<h3 class="text-muted section-subheading">@Model.Title</h3>
+					<h3 class="text-muted section-subheading">@Model.Content.Title</h3>
 				}
 			</div>
 		</div>
 		<div class="row text-center services-section__content">
-			@if (Model.ServicesItems != null && Model.ServicesItems.Any())
+			@if (Model.Content.ServicesItems != null && Model.Content.ServicesItems.Any())
 			{
-				foreach (var item in Model.ServicesItems)
+				foreach (var item in Model.Content.ServicesItems)
 				{
 					var currentItem = item.Content as ServiceItem;
 					if (currentItem != null)

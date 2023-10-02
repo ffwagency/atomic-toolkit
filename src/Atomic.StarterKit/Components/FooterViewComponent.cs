@@ -16,7 +16,7 @@ public class FooterViewComponent : ViewComponent
 	public IViewComponentResult Invoke()
 	{
 		var sharedComponents = _multisiteContentService.GetSharedContent<Layout>();
-		var footer = sharedComponents?.Footer?.FirstOrDefault()?.Content as Footer;
-		return View("~/views/Components/Footer.cshtml", footer);
+		var footer = sharedComponents?.Footer?.FirstOrDefault();
+		return View("~/Views/Partials/blocklist/Components/Footer.cshtml", footer);
 	}
 }
