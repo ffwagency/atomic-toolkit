@@ -1,5 +1,6 @@
 ﻿using Atomic.Search.Fields.Base;
 using Atomic.Search.Models;
+using Atomic.Search.Models.RangeValue;
 
 namespace Atomic.Search.Querying;
 
@@ -28,7 +29,7 @@ public class FilterQuery
             case MultiValue multiValue:
                 AddEqualsToAny<TSearchField>(multiValue);
                 break;
-            case RangeValue rangeValue:
+            case IRangeValue rangeValue:
                 AddInRange<TSearchField>(rangeValue);
                 break;
         }
@@ -49,7 +50,7 @@ public class FilterQuery
             case MultiValue multiValue:
                 AddEqualsToAny(searchFieldKey, multiValue);
                 break;
-            case RangeValue rangeValue:
+            case IRangeValue rangeValue:
                 AddInRange(searchFieldKey, rangeValue);
                 break;
         }
@@ -128,18 +129,18 @@ public class FilterQuery
     public FilterQuery AddInRange<TSearchField>(double? min, double? max)
        where TSearchField : SearchField
     {
-        var rangeValue = new RangeValue(min, max);
+        var rangeValue = new DoubleRangeValue(min, max);
         return AddInRange<TSearchField>(rangeValue);
     }
 
     public FilterQuery AddInRange<TSearchField>(long? min, long? max)
      where TSearchField : SearchField
     {
-        var rangeValue = new RangeValue(min, max);
+        var rangeValue = new LongRangeValue(min, max);
         return AddInRange<TSearchField>(rangeValue);
     }
 
-    public FilterQuery AddInRange<TSearchField>(RangeValue value)
+    public FilterQuery AddInRange<TSearchField>(IRangeValue value)
     where TSearchField : SearchField
     {
         if (value?.IsEmpty == true)
@@ -152,17 +153,17 @@ public class FilterQuery
 
     public FilterQuery AddInRange(string? searchFieldKey, double? min, double? max)
     {
-        var rangeValue = new RangeValue(min, max);
+        var rangeValue = new DoubleRangeValue(min, max);
         return AddInRange(searchFieldKey, rangeValue);
     }
 
     public FilterQuery AddInRange(string? searchFieldKey, long? min, long? max)
     {
-        var rangeValue = new RangeValue(min, max);
+        var rangeValue = new LongRangeValue(min, max);
         return AddInRange(searchFieldKey, rangeValue);
     }
 
-    public FilterQuery AddInRange(string? searchFieldKey, RangeValue value)
+    public FilterQuery AddInRange(string? searchFieldKey, IRangeValue value)
     {
         if (string.IsNullOrWhiteSpace(searchFieldKey) || value?.IsEmpty == true)
             return this;

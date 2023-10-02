@@ -10,6 +10,7 @@ using Atomic.Common.Pagination;
 using Umbraco.Cms.Web.Common.PublishedModels;
 using Atomic.Search.Models;
 using Atomic.Search.Fields.Base;
+using Atomic.Search.Models.RangeValue;
 
 namespace Atomic.Search.Querying;
 
@@ -211,7 +212,7 @@ public class SearchService
                 case MultiValue multiValue:
                     examineQuery = examineQuery.And().MultiValueQuery(searchField, multiValue);
                     break;
-                case RangeValue rangeValue:
+                case IRangeValue rangeValue:
                     examineQuery = examineQuery.And().RangeValueQuery(searchField, rangeValue);
                     break;
             }

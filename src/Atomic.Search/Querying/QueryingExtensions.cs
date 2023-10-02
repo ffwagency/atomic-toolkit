@@ -1,6 +1,7 @@
 ﻿using Atomic.Search.Fields.Base;
 using Atomic.Search.Fields.Exceptions;
 using Atomic.Search.Models;
+using Atomic.Search.Models.RangeValue;
 using Examine;
 using Examine.Search;
 using System.Globalization;
@@ -30,7 +31,7 @@ public static class QueryingExtensions
     {
         var boostedValues = multiValue.Values.Select(v => v.Value.Boost(v.Boost.Value + searchField.Boost.Value)).ToArray();
 
-        if(multiValue.IsNegation)
+        if (multiValue.IsNegation)
         {
             return searchField.VaryByCulture
                 ? query.GroupedNot(new[] { searchField.ExamineNameWithoutCulture, ExamineNameWithCulture(searchField.ExamineNameWithoutCulture) }, boostedValues)
@@ -44,19 +45,20 @@ public static class QueryingExtensions
         }
     }
 
-    public static IBooleanOperation RangeValueQuery(this IQuery query, SearchField searchField, RangeValue rangeValue)
+    public static IBooleanOperation RangeValueQuery(this IQuery query, SearchField searchField, IRangeValue rangeValue)
     {
-        if (rangeValue.Type == typeof(long))
+        switch (rangeValue)
         {
-            return searchField.VaryByCulture
-                ? query.RangeQuery<long>(new[] { searchField.ExamineNameWithoutCulture, ExamineNameWithCulture(searchField.ExamineNameWithoutCulture) }, (long)rangeValue.Min, (long)rangeValue.Max)
-                : query.RangeQuery<long>(new[] { searchField.ExamineNameWithoutCulture }, (long)rangeValue.Min, (long)rangeValue.Max);
-        }
-        else
-        {
-            return searchField.VaryByCulture
-                ? query.RangeQuery<double>(new[] { searchField.ExamineNameWithoutCulture, ExamineNameWithCulture(searchField.ExamineNameWithoutCulture) }, (double)rangeValue.Min, (double)rangeValue.Max)
-                : query.RangeQuery<double>(new[] { searchField.ExamineNameWithoutCulture }, (double)rangeValue.Min, (double)rangeValue.Max);
+            case LongRangeValue longRangeValue:
+                return searchField.VaryByCulture
+                    ? query.RangeQuery<long>(new[] { searchField.ExamineNameWithoutCulture, ExamineNameWithCulture(searchField.ExamineNameWithoutCulture) }, longRangeValue.Min, longRangeValue.Max)
+                    : query.RangeQuery<long>(new[] { searchField.ExamineNameWithoutCulture }, longRangeValue.Min, longRangeValue.Max);
+            case DoubleRangeValue doubleRangeValue:
+                return searchField.VaryByCulture
+                    ? query.RangeQuery<double>(new[] { searchField.ExamineNameWithoutCulture, ExamineNameWithCulture(searchField.ExamineNameWithoutCulture) }, doubleRangeValue.Min, doubleRangeValue.Max)
+                    : query.RangeQuery<double>(new[] { searchField.ExamineNameWithoutCulture }, doubleRangeValue.Min, doubleRangeValue.Max);
+            default:
+                throw new NotSupportedRangeValueException();
         }
     }
 
@@ -96,7 +98,7 @@ public static class QueryingExtensions
 
     public static ISearchValue ToSearchValue(this string? value)
     {
-        if (RangeValue.TryParse(value, out var rangeValue))
+        if (RangeValueHelper.TryParse(value, out var rangeValue))
             return rangeValue!;
 
         if (MultiValue.TryParse(value, out MultiValue? multiValue))
